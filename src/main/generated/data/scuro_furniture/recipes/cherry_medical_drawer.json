@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "scuro_furniture_carpenter:cherry_medical_drawer_box"
+    },
+    "p": {
+      "item": "minecraft:cherry_planks"
+    }
+  },
+  "pattern": [
+    "bpb",
+    "ppp",
+    "bpb"
+  ],
+  "result": {
+    "item": "scuro_furniture_carpenter:cherry_medical_drawer"
+  }
+}

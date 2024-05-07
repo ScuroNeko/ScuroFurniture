@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture_roads:block/asphalt_68",
+  "textures": {
+    "layer0": "scuro_furniture_roads:item/asphalt"
+  }
+}

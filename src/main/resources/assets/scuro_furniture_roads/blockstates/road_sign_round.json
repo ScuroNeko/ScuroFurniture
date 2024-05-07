@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scuro_furniture_roads:block/road_sign_round",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scuro_furniture_roads:block/road_sign_round"
+    },
+    "facing=south": {
+      "model": "scuro_furniture_roads:block/road_sign_round",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scuro_furniture_roads:block/road_sign_round",
+      "y": 270
+    }
+  }
+}

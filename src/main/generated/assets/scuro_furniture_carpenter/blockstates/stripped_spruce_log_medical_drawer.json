@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scuro_furniture_carpenter:block/stripped_spruce_log_medical_drawer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scuro_furniture_carpenter:block/stripped_spruce_log_medical_drawer"
+    },
+    "facing=south": {
+      "model": "scuro_furniture_carpenter:block/stripped_spruce_log_medical_drawer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scuro_furniture_carpenter:block/stripped_spruce_log_medical_drawer",
+      "y": 270
+    }
+  }
+}

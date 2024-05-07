@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture_carpenter:block/medical_drawer",
+  "textures": {
+    "texture": "scuro_furniture_carpenter:block/stripped_dark_oak_log_medical_drawer"
+  }
+}

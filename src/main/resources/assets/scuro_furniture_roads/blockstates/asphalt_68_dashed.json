@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scuro_furniture_roads:block/asphalt_68/dashed",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scuro_furniture_roads:block/asphalt_68/dashed"
+    },
+    "facing=south": {
+      "model": "scuro_furniture_roads:block/asphalt_68/dashed",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scuro_furniture_roads:block/asphalt_68/dashed",
+      "y": 270
+    }
+  }
+}

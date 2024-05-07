@@ -1,0 +1,9 @@
+{
+  "type": "scuro_furniture:shapeless_carpenter_table",
+  "ingredients": [{
+    "item": "minecraft:cherry_log"
+  }],
+  "output": {
+    "item": "scuro_furniture_carpenter:cherry_log_medical_drawer"
+  }
+}

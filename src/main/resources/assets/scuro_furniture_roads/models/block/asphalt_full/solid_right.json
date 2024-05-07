@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture_roads:block/asphalt_full",
+  "textures": {
+    "0": "scuro_furniture_roads:block/asphalt/solid_right"
+  }
+}

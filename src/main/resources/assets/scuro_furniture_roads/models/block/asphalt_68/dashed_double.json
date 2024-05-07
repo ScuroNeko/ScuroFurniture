@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture_roads:block/asphalt_68",
+  "textures": {
+    "0": "scuro_furniture_roads:block/asphalt/dashed_double"
+  }
+}

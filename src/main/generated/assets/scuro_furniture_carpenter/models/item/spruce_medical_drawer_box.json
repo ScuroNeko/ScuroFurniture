@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "scuro_furniture_carpenter:item/spruce_medical_drawer_box"
+  }
+}

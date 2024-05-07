@@ -1,0 +1,64 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/door_bottom_right",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scuro_furniture:block/airtight_door",
+		"particle": "scuro_furniture:block/airtight_door"
+	},
+	"elements": [
+		{
+			"name": "door",
+			"from": [0, 1, 1],
+			"to": [2, 16, 15],
+			"faces": {
+				"north": {"uv": [6.5, 7.5, 7, 11.25], "texture": "#0"},
+				"east": {"uv": [3.5, 0, 7, 3.75], "texture": "#0"},
+				"south": {"uv": [6, 7.5, 6.5, 11.25], "texture": "#0"},
+				"west": {"uv": [0, 0, 3.5, 3.75], "texture": "#0"},
+				"up": {"uv": [7.5, 11, 7, 7.5], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [8, 7.5, 7.5, 11], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "bottom",
+			"from": [0, 0, 0],
+			"to": [8, 1, 16],
+			"faces": {
+				"north": {"uv": [0.5, 8.25, 2.5, 8.5], "texture": "#0"},
+				"east": {"uv": [0, 7.75, 4, 8], "texture": "#0"},
+				"south": {"uv": [8.25, 3.75, 10.25, 4], "texture": "#0"},
+				"west": {"uv": [0, 8, 4, 8.25], "texture": "#0"},
+				"up": {"uv": [2, 7.75, 0, 3.75], "texture": "#0"},
+				"down": {"uv": [4, 3.75, 2, 7.75], "texture": "#0"}
+			}
+		},
+		{
+			"name": "side1",
+			"from": [0, 1, 0],
+			"to": [8, 16, 1],
+			"faces": {
+				"north": {"uv": [4, 3.75, 6, 7.5], "texture": "#0"},
+				"east": {"uv": [8, 3.75, 8.25, 7.5], "texture": "#0"},
+				"south": {"uv": [6, 3.75, 8, 7.5], "texture": "#0"},
+				"west": {"uv": [8, 7.5, 8.25, 11.25], "texture": "#0"},
+				"up": {"uv": [10.25, 4.25, 8.25, 4], "texture": "#0"},
+				"down": {"uv": [10.25, 4.25, 8.25, 4.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "side2",
+			"from": [0, 1, 15],
+			"to": [8, 16, 16],
+			"faces": {
+				"north": {"uv": [7, 0, 9, 3.75], "texture": "#0"},
+				"east": {"uv": [0, 8.25, 0.25, 12], "texture": "#0"},
+				"south": {"uv": [4, 7.5, 6, 11.25], "texture": "#0"},
+				"west": {"uv": [0.25, 8.25, 0.5, 12], "texture": "#0"},
+				"up": {"uv": [10.25, 4.75, 8.25, 4.5], "texture": "#0"},
+				"down": {"uv": [10.25, 4.75, 8.25, 5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {}
+}

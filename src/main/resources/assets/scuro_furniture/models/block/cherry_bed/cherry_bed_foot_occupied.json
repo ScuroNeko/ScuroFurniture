@@ -1,0 +1,100 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/bed",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scuro_furniture:block/cherry_bed",
+		"particle": "scuro_furniture:block/cherry_bed"
+	},
+	"elements": [
+		{
+			"name": "blanket2",
+			"from": [16.1, 4.1, 0],
+			"to": [16.1, 12.1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 0, 2], "texture": "#0"},
+				"east": {"uv": [4, 0, 6, 4], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 2], "texture": "#0"},
+				"west": {"uv": [4, 0, 6, 4], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 1.75, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 1.75], "texture": "#0"}
+			}
+		},
+		{
+			"name": "blanket_top",
+			"from": [-0.1, 12.1, 0],
+			"to": [16.1, 12.1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 0], "texture": "#0"},
+				"east": {"uv": [0, 0, 1.75, 0], "texture": "#0"},
+				"south": {"uv": [0, 0, 4, 0], "texture": "#0"},
+				"west": {"uv": [0, 0, 1.75, 0], "texture": "#0"},
+				"up": {"uv": [8, 4, 4, 0], "texture": "#0"},
+				"down": {"uv": [8, 0, 4, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "blanket1",
+			"from": [-0.1, 4.1, 0],
+			"to": [-0.1, 12.1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 0, 2], "texture": "#0"},
+				"east": {"uv": [4, 0, 6, 4], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 2], "texture": "#0"},
+				"west": {"uv": [4, 0, 6, 4], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 1.75, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 1.75], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 3, 0],
+			"to": [16, 9, 16],
+			"faces": {
+				"north": {"uv": [0, 8, 4, 9.5], "texture": "#0"},
+				"east": {"uv": [0, 8, 4, 9.5], "texture": "#0"},
+				"south": {"uv": [0, 8, 4, 9.5], "texture": "#0"},
+				"west": {"uv": [0, 8, 4, 9.5], "texture": "#0"},
+				"up": {"uv": [4, 8, 0, 4], "texture": "#0"},
+				"down": {"uv": [4, 0, 0, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "leg1",
+			"from": [13, 0, 13],
+			"to": [16, 3, 16],
+			"faces": {
+				"north": {"uv": [1.5, 9.5, 2.25, 10.25], "texture": "#0"},
+				"east": {"uv": [2.25, 9.5, 3, 10.25], "texture": "#0"},
+				"south": {"uv": [3, 9.5, 3.75, 10.25], "texture": "#0"},
+				"west": {"uv": [3.75, 9.5, 4.5, 10.25], "texture": "#0"},
+				"up": {"uv": [0.75, 10.25, 0, 9.5], "texture": "#0"},
+				"down": {"uv": [1.5, 9.5, 0.75, 10.25], "texture": "#0"}
+			}
+		},
+		{
+			"name": "leg2",
+			"from": [0, 0, 13],
+			"to": [3, 3, 16],
+			"faces": {
+				"north": {"uv": [1.5, 9.5, 2.25, 10.25], "texture": "#0"},
+				"east": {"uv": [2.25, 9.5, 3, 10.25], "texture": "#0"},
+				"south": {"uv": [3, 9.5, 3.75, 10.25], "texture": "#0"},
+				"west": {"uv": [3.75, 9.5, 4.5, 10.25], "texture": "#0"},
+				"up": {"uv": [0.75, 10.25, 0, 9.5], "texture": "#0"},
+				"down": {"uv": [1.5, 9.5, 0.75, 10.25], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "blanket",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"nbt": "{}",
+			"children": [0, 1, 2]
+		},
+		3,
+		4,
+		5
+	]
+}
