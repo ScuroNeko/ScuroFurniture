@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "scuro_furniture_roads:item/asphalt_solid_dashed_left"
-  }
-}

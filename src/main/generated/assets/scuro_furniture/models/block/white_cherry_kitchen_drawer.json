@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:block/kitchen_drawer",
+  "textures": {
+    "texture": "scuro_furniture:block/white_cherry_kitchen_drawer"
+  }
+}

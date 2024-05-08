@@ -1,5 +1,5 @@
 {
-  "type": "scuro_furniture:shaped_carpenter_table",
+  "type": "scuro_furniture:shaped_table",
   "key": {
     "P": {
       "item": "minecraft:cherry_planks"
@@ -11,6 +11,6 @@
     "PPPP"
   ],
   "output": {
-    "item": "scuro_furniture_carpenter:cherry_medical_drawer"
+    "item": "scuro_furniture:cherry_medical_drawer"
   }
 }

@@ -1,20 +1,24 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "b": {
-      "item": "scuro_furniture_carpenter:cherry_medical_drawer_box"
+  "ingredients": [
+    {
+      "item": "scuro_furniture:cherry_medical_box"
     },
-    "p": {
-      "item": "minecraft:cherry_planks"
+    {
+      "item": "scuro_furniture:cherry_medical_box"
+    },
+    {
+      "item": "scuro_furniture:cherry_medical_box"
+    },
+    {
+      "item": "scuro_furniture:cherry_medical_box"
+    },
+    {
+      "item": "scuro_furniture:cherry_medical_drawer_case"
     }
-  },
-  "pattern": [
-    "bpb",
-    "ppp",
-    "bpb"
   ],
   "result": {
-    "item": "scuro_furniture_carpenter:cherry_medical_drawer"
+    "item": "scuro_furniture:cherry_medical_drawer"
   }
 }

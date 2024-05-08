@@ -11,7 +11,7 @@
 		"homepage": "https://modrinth.com/project/scuros-furniture",
 		"sources": "https://github.com/ScuroNeko/ScuroFurniture"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/scuro_furniture/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -40,7 +40,7 @@
 		"scuro_furniture.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.10",
+		"fabricloader": ">=0.15.7",
 		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*",

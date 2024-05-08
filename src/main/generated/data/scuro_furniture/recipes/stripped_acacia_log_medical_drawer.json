@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:acacia_medical_box"
+    },
+    {
+      "item": "scuro_furniture:acacia_medical_box"
+    },
+    {
+      "item": "scuro_furniture:acacia_medical_box"
+    },
+    {
+      "item": "scuro_furniture:acacia_medical_box"
+    },
+    {
+      "item": "scuro_furniture:stripped_acacia_log_medical_drawer_case"
+    }
+  ],
+  "result": {
+    "item": "scuro_furniture:stripped_acacia_log_medical_drawer"
+  }
+}

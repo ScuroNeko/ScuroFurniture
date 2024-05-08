@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:block/medical_drawer",
+  "textures": {
+    "texture": "scuro_furniture:block/warped_stem_medical_drawer"
+  }
+}

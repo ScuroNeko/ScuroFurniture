@@ -1,6 +1,0 @@
-{
-  "parent": "scuro_furniture_carpenter:block/medical_drawer",
-  "textures": {
-    "texture": "scuro_furniture_carpenter:block/acacia_log_medical_drawer"
-  }
-}

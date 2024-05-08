@@ -1,9 +1,0 @@
-{
-  "type": "scuro_furniture:road_worker_station",
-  "ingredient": {
-    "item": "scuro_furniture_roads:asphalt_full"
-  },
-  "output": {
-    "item": "scuro_furniture_roads:asphalt_full_solid"
-  }
-}

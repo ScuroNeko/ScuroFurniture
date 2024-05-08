@@ -6,15 +6,18 @@ import net.minecraft.item.BlockItem
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
-import ru.scuroneko.furniture.carpenter.CarpenterBlocks.BEDSIDE_TABLES
-import ru.scuroneko.furniture.carpenter.CarpenterBlocks.BEDSIDE_TABLES_ITEMS
-import ru.scuroneko.furniture.carpenter.CarpenterBlocks.KITCHEN_DRAWERS
-import ru.scuroneko.furniture.carpenter.CarpenterBlocks.KITCHEN_DRAWERS_ITEMS
-import ru.scuroneko.furniture.carpenter.CarpenterBlocks.MEDICAL_DRAWERS
-import ru.scuroneko.furniture.carpenter.CarpenterBlocks.MEDICAL_DRAWERS_ITEMS
-import ru.scuroneko.furniture.carpenter.blocks.BedsideTableBlock
-import ru.scuroneko.furniture.carpenter.blocks.KitchenDrawerBlock
-import ru.scuroneko.furniture.carpenter.blocks.MedicalDrawerBlock
+import ru.scuroneko.furniture.ModBlocks.BEDSIDE_TABLES
+import ru.scuroneko.furniture.ModBlocks.BEDSIDE_TABLES_ITEMS
+import ru.scuroneko.furniture.ModBlocks.KITCHEN_CABINETS
+import ru.scuroneko.furniture.ModBlocks.KITCHEN_CABINETS_ITEMS
+import ru.scuroneko.furniture.ModBlocks.KITCHEN_DRAWERS
+import ru.scuroneko.furniture.ModBlocks.KITCHEN_DRAWERS_ITEMS
+import ru.scuroneko.furniture.ModBlocks.MEDICAL_DRAWERS
+import ru.scuroneko.furniture.ModBlocks.MEDICAL_DRAWERS_ITEMS
+import ru.scuroneko.furniture.blocks.BedsideTableBlock
+import ru.scuroneko.furniture.blocks.KitchenCabinetBlock
+import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
+import ru.scuroneko.furniture.blocks.MedicalDrawerBlock
 
 object ScuroFurnitureBlocksAPI {
     fun registerBlock(id: Identifier, block: Block): BlockItem {
@@ -40,5 +43,11 @@ object ScuroFurnitureBlocksAPI {
         val item = registerBlock(id, block)
         KITCHEN_DRAWERS[id] = block
         KITCHEN_DRAWERS_ITEMS[id] = item
+    }
+
+    fun registerKitchenCabinet(id: Identifier, block: KitchenCabinetBlock) {
+        val item = registerBlock(id, block)
+        KITCHEN_CABINETS[id] = block
+        KITCHEN_CABINETS_ITEMS[id] = item
     }
 }

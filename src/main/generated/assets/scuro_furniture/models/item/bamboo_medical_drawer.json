@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:block/medical_drawer",
+  "textures": {
+    "texture": "scuro_furniture:block/bamboo_medical_drawer"
+  }
+}

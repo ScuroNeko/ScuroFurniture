@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:item/medical_case",
+  "textures": {
+    "texture": "minecraft:block/stripped_oak_log"
+  }
+}

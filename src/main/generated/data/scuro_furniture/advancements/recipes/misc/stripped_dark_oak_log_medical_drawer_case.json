@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_oak_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:dark_oak_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stripped_dark_oak_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:stripped_dark_oak_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "scuro_furniture:stripped_dark_oak_log_medical_drawer_case"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_oak_slab",
+      "has_stripped_dark_oak_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "scuro_furniture:stripped_dark_oak_log_medical_drawer_case"
+    ]
+  }
+}
