@@ -9,7 +9,8 @@ import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.ScuroFurniture
 
-class CarpenterTableScreen(handler: CarpenterTableScreenHandler, inventory: PlayerInventory, title: Text) : HandledScreen<CarpenterTableScreenHandler>(handler, inventory, title) {
+class CarpenterTableScreen(handler: CarpenterTableScreenHandler, inventory: PlayerInventory, title: Text) :
+    HandledScreen<CarpenterTableScreenHandler>(handler, inventory, title) {
     private val texture = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/carpenter_table.png")
 
     override fun drawBackground(context: DrawContext, delta: Float, mouseX: Int, mouseY: Int) {

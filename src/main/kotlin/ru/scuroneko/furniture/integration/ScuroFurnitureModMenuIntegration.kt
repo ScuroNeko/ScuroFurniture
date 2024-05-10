@@ -6,8 +6,13 @@ import me.shedaniel.autoconfig.AutoConfig
 import net.minecraft.client.gui.screen.Screen
 import ru.scuroneko.furniture.config.ScuroFurnitureConfig
 
-class ScuroFurnitureModMenuIntegration: ModMenuApi {
+class ScuroFurnitureModMenuIntegration : ModMenuApi {
     override fun getModConfigScreenFactory(): ConfigScreenFactory<*> {
-        return ConfigScreenFactory { parent: Screen -> AutoConfig.getConfigScreen(ScuroFurnitureConfig::class.java, parent).get() }
+        return ConfigScreenFactory { parent: Screen ->
+            AutoConfig.getConfigScreen(
+                ScuroFurnitureConfig::class.java,
+                parent
+            ).get()
+        }
     }
 }

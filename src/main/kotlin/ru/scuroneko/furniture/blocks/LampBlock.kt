@@ -53,10 +53,13 @@ class LampBlock(settings: Settings) : HorizontalFacingBlock(settings.luminance {
         pos: BlockPos?,
         context: ShapeContext?
     ): VoxelShape = shape
+
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
         builder.add(HORIZONTAL_FACING)
     }
+
     override fun getPlacementState(ctx: ItemPlacementContext): BlockState? =
         super.getPlacementState(ctx)?.with(HORIZONTAL_FACING, ctx.horizontalPlayerFacing.opposite)
+
     override fun getCodec(): MapCodec<out HorizontalFacingBlock> = createCodec(::LampBlock)
 }

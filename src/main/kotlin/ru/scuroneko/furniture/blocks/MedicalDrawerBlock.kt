@@ -1,10 +1,8 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
-import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
-import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
@@ -15,11 +13,14 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
 import ru.scuroneko.furniture.ModBlocks
+import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
+import ru.scuroneko.furniture.item.BoxItem
+import ru.scuroneko.furniture.item.CaseItem
 
-class MedicalDrawerBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box) {
-    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.OAK_PLANKS)
+class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
+    private constructor(settings: Settings) : this(ModItems.OAK_MEDICAL_DRAWER_CASE, ModItems.OAK_MEDICAL_BOX)
 
     private val boxTopLeft = VoxelShapes.combineAndSimplify(
         createCuboidShape(3.0, 11.0, 9.0, 5.0, 13.0, 9.5),
@@ -57,9 +58,9 @@ class MedicalDrawerBlock(case: Block, box: Block) : AbstractDrawerBlock(case, bo
     }
 
     private fun openScreen(box: VoxelShape, player: PlayerEntity, state: BlockState, world: World, pos: BlockPos) {
-        if(world.isClient) return
+        if (world.isClient) return
         val optional = world.getBlockEntity(pos, ModBlocks.MEDICAL_DRAWER_BLOCK_ENTITY)
-        if(!optional.isPresent) return
+        if (!optional.isPresent) return
         val blockEntity = optional.get()
         val boxToOpen = when (box) {
             boxTopLeft -> 0
@@ -75,5 +76,6 @@ class MedicalDrawerBlock(case: Block, box: Block) : AbstractDrawerBlock(case, bo
 
     override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity =
         MedicalDrawerBlockEntity(pos, state)
+
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::MedicalDrawerBlock)
 }

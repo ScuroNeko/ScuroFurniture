@@ -21,7 +21,12 @@ class CustomBedBlock(color: DyeColor, settings: Settings) : BedBlock(color, sett
     val WEST_SHAPE = VoxelShapes.union(TOP_SHAPE, *arrayOf(LEG_1_SHAPE, LEG_2_SHAPE))
     val EAST_SHAPE = VoxelShapes.union(TOP_SHAPE, *arrayOf(LEG_3_SHAPE, LEG_4_SHAPE))
 
-    override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape {
+    override fun getOutlineShape(
+        state: BlockState,
+        world: BlockView,
+        pos: BlockPos,
+        context: ShapeContext
+    ): VoxelShape {
         val direction = getOppositePartDirection(state).opposite
         return when (direction) {
             Direction.NORTH -> NORTH_SHAPE

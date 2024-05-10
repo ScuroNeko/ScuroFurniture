@@ -12,7 +12,7 @@ object ModModels {
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX,
         TextureKey.PARTICLE
     )
-    val MEDICAL_CASE = block(
+    val MEDICAL_CASE = item(
         Identifier(ScuroFurniture.MOD_ID, "item/medical_case"),
         TextureKey.TEXTURE
     )
@@ -20,6 +20,7 @@ object ModModels {
         Identifier(ScuroFurniture.MOD_ID, "item/medical_box"),
         ModTextureKeys.DRAWER_BOX
     )
+
     val BEDSIDE_TABLE = block(
         Identifier(ScuroFurniture.MOD_ID, "block/bedside_table"),
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX,
@@ -30,6 +31,15 @@ object ModModels {
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX, ModTextureKeys.DRAWER_CONCRETE,
         TextureKey.PARTICLE
     )
+    val KITCHEN_DRAWER_CASE = item(
+        Identifier(ScuroFurniture.MOD_ID, "item/kitchen_drawer_case"),
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_CONCRETE
+    )
+    val KITCHEN_DRAWER_BOX = item(
+        Identifier(ScuroFurniture.MOD_ID, "item/kitchen_drawer_box"),
+        ModTextureKeys.DRAWER_BOX
+    )
+
     val KITCHEN_CABINET = block(
         Identifier(ScuroFurniture.MOD_ID, "block/kitchen_cabinet"),
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX,

@@ -9,27 +9,38 @@ import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
 import ru.scuroneko.furniture.ModScreenHandlers
 
-class BedsideTableScreenHandler(syncId: Int, playerInventory: PlayerInventory, private val inventory: Inventory, boxIndex: Int) : ScreenHandler(
-    ModScreenHandlers.BEDSIDE_TABLE_SCREEN_HANDLER, syncId) {
-    constructor(syncId: Int, playerInventory: PlayerInventory) : this(syncId, playerInventory, SimpleInventory(2*18), 0)
+class BedsideTableScreenHandler(
+    syncId: Int,
+    playerInventory: PlayerInventory,
+    private val inventory: Inventory,
+    boxIndex: Int
+) : ScreenHandler(
+    ModScreenHandlers.BEDSIDE_TABLE_SCREEN_HANDLER, syncId
+) {
+    constructor(syncId: Int, playerInventory: PlayerInventory) : this(
+        syncId,
+        playerInventory,
+        SimpleInventory(2 * 18),
+        0
+    )
 
     init {
-        checkSize(inventory, 2*18)
+        checkSize(inventory, 2 * 18)
         inventory.onOpen(playerInventory.player)
 
         for (line in 0 until 2)
             for (m in 0 until 9)
-                this.addSlot(Slot(inventory, (boxIndex*2)*9+(9*line)+m, 8 + m * 18, 26+(line*18)))
+                this.addSlot(Slot(inventory, (boxIndex * 2) * 9 + (9 * line) + m, 8 + m * 18, 26 + (line * 18)))
 
         for (m in 0 until 3)
-            for(l in 0 until 9)
+            for (l in 0 until 9)
                 this.addSlot(Slot(playerInventory, l + m * 9 + 9, 8 + l * 18, 84 + m * 18))
 
         for (m in 0 until 9)
             this.addSlot(Slot(playerInventory, m, 8 + m * 18, 142))
     }
 
-    override fun quickMove(player: PlayerEntity?, slot: Int): ItemStack {
+    override fun quickMove(player: PlayerEntity, slot: Int): ItemStack {
         return ItemStack.EMPTY
     }
 

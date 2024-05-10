@@ -18,9 +18,10 @@ import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.CarpenterTableScreenHandler
 
-class CarpenterTableBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ModBlocks.CARPENTER_TABLE_BLOCK_ENTITY, pos, state),
+class CarpenterTableBlockEntity(pos: BlockPos, state: BlockState) :
+    BlockEntity(ModBlocks.CARPENTER_TABLE_BLOCK_ENTITY, pos, state),
     NamedScreenHandlerFactory, IInventory {
-    private val inventory = DefaultedList.ofSize(4*3, ItemStack.EMPTY)
+    private val inventory = DefaultedList.ofSize(4 * 3, ItemStack.EMPTY)
     private val onChange = ArrayList<(Inventory) -> Unit>()
 
     fun addChangeHandler(handler: (Inventory) -> Unit) {
@@ -45,6 +46,7 @@ class CarpenterTableBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(
     override fun createMenu(syncId: Int, playerInventory: PlayerInventory, player: PlayerEntity): ScreenHandler {
         return CarpenterTableScreenHandler(syncId, playerInventory, this, ScreenHandlerContext.create(world, pos), pos)
     }
+
     override fun getDisplayName(): Text = Text.literal("Carpenter table")
     override fun getItems(): DefaultedList<ItemStack> = this.inventory
 }

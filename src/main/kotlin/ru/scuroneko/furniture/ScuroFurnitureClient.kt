@@ -10,22 +10,24 @@ import net.minecraft.client.render.RenderLayer
 import ru.scuroneko.furniture.client.SofaEntityRenderer
 import ru.scuroneko.furniture.gui.BedsideTableScreen
 import ru.scuroneko.furniture.gui.CarpenterTableScreen
+import ru.scuroneko.furniture.gui.KitchenDrawerScreen
 import ru.scuroneko.furniture.gui.MedicalDrawerScreen
 
 @Environment(EnvType.CLIENT)
 object ScuroFurnitureClient : ClientModInitializer {
-	override fun onInitializeClient() {
-		HandledScreens.register(ModScreenHandlers.CARPENTER_TABLE_SCREEN_HANDLER, ::CarpenterTableScreen)
-		HandledScreens.register(ModScreenHandlers.MEDICAL_DRAWER_SCREEN_HANDLER, ::MedicalDrawerScreen)
-		HandledScreens.register(ModScreenHandlers.BEDSIDE_TABLE_SCREEN_HANDLER, ::BedsideTableScreen)
+    override fun onInitializeClient() {
+        HandledScreens.register(ModScreenHandlers.CARPENTER_TABLE_SCREEN_HANDLER, ::CarpenterTableScreen)
+        HandledScreens.register(ModScreenHandlers.MEDICAL_DRAWER_SCREEN_HANDLER, ::MedicalDrawerScreen)
+        HandledScreens.register(ModScreenHandlers.BEDSIDE_TABLE_SCREEN_HANDLER, ::BedsideTableScreen)
+        HandledScreens.register(ModScreenHandlers.KITCHEN_DRAWER_SCREEN_HANDLER, ::KitchenDrawerScreen)
 
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_MEDICAL_DRAWER, RenderLayer.getCutout())
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHERRY_BEDSIDE_TABLE, RenderLayer.getCutout())
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_MEDICAL_DRAWER, RenderLayer.getCutout())
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHERRY_BEDSIDE_TABLE, RenderLayer.getCutout())
 
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_OAK_LAMP, RenderLayer.getCutout())
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_OAK_LAMP, RenderLayer.getCutout())
 
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_CHERRY_SOFA, RenderLayer.getCutout())
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_CHERRY_SOFA, RenderLayer.getCutout())
 
-		EntityRendererRegistry.register(ModEntities.SOFA_ENTITY) { context -> SofaEntityRenderer(context) }
-	}
+        EntityRendererRegistry.register(ModEntities.SOFA_ENTITY) { context -> SofaEntityRenderer(context) }
+    }
 }

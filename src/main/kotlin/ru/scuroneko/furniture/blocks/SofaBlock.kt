@@ -21,7 +21,7 @@ import ru.scuroneko.furniture.blocks.entity.SofaEntity
 import ru.scuroneko.furniture.utils.MathUtils
 
 class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEntity>(base, leg, wool) {
-    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.STRIPPED_OAK_LOG, Blocks.WHITE_WOOL)
+    private constructor(settings: Settings) : this(Blocks.OAK_PLANKS, Blocks.STRIPPED_OAK_LOG, Blocks.WHITE_WOOL)
 
     private val shape: VoxelShape = VoxelShapes.combineAndSimplify(
         sequenceOf(
@@ -54,7 +54,8 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
                 createCuboidShape(2, 4, 2, 16, 6, 15),
                 createCuboidShape(2, 6, 2, 16, 14, 4),
                 BooleanBiFunction.OR
-            )).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) },
+            )
+        ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) },
         BooleanBiFunction.OR
     )
     private val centerShape = VoxelShapes.combineAndSimplify(
@@ -69,7 +70,8 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
                 createCuboidShape(0, 4, 2, 16, 6, 15),
                 createCuboidShape(0, 6, 2, 16, 14, 4),
                 BooleanBiFunction.OR
-            )).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) },
+            )
+        ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) },
         BooleanBiFunction.OR
     )
     private val rightShape = VoxelShapes.combineAndSimplify(
@@ -84,7 +86,8 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
                 createCuboidShape(0, 4, 2, 14, 6, 15),
                 createCuboidShape(0, 6, 2, 14, 14, 4),
                 BooleanBiFunction.OR
-            )).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) },
+            )
+        ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) },
         BooleanBiFunction.OR
     )
 
@@ -111,7 +114,7 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
     }
 
     fun getShape(state: BlockState): VoxelShape {
-        val part = when(state.get(TYPE_PROPERTY)) {
+        val part = when (state.get(TYPE_PROPERTY)) {
             SofaType.SINGLE -> shape
             SofaType.LEFT -> leftShape
             SofaType.CENTER -> centerShape

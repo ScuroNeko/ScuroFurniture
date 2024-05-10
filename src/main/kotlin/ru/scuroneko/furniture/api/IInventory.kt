@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.util.collection.DefaultedList
 
 @FunctionalInterface
-interface IInventory: Inventory {
+interface IInventory : Inventory {
     fun getItems(): DefaultedList<ItemStack>
 
 //    companion object {
@@ -20,7 +20,7 @@ interface IInventory: Inventory {
     override fun isEmpty(): Boolean {
         for (i in 0 until size()) {
             val stack = getStack(i)
-            if(!stack.isEmpty) return false
+            if (!stack.isEmpty) return false
         }
         return true
     }
@@ -39,8 +39,10 @@ interface IInventory: Inventory {
         if (stack.count > stack.maxCount)
             stack.count = stack.maxCount
     }
+
     override fun clear() {
         getItems().clear()
     }
+
     override fun canPlayerUse(player: PlayerEntity): Boolean = true
 }

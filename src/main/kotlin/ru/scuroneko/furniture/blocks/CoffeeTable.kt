@@ -6,7 +6,7 @@ import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.block.HorizontalFacingBlock
 
-class CoffeeTable(wood: Block): HorizontalFacingBlock(FabricBlockSettings.copy(wood)) {
+class CoffeeTable(wood: Block) : HorizontalFacingBlock(FabricBlockSettings.copy(wood)) {
     private constructor(settings: Settings) : this(Blocks.OAK_PLANKS)
 
     override fun getCodec(): MapCodec<out HorizontalFacingBlock> = createCodec(::CoffeeTable)

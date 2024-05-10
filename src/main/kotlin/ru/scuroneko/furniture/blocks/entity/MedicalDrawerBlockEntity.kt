@@ -17,9 +17,10 @@ import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.MedicalDrawerScreenHandler
 
-class MedicalDrawerBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ModBlocks.MEDICAL_DRAWER_BLOCK_ENTITY, pos, state), NamedScreenHandlerFactory, IInventory {
+class MedicalDrawerBlockEntity(pos: BlockPos, state: BlockState) :
+    BlockEntity(ModBlocks.MEDICAL_DRAWER_BLOCK_ENTITY, pos, state), NamedScreenHandlerFactory, IInventory {
     private var boxIndex = 0
-    private val inventory = DefaultedList.ofSize(4*9, ItemStack.EMPTY)
+    private val inventory = DefaultedList.ofSize(4 * 9, ItemStack.EMPTY)
 
     fun setBoxIndex(index: Int) {
         this.boxIndex = index

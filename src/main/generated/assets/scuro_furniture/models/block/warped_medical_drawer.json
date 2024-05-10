@@ -1,8 +1,8 @@
 {
   "parent": "scuro_furniture:block/medical_drawer",
   "textures": {
-    "drawer_box": "minecraft:block/crimson_planks",
-    "drawer_case": "minecraft:block/crimson_planks",
-    "particle": "minecraft:block/crimson_planks"
+    "drawer_box": "minecraft:block/warped_planks",
+    "drawer_case": "minecraft:block/warped_planks",
+    "particle": "minecraft:block/warped_planks"
   }
 }

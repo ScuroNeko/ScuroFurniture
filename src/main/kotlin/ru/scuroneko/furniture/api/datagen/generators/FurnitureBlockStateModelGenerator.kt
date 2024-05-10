@@ -4,7 +4,6 @@ import net.minecraft.block.Block
 import net.minecraft.data.client.*
 import net.minecraft.entity.Entity
 import net.minecraft.util.Identifier
-import ru.scuroneko.furniture.ScuroFurniture
 import ru.scuroneko.furniture.api.SofaType
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
@@ -54,7 +53,8 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
         val singleModelId = TexturedModel.makeFactory(ModTextureMap::sofa, ModModels.SOFA_SINGLE)
             .upload(block, generator.modelCollector)
         val leftModelId = this.createSubModel(block, "_left", ModModels.SOFA_LEFT) { _ -> ModTextureMap.sofa(block) }
-        val centerModelId = this.createSubModel(block, "_center", ModModels.SOFA_CENTER) { _ -> ModTextureMap.sofa(block) }
+        val centerModelId =
+            this.createSubModel(block, "_center", ModModels.SOFA_CENTER) { _ -> ModTextureMap.sofa(block) }
         val rightModelId = this.createSubModel(block, "_right", ModModels.SOFA_RIGHT) { _ -> ModTextureMap.sofa(block) }
 
         return VariantsBlockStateSupplier.create(block).coordinate(

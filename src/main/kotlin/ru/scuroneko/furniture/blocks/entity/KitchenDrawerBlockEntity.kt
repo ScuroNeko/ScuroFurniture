@@ -15,12 +15,13 @@ import net.minecraft.util.math.BlockPos
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
-import ru.scuroneko.furniture.gui.BedsideTableScreenHandler
+import ru.scuroneko.furniture.gui.KitchenDrawerScreenHandler
 
-class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ModBlocks.BEDSIDE_TABLE_BLOCK_ENTITY, pos, state),
+class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) :
+    BlockEntity(ModBlocks.BEDSIDE_TABLE_BLOCK_ENTITY, pos, state),
     NamedScreenHandlerFactory, IInventory {
     private var boxIndex = 0
-    private val inventory = DefaultedList.ofSize(2*18, ItemStack.EMPTY)
+    private val inventory = DefaultedList.ofSize(2 * 18, ItemStack.EMPTY)
 
     fun setBoxIndex(index: Int) {
         this.boxIndex = index
@@ -37,7 +38,7 @@ class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(M
     }
 
     override fun createMenu(syncId: Int, playerInventory: PlayerInventory, player: PlayerEntity): ScreenHandler {
-        return BedsideTableScreenHandler(syncId, playerInventory, this, this.boxIndex)
+        return KitchenDrawerScreenHandler(syncId, playerInventory, this, this.boxIndex)
     }
 
     override fun getDisplayName(): Text = Text.translatable(Constants.ScreenNames.KITCHEN_DRAWER)

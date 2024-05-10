@@ -1,10 +1,8 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
-import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
-import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.function.BooleanBiFunction
@@ -12,11 +10,14 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
+import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.BedsideTableBlockEntity
+import ru.scuroneko.furniture.item.BoxItem
+import ru.scuroneko.furniture.item.CaseItem
 
-class BedsideTableBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box) {
-    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.OAK_PLANKS)
+class BedsideTableBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
+    private constructor(settings: Settings) : this(ModItems.OAK_MEDICAL_DRAWER_CASE, ModItems.OAK_MEDICAL_BOX)
 
     private val boxTop = VoxelShapes.combineAndSimplify(
         createCuboidShape(1.0, 9.0, 14.0, 15.0, 15.0, 15.0),
@@ -46,7 +47,7 @@ class BedsideTableBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box
         world: World,
         pos: BlockPos
     ) {
-        if(world.isClient) return
+        if (world.isClient) return
         val blockEntity = world.getBlockEntity(pos) as BedsideTableBlockEntity
         val boxToOpen = when (box) {
             boxTop -> 0

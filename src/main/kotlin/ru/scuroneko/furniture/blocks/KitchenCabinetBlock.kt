@@ -1,10 +1,8 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
-import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
-import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.function.BooleanBiFunction
@@ -12,10 +10,16 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
+import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
+import ru.scuroneko.furniture.item.BoxItem
+import ru.scuroneko.furniture.item.CaseItem
 
-class KitchenCabinetBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box) {
-    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.OAK_PLANKS)
+class KitchenCabinetBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
+    private constructor(settings: Settings) : this(
+        ModItems.BLACK_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER_CASE,
+        ModItems.CHERRY_KITCHEN_DRAWER_BOX
+    )
 
     private val boxLeft = VoxelShapes.combineAndSimplify(
         createCuboidShape(1, 1, 14, 8, 15, 15),
@@ -39,7 +43,7 @@ class KitchenCabinetBlock(case: Block, box: Block) : AbstractDrawerBlock(case, b
     }
 
     private fun openScreen(box: VoxelShape, player: PlayerEntity, state: BlockState, world: World, pos: BlockPos) {
-        if(world.isClient) return
+        if (world.isClient) return
         val blockEntity = world.getBlockEntity(pos) as ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
         val boxToOpen = when (box) {
             boxLeft -> 0

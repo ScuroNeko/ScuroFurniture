@@ -1,10 +1,8 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
-import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
-import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.function.BooleanBiFunction
@@ -12,11 +10,17 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
+import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
+import ru.scuroneko.furniture.item.BoxItem
+import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 
-class KitchenDrawerBlock(case: Block, box: Block, val concrete: Block) : AbstractDrawerBlock(case, box) {
-    constructor(settings: Settings): this(Blocks.CHERRY_PLANKS, Blocks.CHERRY_PLANKS, Blocks.BLACK_CONCRETE)
+class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
+    constructor(settings: Settings) : this(
+        ModItems.BLACK_CHERRY_KITCHEN_DRAWER_CASE,
+        ModItems.CHERRY_KITCHEN_DRAWER_BOX
+    )
 
     private val boxTop = VoxelShapes.combineAndSimplify(
         createCuboidShape(1, 9, 14, 15, 15, 15),
@@ -56,6 +60,6 @@ class KitchenDrawerBlock(case: Block, box: Block, val concrete: Block) : Abstrac
         }
     }
 
-    override fun createBlockEntity(pos: BlockPos?, state: BlockState?): BlockEntity? = null
+    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = KitchenDrawerBlockEntity(pos, state)
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::KitchenDrawerBlock)
 }

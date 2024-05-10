@@ -9,17 +9,17 @@ import ru.scuroneko.furniture.config.ScuroFurnitureConfig
 
 object ScuroFurniture : ModInitializer {
     val LOGGER: Logger = LoggerFactory.getLogger("Scuro's Furniture")
-	const val MOD_ID = "scuro_furniture"
+    const val MOD_ID = "scuro_furniture"
 
-	override fun onInitialize() {
-		AutoConfig.register(ScuroFurnitureConfig::class.java, ::GsonConfigSerializer)
-		ModItemGroups.register()
+    override fun onInitialize() {
+        AutoConfig.register(ScuroFurnitureConfig::class.java, ::GsonConfigSerializer)
+        ModItemGroups.register()
 
         ModBlocks.register()
-		ModItems.register()
+        ModItems.register()
         ModRecipes.register()
-		ModEntities.register()
+        ModEntities.register()
 
-		ModScreenHandlers.register()
-	}
+        ModScreenHandlers.register()
+    }
 }

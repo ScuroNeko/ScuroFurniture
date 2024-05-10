@@ -17,27 +17,39 @@ import ru.scuroneko.furniture.ModScreenHandlers
 import ru.scuroneko.furniture.blocks.entity.CarpenterTableBlockEntity
 import ru.scuroneko.furniture.recipe.ShapelessCarpenterTableRecipe
 
-class CarpenterTableScreenHandler(syncId: Int, playerInventory: PlayerInventory, private val inventory: Inventory, private val context: ScreenHandlerContext, private val pos: BlockPos) : ScreenHandler(ModScreenHandlers.CARPENTER_TABLE_SCREEN_HANDLER, syncId) {
-    constructor(syncId: Int, playerInventory: PlayerInventory) : this(syncId, playerInventory, SimpleInventory(4*3), ScreenHandlerContext.EMPTY, BlockPos.ORIGIN)
+class CarpenterTableScreenHandler(
+    syncId: Int,
+    playerInventory: PlayerInventory,
+    private val inventory: Inventory,
+    private val context: ScreenHandlerContext,
+    private val pos: BlockPos
+) : ScreenHandler(ModScreenHandlers.CARPENTER_TABLE_SCREEN_HANDLER, syncId) {
+    constructor(syncId: Int, playerInventory: PlayerInventory) : this(
+        syncId,
+        playerInventory,
+        SimpleInventory(4 * 3),
+        ScreenHandlerContext.EMPTY,
+        BlockPos.ORIGIN
+    )
 
     private val result = CraftingResultInventory()
     private val player = playerInventory.player
 
     init {
-        checkSize(inventory, 4*3)
+        checkSize(inventory, 4 * 3)
         inventory.onOpen(playerInventory.player)
-        if(inventory is CarpenterTableBlockEntity)
+        if (inventory is CarpenterTableBlockEntity)
             this.inventory.addChangeHandler(this::onContentChanged)
 
         var slotIndex = 0
         for (line in 0 until 3)
             for (m in 0 until 4)
-                this.addSlot(Slot(inventory, slotIndex++, 12 + m * 18, 17+(line*18)))
+                this.addSlot(Slot(inventory, slotIndex++, 12 + m * 18, 17 + (line * 18)))
 
         this.addSlot(Slot(this.result, slotIndex, 124, 35))
 
         for (row in 0 until 3)
-            for(line in 0 until 9)
+            for (line in 0 until 9)
                 this.addSlot(Slot(playerInventory, line + row * 9 + 9, 8 + line * 18, 84 + row * 18))
 
         for (m in 0 until 9)
@@ -45,14 +57,15 @@ class CarpenterTableScreenHandler(syncId: Int, playerInventory: PlayerInventory,
     }
 
     private fun updateResult(world: World) {
-        if(world.isClient) return
+        if (world.isClient) return
         val serverPlayerEntity = player as ServerPlayerEntity
         var itemStack = ItemStack.EMPTY
         val inv = SimpleInventory(this.inventory.size())
         for (i in 0 until this.inventory.size())
             inv.setStack(i, this.inventory.getStack(i))
 
-        val optional = world.server!!.recipeManager.getFirstMatch(ShapelessCarpenterTableRecipe.Type.INSTANCE, inv, world)
+        val optional =
+            world.server!!.recipeManager.getFirstMatch(ShapelessCarpenterTableRecipe.Type.INSTANCE, inv, world)
 //        println(optional.isPresent)
         if (optional.isPresent) {
             val recipeEntry = optional.get()
@@ -88,7 +101,7 @@ class CarpenterTableScreenHandler(syncId: Int, playerInventory: PlayerInventory,
             if (invSlot < inventory.size()) {
                 if (!this.insertItem(originalStack, inventory.size(), slots.size, true))
                     return ItemStack.EMPTY
-            } else if (!this.insertItem(originalStack, 0, inventory.size()/4, false))
+            } else if (!this.insertItem(originalStack, 0, inventory.size() / 4, false))
                 return ItemStack.EMPTY
 
             if (originalStack.isEmpty) slot.stack = ItemStack.EMPTY
@@ -99,5 +112,6 @@ class CarpenterTableScreenHandler(syncId: Int, playerInventory: PlayerInventory,
     }
 
     override fun canUse(player: PlayerEntity): Boolean = this.inventory.canPlayerUse(player)
-    override fun canInsertIntoSlot(stack: ItemStack, slot: Slot): Boolean = slot.inventory != this.result && super.canInsertIntoSlot(stack, slot)
+    override fun canInsertIntoSlot(stack: ItemStack, slot: Slot): Boolean =
+        slot.inventory != this.result && super.canInsertIntoSlot(stack, slot)
 }

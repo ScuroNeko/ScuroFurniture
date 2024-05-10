@@ -37,21 +37,28 @@ class CarpenterTableBlock(settings: Settings) : BlockWithEntity(settings) {
         player.openHandledScreen(blockEntity as CarpenterTableBlockEntity)
         return super.onUse(state, world, pos, player, hand, hit)
     }
-    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = CarpenterTableBlockEntity(pos, state)
+
+    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity =
+        CarpenterTableBlockEntity(pos, state)
+
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::CarpenterTableBlock)
 
     // Facing
     override fun getPlacementState(ctx: ItemPlacementContext): BlockState? = super.getPlacementState(ctx)?.with(
         HORIZONTAL_FACING, ctx.horizontalPlayerFacing
     )
+
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
         builder.add(HORIZONTAL_FACING)
     }
+
     override fun rotate(state: BlockState, rotation: BlockRotation): BlockState = state.with(
         HORIZONTAL_FACING,
         rotation.rotate(state.get(HORIZONTAL_FACING))
     )
-    override fun mirror(state: BlockState, mirror: BlockMirror): BlockState = state.rotate(mirror.getRotation(state.get(HORIZONTAL_FACING)))
+
+    override fun mirror(state: BlockState, mirror: BlockMirror): BlockState =
+        state.rotate(mirror.getRotation(state.get(HORIZONTAL_FACING)))
 
 
     override fun getRenderType(state: BlockState): BlockRenderType = BlockRenderType.MODEL

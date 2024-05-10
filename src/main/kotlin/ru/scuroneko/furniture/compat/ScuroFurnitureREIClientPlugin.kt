@@ -5,7 +5,7 @@ import me.shedaniel.rei.api.client.registry.category.CategoryRegistry
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry
 
-class ScuroFurnitureREIClientPlugin: REIClientPlugin {
+class ScuroFurnitureREIClientPlugin : REIClientPlugin {
     override fun registerCategories(registry: CategoryRegistry?) {
         super.registerCategories(registry)
     }

@@ -9,14 +9,14 @@ import ru.scuroneko.furniture.datagen.lang.EnglishLangProvider
 import ru.scuroneko.furniture.datagen.lang.RussianLangProvider
 
 object ScuroFurnitureDataGenerator : DataGeneratorEntrypoint {
-	override fun onInitializeDataGenerator(fabricDataGenerator: FabricDataGenerator) {
-		val pack = fabricDataGenerator.createPack()
+    override fun onInitializeDataGenerator(fabricDataGenerator: FabricDataGenerator) {
+        val pack = fabricDataGenerator.createPack()
 
-		pack.addProvider(::ModelGeneratorProvider)
-		pack.addProvider(::LootTableGeneratorProvider)
-		pack.addProvider(::RecipeGeneratorProvider)
+        pack.addProvider(::ModelGeneratorProvider)
+        pack.addProvider(::LootTableGeneratorProvider)
+        pack.addProvider(::RecipeGeneratorProvider)
 
-		pack.addProvider(::EnglishLangProvider)
-		pack.addProvider(::RussianLangProvider)
-	}
+        pack.addProvider(::EnglishLangProvider)
+        pack.addProvider(::RussianLangProvider)
+    }
 }

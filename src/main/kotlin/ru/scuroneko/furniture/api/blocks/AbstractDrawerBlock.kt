@@ -24,19 +24,22 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
+import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
+import ru.scuroneko.furniture.item.BoxItem
+import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.utils.MathUtils
 
 abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(settings) {
     var drawerShape: VoxelShape = VoxelShapes.empty()
     var shape: VoxelShape = VoxelShapes.empty()
 
-    var caseMaterial: Block = Blocks.OAK_PLANKS
-    var boxMaterial: Block = Blocks.OAK_PLANKS
+    var case: CaseItem = ModItems.OAK_MEDICAL_DRAWER_CASE
+    var box: BoxItem = ModItems.OAK_MEDICAL_BOX
 
-    constructor(caseMaterial: Block, boxMaterial: Block): this(FabricBlockSettings.copy(caseMaterial)) {
-        this.caseMaterial = caseMaterial
-        this.boxMaterial = boxMaterial
+    constructor(case: CaseItem, box: BoxItem) : this(FabricBlockSettings.copy(case.material)) {
+        this.case = case
+        this.box = box
     }
 
     private val boxList = hashMapOf<VoxelShape, (VoxelShape, PlayerEntity, BlockState, World, BlockPos) -> Unit>()
@@ -68,10 +71,10 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
             if (this.isRayInBox(MathUtils.rotateShape(state.get(HORIZONTAL_FACING), box), pos, hit.pos)) {
                 this.boxList[box]?.invoke(box, player, state, world, pos)
                 // TODO play sound on close
-                if(world.isClient)
+                if (world.isClient)
                     world.playSoundAtBlockCenter(
                         pos, SoundEvents.BLOCK_BARREL_OPEN, SoundCategory.BLOCKS,
-                        1f, 0.9f + world.random.nextFloat()*.1f, true
+                        1f, 0.9f + world.random.nextFloat() * .1f, true
                     )
                 return ActionResult.SUCCESS
             }
@@ -82,26 +85,41 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
 
     fun getRayCast(state: BlockState, pos: BlockPos, hit: BlockHitResult): VoxelShape? {
         this.boxList.keys.forEach { box ->
-            if(this.isRayInBox(MathUtils.rotateShape(state.get(HORIZONTAL_FACING), box), pos, hit.pos)) return box
+            if (this.isRayInBox(MathUtils.rotateShape(state.get(HORIZONTAL_FACING), box), pos, hit.pos)) return box
         }
         return null
     }
 
     private fun isRayInBox(box: VoxelShape, blockPos: BlockPos, pos: Vec3d): Boolean {
         val bound = box.boundingBox
-        return this.isInX(bound, blockPos.x, pos.x) && this.isInY(bound, blockPos.y, pos.y) && this.isInZ(bound, blockPos.z, pos.z)
+        return this.isInX(bound, blockPos.x, pos.x) && this.isInY(bound, blockPos.y, pos.y) && this.isInZ(
+            bound,
+            blockPos.z,
+            pos.z
+        )
     }
 
     fun isInX(box: Box, posX: Int, x: Double): Boolean = posX + box.minX <= x && posX + box.maxX >= x
     fun isInY(box: Box, posY: Int, y: Double): Boolean = posY + box.minY <= y && posY + box.maxY >= y
     fun isInZ(box: Box, posZ: Int, z: Double): Boolean = posZ + box.minZ <= z && posZ + box.maxZ >= z
 
-    private fun getShape(state: BlockState): VoxelShape = MathUtils.rotateShape(state.get(HORIZONTAL_FACING), this.shape)
+    private fun getShape(state: BlockState): VoxelShape =
+        MathUtils.rotateShape(state.get(HORIZONTAL_FACING), this.shape)
 
-    override fun getCollisionShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape = getShape(state)
+    override fun getCollisionShape(
+        state: BlockState,
+        world: BlockView,
+        pos: BlockPos,
+        context: ShapeContext
+    ): VoxelShape = getShape(state)
 
     @Environment(EnvType.CLIENT)
-    override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape {
+    override fun getOutlineShape(
+        state: BlockState,
+        world: BlockView,
+        pos: BlockPos,
+        context: ShapeContext
+    ): VoxelShape {
         val hit = MinecraftClient.getInstance().crosshairTarget ?: return getShape(state)
         if (hit.type != HitResult.Type.BLOCK) return getShape(state)
         val rayCastShape = this.getRayCast(state, pos, hit as BlockHitResult) ?: return getShape(state)
@@ -112,7 +130,7 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     }
 
     override fun onStateReplaced(state: BlockState, world: World, pos: BlockPos, newState: BlockState, moved: Boolean) {
-        if(state.block === newState.block) return
+        if (state.block === newState.block) return
         val blockEntity = world.getBlockEntity(pos)
         if (blockEntity is MedicalDrawerBlockEntity) {
             ItemScatterer.spawn(world, pos, blockEntity)
@@ -125,17 +143,22 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     override fun getPlacementState(ctx: ItemPlacementContext): BlockState? = super.getPlacementState(ctx)?.with(
         HORIZONTAL_FACING, ctx.horizontalPlayerFacing
     )
+
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
         builder.add(HORIZONTAL_FACING)
         builder.add(AXIS)
     }
+
     override fun rotate(state: BlockState, rotation: BlockRotation): BlockState = state.with(
         HORIZONTAL_FACING,
         rotation.rotate(state.get(HORIZONTAL_FACING))
     )
-    override fun mirror(state: BlockState, mirror: BlockMirror): BlockState = state.rotate(mirror.getRotation(state.get(HORIZONTAL_FACING)))
+
+    override fun mirror(state: BlockState, mirror: BlockMirror): BlockState =
+        state.rotate(mirror.getRotation(state.get(HORIZONTAL_FACING)))
 
     override fun getRenderType(state: BlockState): BlockRenderType = BlockRenderType.MODEL
     override fun hasComparatorOutput(state: BlockState): Boolean = true
-    override fun getComparatorOutput(state: BlockState, world: World, pos: BlockPos): Int = ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos))
+    override fun getComparatorOutput(state: BlockState, world: World, pos: BlockPos): Int =
+        ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos))
 }
