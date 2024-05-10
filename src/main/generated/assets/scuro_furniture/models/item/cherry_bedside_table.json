@@ -1,6 +1,3 @@
 {
-  "parent": "scuro_furniture:block/bedside_table",
-  "textures": {
-    "texture": "scuro_furniture:block/cherry_bedside_table"
-  }
+  "parent": "scuro_furniture:block/cherry_bedside_table"
 }

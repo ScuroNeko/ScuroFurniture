@@ -2,6 +2,7 @@ package ru.scuroneko.furniture.api.blocks
 
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
+import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.*
 import net.minecraft.client.MinecraftClient
 import net.minecraft.entity.player.PlayerEntity
@@ -10,6 +11,7 @@ import net.minecraft.screen.ScreenHandler
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
 import net.minecraft.state.StateManager
+import net.minecraft.state.property.Properties.AXIS
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.*
 import net.minecraft.util.function.BooleanBiFunction
@@ -17,7 +19,6 @@ import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Box
-import net.minecraft.util.math.Direction
 import net.minecraft.util.math.Vec3d
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
@@ -26,22 +27,17 @@ import net.minecraft.world.World
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.utils.MathUtils
 
-// TODO add case and box into class
-abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(settings.hardness(.5f)) {
+abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(settings) {
     var drawerShape: VoxelShape = VoxelShapes.empty()
     var shape: VoxelShape = VoxelShapes.empty()
 
-    init {
-        defaultState = defaultState.with(HORIZONTAL_FACING, Direction.NORTH)
-    }
+    var caseMaterial: Block = Blocks.OAK_PLANKS
+    var boxMaterial: Block = Blocks.OAK_PLANKS
 
-//    fun setDrawerShape(shape: VoxelShape): Unit {
-//        this.drawerShape = shape
-//    }
-//
-//    fun setShape(shape: VoxelShape): Unit {
-//        this.shape = shape
-//    }
+    constructor(caseMaterial: Block, boxMaterial: Block): this(FabricBlockSettings.copy(caseMaterial)) {
+        this.caseMaterial = caseMaterial
+        this.boxMaterial = boxMaterial
+    }
 
     private val boxList = hashMapOf<VoxelShape, (VoxelShape, PlayerEntity, BlockState, World, BlockPos) -> Unit>()
 
@@ -131,6 +127,7 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     )
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
         builder.add(HORIZONTAL_FACING)
+        builder.add(AXIS)
     }
     override fun rotate(state: BlockState, rotation: BlockRotation): BlockState = state.with(
         HORIZONTAL_FACING,

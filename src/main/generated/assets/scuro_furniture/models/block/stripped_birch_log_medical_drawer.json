@@ -1,6 +1,8 @@
 {
   "parent": "scuro_furniture:block/medical_drawer",
   "textures": {
-    "texture": "scuro_furniture:block/stripped_birch_log_medical_drawer"
+    "drawer_box": "minecraft:block/birch_planks",
+    "drawer_case": "minecraft:block/stripped_birch_log",
+    "particle": "minecraft:block/stripped_birch_log"
   }
 }

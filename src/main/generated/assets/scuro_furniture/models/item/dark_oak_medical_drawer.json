@@ -1,6 +1,3 @@
 {
-  "parent": "scuro_furniture:block/medical_drawer",
-  "textures": {
-    "texture": "scuro_furniture:block/dark_oak_medical_drawer"
-  }
+  "parent": "scuro_furniture:block/dark_oak_medical_drawer"
 }

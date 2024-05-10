@@ -1,12 +1,16 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
+import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
+import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.function.BooleanBiFunction
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
@@ -14,7 +18,9 @@ import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 
-class MedicalDrawerBlock(settings: Settings) : AbstractDrawerBlock(settings) {
+class MedicalDrawerBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box) {
+    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.OAK_PLANKS)
+
     private val boxTopLeft = VoxelShapes.combineAndSimplify(
         createCuboidShape(3.0, 11.0, 9.0, 5.0, 13.0, 9.5),
         createCuboidShape(1.0, 9.0, 8.0, 7.0, 15.0, 9.0),
@@ -38,6 +44,7 @@ class MedicalDrawerBlock(settings: Settings) : AbstractDrawerBlock(settings) {
 
 
     init {
+        defaultState = defaultState.with(HORIZONTAL_FACING, Direction.NORTH)
         registerBox(boxTopLeft, ::openScreen)
         registerBox(boxTopRight, ::openScreen)
         registerBox(boxBottomLeft, ::openScreen)

@@ -1,8 +1,10 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
+import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
+import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.function.BooleanBiFunction
@@ -12,7 +14,9 @@ import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 
-class KitchenCabinetBlock(settings: Settings) : AbstractDrawerBlock(settings) {
+class KitchenCabinetBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box) {
+    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.OAK_PLANKS)
+
     private val boxLeft = VoxelShapes.combineAndSimplify(
         createCuboidShape(1, 1, 14, 8, 15, 15),
         createCuboidShape(6.0, 2.0, 15.0, 7.0, 6.0, 15.5),
@@ -47,5 +51,5 @@ class KitchenCabinetBlock(settings: Settings) : AbstractDrawerBlock(settings) {
     }
 
     override fun createBlockEntity(pos: BlockPos?, state: BlockState?): BlockEntity? = null
-    override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::KitchenDrawerBlock)
+    override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::KitchenCabinetBlock)
 }

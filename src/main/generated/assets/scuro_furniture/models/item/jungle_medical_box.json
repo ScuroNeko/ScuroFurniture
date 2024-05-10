@@ -1,6 +1,6 @@
 {
   "parent": "scuro_furniture:item/medical_box",
   "textures": {
-    "texture": "scuro_furniture:item/jungle_medical_box"
+    "drawer_box": "minecraft:block/jungle_planks"
   }
 }

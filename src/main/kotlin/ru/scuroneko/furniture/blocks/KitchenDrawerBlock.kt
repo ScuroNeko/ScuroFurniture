@@ -1,8 +1,10 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
+import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
+import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.function.BooleanBiFunction
@@ -13,7 +15,9 @@ import net.minecraft.world.World
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
 
-class KitchenDrawerBlock(settings: Settings) : AbstractDrawerBlock(settings) {
+class KitchenDrawerBlock(case: Block, box: Block, val concrete: Block) : AbstractDrawerBlock(case, box) {
+    constructor(settings: Settings): this(Blocks.CHERRY_PLANKS, Blocks.CHERRY_PLANKS, Blocks.BLACK_CONCRETE)
+
     private val boxTop = VoxelShapes.combineAndSimplify(
         createCuboidShape(1, 9, 14, 15, 15, 15),
         createCuboidShape(5.0, 11.0, 15.0, 11.0, 13.0, 15.5),

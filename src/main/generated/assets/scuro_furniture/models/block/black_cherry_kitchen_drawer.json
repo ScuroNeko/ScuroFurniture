@@ -1,6 +1,9 @@
 {
   "parent": "scuro_furniture:block/kitchen_drawer",
   "textures": {
-    "texture": "scuro_furniture:block/black_cherry_kitchen_drawer"
+    "drawer_box": "minecraft:block/cherry_planks",
+    "drawer_case": "minecraft:block/cherry_planks",
+    "drawer_concrete": "minecraft:block/black_concrete",
+    "particle": "minecraft:block/cherry_planks"
   }
 }

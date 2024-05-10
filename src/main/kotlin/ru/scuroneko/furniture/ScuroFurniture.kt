@@ -18,6 +18,7 @@ object ScuroFurniture : ModInitializer {
         ModBlocks.register()
 		ModItems.register()
         ModRecipes.register()
+		ModEntities.register()
 
 		ModScreenHandlers.register()
 	}

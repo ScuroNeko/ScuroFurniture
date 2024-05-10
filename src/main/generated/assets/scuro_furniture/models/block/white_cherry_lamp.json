@@ -1,0 +1,9 @@
+{
+  "parent": "scuro_furniture:block/lamp",
+  "textures": {
+    "log": "minecraft:block/stripped_cherry_log",
+    "particle": "minecraft:block/white_wool",
+    "planks": "minecraft:block/cherry_planks",
+    "wool": "minecraft:block/white_wool"
+  }
+}

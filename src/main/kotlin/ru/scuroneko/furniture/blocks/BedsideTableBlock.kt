@@ -1,8 +1,10 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
+import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
+import net.minecraft.block.Blocks
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.function.BooleanBiFunction
@@ -13,7 +15,9 @@ import net.minecraft.world.World
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.BedsideTableBlockEntity
 
-class BedsideTableBlock(settings: Settings) : AbstractDrawerBlock(settings.nonOpaque()) {
+class BedsideTableBlock(case: Block, box: Block) : AbstractDrawerBlock(case, box) {
+    private constructor(settings: Settings): this(Blocks.OAK_PLANKS, Blocks.OAK_PLANKS)
+
     private val boxTop = VoxelShapes.combineAndSimplify(
         createCuboidShape(1.0, 9.0, 14.0, 15.0, 15.0, 15.0),
         createCuboidShape(7.0, 11.0, 15.0, 9.0, 13.0, 15.5),
@@ -33,7 +37,6 @@ class BedsideTableBlock(settings: Settings) : AbstractDrawerBlock(settings.nonOp
         shape = sequenceOf(
             drawerShape, boxTop, boxBottom
         ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) }
-
     }
 
     fun openScreen(

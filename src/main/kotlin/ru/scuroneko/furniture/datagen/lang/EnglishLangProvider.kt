@@ -108,9 +108,19 @@ class EnglishLangProvider(output: FabricDataOutput): FabricLanguageProvider(outp
         builder.add(ModBlocks.WARPED_STEM_MEDICAL_DRAWER, "Warped stem medical drawer")
         builder.add(ModBlocks.STRIPPED_WARPED_STEM_MEDICAL_DRAWER, "Stripped warped stem medical drawer")
 
+        builder.add(ModBlocks.CHERRY_BEDSIDE_TABLE, "Cherry bedside drawer")
 
-        builder.add(ModBlocks.CHERRY_BEDSIDE_TABLE, "Cherry Bedside Drawer")
-        builder.add(ModBlocks.BLACK_CHERRY_KITCHEN_DRAWER, "Black Cherry Kitchen Drawer")
-        builder.add(ModBlocks.CHERRY_KITCHEN_CABINET, "Cherry Kitchen Cabinet")
+        builder.add(ModBlocks.BLACK_CHERRY_KITCHEN_DRAWER, "Black cherry kitchen drawer")
+        builder.add(ModBlocks.WHITE_CHERRY_KITCHEN_DRAWER, "White cherry kitchen drawer")
+
+        builder.add(ModBlocks.CHERRY_KITCHEN_CABINET, "Cherry kitchen cabinet")
+
+        builder.add(ModBlocks.WHITE_CHERRY_SOFA, "White cherry sofa")
+        builder.add(ModBlocks.BLACK_CHERRY_SOFA, "Black cherry sofa")
+
+        builder.add(ModBlocks.WHITE_OAK_LAMP, "White oak lamp")
+        builder.add(ModBlocks.BLACK_OAK_LAMP, "Black oak lamp")
+        builder.add(ModBlocks.WHITE_CHERRY_LAMP, "White cherry lamp")
+        builder.add(ModBlocks.BLACK_CHERRY_LAMP, "Black cherry lamp")
     }
 }

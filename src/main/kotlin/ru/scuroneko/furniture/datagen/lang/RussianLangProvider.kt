@@ -111,6 +111,17 @@ class RussianLangProvider(output: FabricDataOutput): FabricLanguageProvider(outp
 
         builder.add(ModBlocks.CHERRY_BEDSIDE_TABLE, "Вишневая прикроватная тумба")
 
+        builder.add(ModBlocks.BLACK_CHERRY_KITCHEN_DRAWER, "Черная вишневая кухонная тумба")
+        builder.add(ModBlocks.WHITE_CHERRY_KITCHEN_DRAWER, "Белая вишневая кухонная тумба")
+
         builder.add(ModBlocks.CHERRY_KITCHEN_CABINET, "Вишневый кухонный ящик")
+
+        builder.add(ModBlocks.WHITE_CHERRY_SOFA, "Белый вишневый диван")
+        builder.add(ModBlocks.BLACK_CHERRY_SOFA, "Черный вишневый диван")
+
+        builder.add(ModBlocks.WHITE_OAK_LAMP, "Белая дубовая лампа")
+        builder.add(ModBlocks.BLACK_OAK_LAMP, "Черная дубовая лампа")
+        builder.add(ModBlocks.WHITE_CHERRY_LAMP, "Белая вишневая лампа")
+        builder.add(ModBlocks.BLACK_CHERRY_LAMP, "Черная вишневая лампа")
     }
 }
