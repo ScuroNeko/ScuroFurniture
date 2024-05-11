@@ -1,6 +1,6 @@
 {
-  "parent": "scuro_furniture:item/medical_case",
+  "parent": "scuro_furniture:item/medical_drawer_case",
   "textures": {
-    "texture": "minecraft:block/acacia_log"
+    "drawer_case": "minecraft:block/acacia_log"
   }
 }

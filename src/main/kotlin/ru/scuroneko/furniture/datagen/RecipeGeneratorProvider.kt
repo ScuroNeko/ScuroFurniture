@@ -12,6 +12,6 @@ class RecipeGeneratorProvider(output: FabricDataOutput) : FabricRecipeProvider(o
         val exporter = FurnitureRecipeExporter(recipeExporter)
 
         MedicalDrawerRecipeGenerator.generate(exporter)
-        KitchenDrawerRecipeGenerator.generate(exporter)
+//        KitchenDrawerRecipeGenerator.generate(exporter)
     }
 }

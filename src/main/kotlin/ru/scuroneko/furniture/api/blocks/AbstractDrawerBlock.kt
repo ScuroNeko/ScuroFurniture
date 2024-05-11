@@ -28,14 +28,15 @@ import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 import ru.scuroneko.furniture.utils.MathUtils
 
 abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(settings) {
     var drawerShape: VoxelShape = VoxelShapes.empty()
     var shape: VoxelShape = VoxelShapes.empty()
 
-    var case: CaseItem = ModItems.OAK_MEDICAL_DRAWER_CASE
-    var box: BoxItem = ModItems.OAK_MEDICAL_BOX
+    var case: CaseItem = MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE
+    var box: BoxItem = MedicalDrawersComponents.OAK_MEDICAL_BOX
 
     constructor(case: CaseItem, box: BoxItem) : this(FabricBlockSettings.copy(case.material)) {
         this.case = case

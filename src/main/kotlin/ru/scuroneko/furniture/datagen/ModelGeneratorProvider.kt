@@ -44,73 +44,19 @@ class ModelGeneratorProvider(output: FabricDataOutput) : FabricModelProvider(out
             Blocks.STRIPPED_CHERRY_LOG
         )
 
-        ModBlocks.MEDICAL_DRAWERS.forEach { (_, block) -> generator.registerMedicalDrawer(block) }
+        RegistryHelper.Blocks.MEDICAL_DRAWERS.forEach(generator::registerMedicalDrawer)
         ModBlocks.BEDSIDE_TABLES.forEach { (_, block) -> generator.registerBedsideTable(block) }
-        ModBlocks.KITCHEN_DRAWERS.forEach { (_, block) -> generator.registerKitchenDrawer(block) }
+        RegistryHelper.Blocks.KITCHEN_DRAWERS.forEach(generator::registerKitchenDrawer)
         ModBlocks.KITCHEN_CABINETS.forEach { (_, block) -> generator.registerKitchenCabinet(block) }
     }
 
     override fun generateItemModels(itemModelGenerator: ItemModelGenerator) {
         val generator = FurnitureItemModelGenerator(itemModelGenerator)
 
-        generator.registerMedicalBox(ModItems.OAK_MEDICAL_BOX, Blocks.OAK_PLANKS)
-        generator.registerMedicalCase(Blocks.OAK_PLANKS, ModItems.OAK_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.OAK_LOG, ModItems.OAK_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_OAK_LOG, ModItems.STRIPPED_OAK_LOG_MEDICAL_DRAWER_CASE)
+        RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.forEach(generator::registerMedicalBox)
+        RegistryHelper.Items.MEDICAL_DRAWERS_CASES.forEach(generator::registerMedicalCase)
 
-        generator.registerMedicalBox(ModItems.SPRUCE_MEDICAL_BOX, Blocks.SPRUCE_PLANKS)
-        generator.registerMedicalCase(Blocks.SPRUCE_PLANKS, ModItems.SPRUCE_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.SPRUCE_LOG, ModItems.SPRUCE_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_SPRUCE_LOG, ModItems.STRIPPED_SPRUCE_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.BIRCH_MEDICAL_BOX, Blocks.BIRCH_PLANKS)
-        generator.registerMedicalCase(Blocks.BIRCH_PLANKS, ModItems.BIRCH_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.BIRCH_LOG, ModItems.BIRCH_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_BIRCH_LOG, ModItems.STRIPPED_BIRCH_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.JUNGLE_MEDICAL_BOX, Blocks.JUNGLE_PLANKS)
-        generator.registerMedicalCase(Blocks.JUNGLE_PLANKS, ModItems.JUNGLE_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.JUNGLE_LOG, ModItems.JUNGLE_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_JUNGLE_LOG, ModItems.STRIPPED_JUNGLE_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.ACACIA_MEDICAL_BOX, Blocks.ACACIA_PLANKS)
-        generator.registerMedicalCase(Blocks.ACACIA_PLANKS, ModItems.ACACIA_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.ACACIA_LOG, ModItems.ACACIA_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_ACACIA_LOG, ModItems.STRIPPED_ACACIA_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.DARK_OAK_MEDICAL_BOX, Blocks.DARK_OAK_PLANKS)
-        generator.registerMedicalCase(Blocks.DARK_OAK_PLANKS, ModItems.DARK_OAK_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.DARK_OAK_LOG, ModItems.DARK_OAK_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_DARK_OAK_LOG, ModItems.STRIPPED_DARK_OAK_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.MANGROVE_MEDICAL_BOX, Blocks.MANGROVE_PLANKS)
-        generator.registerMedicalCase(Blocks.MANGROVE_PLANKS, ModItems.MANGROVE_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.MANGROVE_LOG, ModItems.MANGROVE_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_MANGROVE_LOG, ModItems.STRIPPED_MANGROVE_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.CHERRY_MEDICAL_BOX, Blocks.CHERRY_PLANKS)
-        generator.registerMedicalCase(Blocks.CHERRY_PLANKS, ModItems.CHERRY_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.CHERRY_LOG, ModItems.CHERRY_LOG_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_CHERRY_LOG, ModItems.STRIPPED_CHERRY_LOG_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.BAMBOO_MEDICAL_BOX, Blocks.BAMBOO_PLANKS)
-        generator.registerMedicalCase(Blocks.BAMBOO_PLANKS, ModItems.BAMBOO_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.BAMBOO_BLOCK, ModItems.BAMBOO_BLOCK_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_BAMBOO_BLOCK, ModItems.STRIPPED_BAMBOO_BLOCK_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.CRIMSON_MEDICAL_BOX, Blocks.CRIMSON_PLANKS)
-        generator.registerMedicalCase(Blocks.CRIMSON_PLANKS, ModItems.CRIMSON_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.CRIMSON_STEM, ModItems.CRIMSON_STEM_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_CRIMSON_STEM, ModItems.STRIPPED_CRIMSON_STEM_MEDICAL_DRAWER_CASE)
-
-        generator.registerMedicalBox(ModItems.WARPED_MEDICAL_BOX, Blocks.WARPED_PLANKS)
-        generator.registerMedicalCase(Blocks.WARPED_PLANKS, ModItems.WARPED_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.WARPED_STEM, ModItems.WARPED_STEM_MEDICAL_DRAWER_CASE)
-        generator.registerMedicalCase(Blocks.STRIPPED_WARPED_STEM, ModItems.STRIPPED_WARPED_STEM_MEDICAL_DRAWER_CASE)
-
-        generator.registerKitchenDrawerBox(ModItems.CHERRY_KITCHEN_DRAWER_BOX, Blocks.CHERRY_PLANKS)
-        RegistryHelper.Items.KITCHEN_DRAWERS_CASES.forEach { (_, case) ->
-            generator.registerKitchenDrawerCase(case)
-        }
+        RegistryHelper.Items.KITCHEN_DRAWERS_BOXES.forEach(generator::registerKitchenDrawerBox)
+        RegistryHelper.Items.KITCHEN_DRAWERS_CASES.forEach(generator::registerKitchenDrawerCase)
     }
 }

@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_stripped_crimson_block_medical_drawer_case": {
+    "has_stripped_crimson_stem_medical_drawer_case": {
       "conditions": {
         "items": [
           {
             "items": [
-              "scuro_furniture:stripped_crimson_block_medical_drawer_case"
+              "scuro_furniture:stripped_crimson_stem_medical_drawer_case"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_stripped_crimson_block_medical_drawer_case",
+      "has_stripped_crimson_stem_medical_drawer_case",
       "has_crimson_medical_box"
     ]
   ],

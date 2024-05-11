@@ -18,9 +18,10 @@ import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 
 class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
-    private constructor(settings: Settings) : this(ModItems.OAK_MEDICAL_DRAWER_CASE, ModItems.OAK_MEDICAL_BOX)
+    private constructor(settings: Settings) : this(MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE, MedicalDrawersComponents.OAK_MEDICAL_BOX)
 
     private val boxTopLeft = VoxelShapes.combineAndSimplify(
         createCuboidShape(3.0, 11.0, 9.0, 5.0, 13.0, 9.5),

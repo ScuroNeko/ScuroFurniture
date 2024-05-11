@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stripped_warped_block_medical_drawer_case": {
+    "has_stripped_warped_stem_medical_drawer_case": {
       "conditions": {
         "items": [
           {
             "items": [
-              "scuro_furniture:stripped_warped_block_medical_drawer_case"
+              "scuro_furniture:stripped_warped_stem_medical_drawer_case"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_stripped_warped_block_medical_drawer_case",
+      "has_stripped_warped_stem_medical_drawer_case",
       "has_warped_medical_box"
     ]
   ],

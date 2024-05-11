@@ -18,7 +18,7 @@ import ru.scuroneko.furniture.item.CaseItem
 class KitchenCabinetBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
     private constructor(settings: Settings) : this(
         ModItems.BLACK_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER_CASE,
-        ModItems.CHERRY_KITCHEN_DRAWER_BOX
+        ModItems.CHERRY_MEDIUM_DRAWER_BOX
     )
 
     private val boxLeft = VoxelShapes.combineAndSimplify(

@@ -16,6 +16,7 @@ base {
 repositories {
 	maven { url "https://maven.shedaniel.me/" }
     maven { url "https://maven.terraformersmc.com/releases/" }
+	maven { url "https://mvn.nix13.pw/releases" }
 }
 
 fabricApi {
@@ -29,6 +30,7 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+	modImplementation "ru.scuroneko:asakusalib:0.1.0-alpha.2"
 
 	modApi("me.shedaniel.cloth:cloth-config-fabric:13.0.121") {
         exclude(group: "net.fabricmc.fabric-api")

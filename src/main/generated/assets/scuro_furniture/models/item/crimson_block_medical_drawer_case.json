@@ -1,6 +1,0 @@
-{
-  "parent": "scuro_furniture:item/medical_case",
-  "textures": {
-    "texture": "minecraft:block/crimson_stem"
-  }
-}

@@ -13,8 +13,8 @@ object ModModels {
         TextureKey.PARTICLE
     )
     val MEDICAL_CASE = item(
-        Identifier(ScuroFurniture.MOD_ID, "item/medical_case"),
-        TextureKey.TEXTURE
+        Identifier(ScuroFurniture.MOD_ID, "item/medical_drawer_case"),
+        ModTextureKeys.DRAWER_CASE
     )
     val MEDICAL_BOX = item(
         Identifier(ScuroFurniture.MOD_ID, "item/medical_box"),
@@ -26,6 +26,7 @@ object ModModels {
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX,
         TextureKey.PARTICLE
     )
+
     val KITCHEN_DRAWER = block(
         Identifier(ScuroFurniture.MOD_ID, "block/kitchen_drawer"),
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX, ModTextureKeys.DRAWER_CONCRETE,
@@ -35,8 +36,8 @@ object ModModels {
         Identifier(ScuroFurniture.MOD_ID, "item/kitchen_drawer_case"),
         ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_CONCRETE
     )
-    val KITCHEN_DRAWER_BOX = item(
-        Identifier(ScuroFurniture.MOD_ID, "item/kitchen_drawer_box"),
+    val MEDIUM_DRAWER_BOX = item(
+        Identifier(ScuroFurniture.MOD_ID, "item/medium_drawer_box"),
         ModTextureKeys.DRAWER_BOX
     )
 
@@ -74,20 +75,14 @@ object ModModels {
     )
 
     private fun item(parent: Identifier, vararg requiredTextureKeys: TextureKey): Model {
-        return Model(
-            Optional.of(parent), Optional.empty(), *requiredTextureKeys
-        )
+        return Model(Optional.of(parent), Optional.empty(), *requiredTextureKeys)
     }
 
     private fun block(parent: Identifier, vararg requiredTextureKeys: TextureKey): Model {
-        return Model(
-            Optional.of(parent), Optional.empty(), *requiredTextureKeys
-        )
+        return Model(Optional.of(parent), Optional.empty(), *requiredTextureKeys)
     }
 
     private fun block(parent: Identifier, variant: String, vararg requiredTextureKeys: TextureKey): Model {
-        return Model(
-            Optional.of(parent), Optional.of(variant), *requiredTextureKeys
-        )
+        return Model(Optional.of(parent), Optional.of(variant), *requiredTextureKeys)
     }
 }

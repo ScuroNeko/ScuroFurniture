@@ -1,0 +1,9 @@
+{
+  "parent": "scuro_furniture:block/kitchen_drawer",
+  "textures": {
+    "drawer_box": "minecraft:block/jungle_planks",
+    "drawer_case": "minecraft:block/jungle_log",
+    "drawer_concrete": "minecraft:block/white_concrete",
+    "particle": "minecraft:block/jungle_log"
+  }
+}

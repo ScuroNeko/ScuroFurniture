@@ -13,38 +13,35 @@ import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
 import ru.scuroneko.furniture.blocks.MedicalDrawerBlock
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
+import ru.scuroneko.furniture.item.MedicalDrawerCaseItem
 
 class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
-    fun createMedicalDrawerBoxRecipe(box: Item, slab: Block) {
+    fun createMedicalDrawerBoxRecipe(box: BoxItem) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, box, 4)
             .pattern("sps").pattern("p p").pattern("sps")
-            .input('p', slab)
+            .input('p', box.slab)
             .input('s', Items.STICK)
-            .criterion(
-                hasItem(slab), conditionsFromItem(slab)
-            ).criterion(
-                hasItem(Items.STICK), conditionsFromItem(Items.STICK)
-            ).offerTo(this.exporter)
+            .criterion(hasItem(box.slab), conditionsFromItem(box.slab))
+            .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+            .offerTo(this.exporter)
     }
 
-    fun createMedicalDrawerCaseRecipe(case: Item, wood: Block, slab: Block) {
+    fun createMedicalDrawerCaseRecipe(case: MedicalDrawerCaseItem) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, case, 4)
             .pattern(" s ").pattern("sws").pattern(" s ")
-            .input('s', slab).input('w', wood)
-            .criterion(
-                hasItem(slab), conditionsFromItem(slab)
-            ).criterion(
-                hasItem(wood), conditionsFromItem(wood)
-            ).offerTo(this.exporter)
+            .input('s', case.slab).input('w', case.material)
+            .criterion(hasItem(case.slab), conditionsFromItem(case.slab))
+            .criterion(hasItem(case.material), conditionsFromItem(case.material))
+            .offerTo(this.exporter)
     }
 
-    fun createMedicalDrawerRecipe(drawer: MedicalDrawerBlock, box: Item, case: Item) {
+    fun createMedicalDrawerRecipe(drawer: MedicalDrawerBlock) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, drawer)
-            .input(box, 4).input(case)
+            .input(drawer.box, 4).input(drawer.case)
             .criterion(
-                hasItem(case), conditionsFromItem(case)
+                hasItem(drawer.case), conditionsFromItem(drawer.case)
             ).criterion(
-                hasItem(box), conditionsFromItem(box)
+                hasItem(drawer.box), conditionsFromItem(drawer.box)
             ).offerTo(this.exporter)
     }
 
