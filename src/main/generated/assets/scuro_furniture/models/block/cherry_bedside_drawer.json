@@ -1,0 +1,8 @@
+{
+  "parent": "scuro_furniture:block/bedside_drawer",
+  "textures": {
+    "drawer_box": "minecraft:block/cherry_planks",
+    "drawer_case": "minecraft:block/cherry_planks",
+    "particle": "minecraft:block/cherry_planks"
+  }
+}

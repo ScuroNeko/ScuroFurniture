@@ -10,16 +10,17 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
-import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
+import ru.scuroneko.furniture.registry.items.KitchenDrawersComponents
+import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
 class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
     constructor(settings: Settings) : this(
-        ModItems.BLACK_CHERRY_KITCHEN_DRAWER_CASE,
-        ModItems.CHERRY_MEDIUM_DRAWER_BOX
+        KitchenDrawersComponents.BLACK_CHERRY_KITCHEN_DRAWER_CASE,
+        MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
     )
 
     private val boxTop = VoxelShapes.combineAndSimplify(

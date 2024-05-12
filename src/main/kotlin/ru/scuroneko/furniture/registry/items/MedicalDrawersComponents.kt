@@ -2,12 +2,12 @@ package ru.scuroneko.furniture.registry.items
 
 import net.minecraft.block.Blocks
 import net.minecraft.item.Item
+import ru.scuroneko.furniture.api.registry.IItemContainer
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.MedicalDrawerCaseItem
 import ru.scuroneko.furniture.registry.RegistryHelper
-import ru.scuroneko.asakusalib.api.registry.IItemContainer
 
-object MedicalDrawersComponents: IItemContainer {
+object MedicalDrawersComponents : IItemContainer {
     val OAK_MEDICAL_BOX = BoxItem(Blocks.OAK_SLAB)
     val OAK_MEDICAL_DRAWER_CASE = MedicalDrawerCaseItem(Blocks.OAK_PLANKS, Blocks.OAK_SLAB)
     val OAK_LOG_MEDICAL_DRAWER_CASE = MedicalDrawerCaseItem(Blocks.OAK_LOG, Blocks.OAK_SLAB)
@@ -52,6 +52,7 @@ object MedicalDrawersComponents: IItemContainer {
 
     val BAMBOO_MEDICAL_BOX = BoxItem(Blocks.BAMBOO_SLAB)
     val BAMBOO_MEDICAL_DRAWER_CASE = MedicalDrawerCaseItem(Blocks.BAMBOO_PLANKS, Blocks.BAMBOO_SLAB)
+    val BAMBOO_MOSAIC_MEDICAL_DRAWER_CASE = MedicalDrawerCaseItem(Blocks.BAMBOO_MOSAIC, Blocks.BAMBOO_SLAB)
     val BAMBOO_BLOCK_MEDICAL_DRAWER_CASE = MedicalDrawerCaseItem(Blocks.BAMBOO_BLOCK, Blocks.BAMBOO_SLAB)
     val STRIPPED_BAMBOO_BLOCK_MEDICAL_DRAWER_CASE =
         MedicalDrawerCaseItem(Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.BAMBOO_SLAB)
@@ -68,10 +69,9 @@ object MedicalDrawersComponents: IItemContainer {
     val STRIPPED_CRIMSON_STEM_MEDICAL_DRAWER_CASE =
         MedicalDrawerCaseItem(Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_SLAB)
 
-    override fun onRegistry(item: Item) {
-        println("registry $item")
-        RegistryHelper.Items.NEW_ITEMS.add(item)
-        if(item is BoxItem) RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.add(item)
-        if(item is MedicalDrawerCaseItem) RegistryHelper.Items.MEDICAL_DRAWERS_CASES.add(item)
+    override fun afterEach(obj: Item) {
+        if (obj is BoxItem) RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.add(obj)
+        if (obj is MedicalDrawerCaseItem) RegistryHelper.Items.MEDICAL_DRAWERS_CASES.add(obj)
+        RegistryHelper.Items.ITEMS.add(obj)
     }
 }

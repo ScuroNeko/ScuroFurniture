@@ -3,8 +3,8 @@ package ru.scuroneko.furniture.gui
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.inventory.SimpleInventory
-import ru.scuroneko.furniture.ModScreenHandlers
 import ru.scuroneko.furniture.api.gui.AbstractDrawerScreenHandler
+import ru.scuroneko.furniture.registry.ModScreenHandlers
 
 class KitchenDrawerScreenHandler(syncId: Int, playerInventory: PlayerInventory, inventory: Inventory, boxIndex: Int) :
     AbstractDrawerScreenHandler(

@@ -14,10 +14,10 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
-import ru.scuroneko.furniture.ModEntities
 import ru.scuroneko.furniture.api.SofaType
 import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
 import ru.scuroneko.furniture.blocks.entity.SofaEntity
+import ru.scuroneko.furniture.registry.ModEntities
 import ru.scuroneko.furniture.utils.MathUtils
 
 class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEntity>(base, leg, wool) {

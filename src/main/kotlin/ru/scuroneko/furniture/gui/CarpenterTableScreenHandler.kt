@@ -13,9 +13,9 @@ import net.minecraft.screen.slot.Slot
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
-import ru.scuroneko.furniture.ModScreenHandlers
 import ru.scuroneko.furniture.blocks.entity.CarpenterTableBlockEntity
 import ru.scuroneko.furniture.recipe.ShapelessCarpenterTableRecipe
+import ru.scuroneko.furniture.registry.ModScreenHandlers
 
 class CarpenterTableScreenHandler(
     syncId: Int,

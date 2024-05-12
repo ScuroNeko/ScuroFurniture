@@ -24,7 +24,6 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
-import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem

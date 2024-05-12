@@ -21,7 +21,7 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
     }
 
     fun registerBedsideTable(block: AbstractDrawerBlock) {
-        val factory = TexturedModel.makeFactory(ModTextureMap::drawer, ModModels.BEDSIDE_TABLE)
+        val factory = TexturedModel.makeFactory(ModTextureMap::drawer, ModModels.BEDSIDE_DRAWER)
         registerFactory(factory, block)
     }
 

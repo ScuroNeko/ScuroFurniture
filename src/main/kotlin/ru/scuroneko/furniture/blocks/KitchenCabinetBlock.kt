@@ -10,15 +10,16 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
-import ru.scuroneko.furniture.ModItems
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.registry.items.KitchenDrawersComponents
+import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
 class KitchenCabinetBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
     private constructor(settings: Settings) : this(
-        ModItems.BLACK_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER_CASE,
-        ModItems.CHERRY_MEDIUM_DRAWER_BOX
+        KitchenDrawersComponents.BLACK_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER_CASE,
+        MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
     )
 
     private val boxLeft = VoxelShapes.combineAndSimplify(

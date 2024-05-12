@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:bamboo_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:bamboo_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:white_bamboo_mosaic_kitchen_drawer_case"
+    }
+  ],
+  "result": {
+    "item": "scuro_furniture:white_bamboo_mosaic_kitchen_drawer"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:cherry_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:cherry_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:stripped_cherry_log_bedside_drawer_case"
+    }
+  ],
+  "result": {
+    "item": "scuro_furniture:stripped_cherry_log_bedside_drawer"
+  }
+}

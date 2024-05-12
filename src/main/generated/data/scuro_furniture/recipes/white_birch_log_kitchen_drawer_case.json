@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:white_concrete"
+    },
+    "s": {
+      "item": "minecraft:birch_slab"
+    },
+    "w": {
+      "item": "minecraft:birch_log"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 4,
+    "item": "scuro_furniture:white_birch_log_kitchen_drawer_case"
+  }
+}

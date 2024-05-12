@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"drawer_case": "block/cherry_log",
-		"drawer_box": "block/cherry_planks",
+		"drawer_case": "minecraft:block/cherry_log",
+		"drawer_box": "minecraft:block/cherry_planks",
 		"particle": "scuro_furniture:block/box_hand",
 		"box_hand": "scuro_furniture:block/box_hand"
 	},

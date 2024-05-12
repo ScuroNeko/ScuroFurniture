@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:acacia_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:acacia_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:white_acacia_kitchen_drawer_case"
+    }
+  ],
+  "result": {
+    "item": "scuro_furniture:white_acacia_kitchen_drawer"
+  }
+}

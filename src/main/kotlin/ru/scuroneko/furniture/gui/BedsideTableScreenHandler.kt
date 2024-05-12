@@ -7,7 +7,7 @@ import net.minecraft.inventory.SimpleInventory
 import net.minecraft.item.ItemStack
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
-import ru.scuroneko.furniture.ModScreenHandlers
+import ru.scuroneko.furniture.registry.ModScreenHandlers
 
 class BedsideTableScreenHandler(
     syncId: Int,

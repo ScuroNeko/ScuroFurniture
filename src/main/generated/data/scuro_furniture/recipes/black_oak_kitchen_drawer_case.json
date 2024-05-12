@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:black_concrete"
+    },
+    "s": {
+      "item": "minecraft:oak_slab"
+    },
+    "w": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 4,
+    "item": "scuro_furniture:black_oak_kitchen_drawer_case"
+  }
+}

@@ -12,6 +12,9 @@ import ru.scuroneko.furniture.gui.BedsideTableScreen
 import ru.scuroneko.furniture.gui.CarpenterTableScreen
 import ru.scuroneko.furniture.gui.KitchenDrawerScreen
 import ru.scuroneko.furniture.gui.MedicalDrawerScreen
+import ru.scuroneko.furniture.registry.ModEntities
+import ru.scuroneko.furniture.registry.ModScreenHandlers
+import ru.scuroneko.furniture.registry.blocks.BedsideDrawers
 import ru.scuroneko.furniture.registry.blocks.MedicalDrawers
 
 @Environment(EnvType.CLIENT)
@@ -23,7 +26,7 @@ object ScuroFurnitureClient : ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.KITCHEN_DRAWER_SCREEN_HANDLER, ::KitchenDrawerScreen)
 
         BlockRenderLayerMap.INSTANCE.putBlock(MedicalDrawers.OAK_MEDICAL_DRAWER, RenderLayer.getCutout())
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHERRY_BEDSIDE_TABLE, RenderLayer.getCutout())
+        BlockRenderLayerMap.INSTANCE.putBlock(BedsideDrawers.CHERRY_BEDSIDE_DRAWER, RenderLayer.getCutout())
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_OAK_LAMP, RenderLayer.getCutout())
 

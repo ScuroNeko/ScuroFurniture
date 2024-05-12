@@ -10,7 +10,7 @@ import ru.scuroneko.furniture.ModBlocks.BEDSIDE_TABLES
 import ru.scuroneko.furniture.ModBlocks.BEDSIDE_TABLES_ITEMS
 import ru.scuroneko.furniture.ModBlocks.KITCHEN_CABINETS
 import ru.scuroneko.furniture.ModBlocks.KITCHEN_CABINETS_ITEMS
-import ru.scuroneko.furniture.blocks.BedsideTableBlock
+import ru.scuroneko.furniture.blocks.BedsideDrawerBlock
 import ru.scuroneko.furniture.blocks.KitchenCabinetBlock
 
 object ScuroFurnitureBlocksAPI {
@@ -21,7 +21,7 @@ object ScuroFurnitureBlocksAPI {
         return blockItem
     }
 
-    fun registerBedsideTable(id: Identifier, block: BedsideTableBlock) {
+    fun registerBedsideTable(id: Identifier, block: BedsideDrawerBlock) {
         val item = registerBlock(id, block)
         BEDSIDE_TABLES[id] = block
         BEDSIDE_TABLES_ITEMS[id] = item

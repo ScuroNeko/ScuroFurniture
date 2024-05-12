@@ -11,4 +11,7 @@ object ModTextureKeys {
     val DRAWER_CASE: TextureKey = TextureKey.of("drawer_case")
     val DRAWER_BOX: TextureKey = TextureKey.of("drawer_box")
     val DRAWER_CONCRETE: TextureKey = TextureKey.of("drawer_concrete")
+
+    val DOOR_HAND: TextureKey = TextureKey.of("door_hand")
+    val CABINET_DOOR: TextureKey = TextureKey.of("cabinet_door")
 }

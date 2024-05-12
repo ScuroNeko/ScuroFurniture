@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"planks": "block/cherry_planks",
-		"particle": "block/stripped_cherry_log",
-		"log": "block/stripped_cherry_log",
-		"wool": "block/white_wool"
+		"planks": "minecraft:block/cherry_planks",
+		"particle": "minecraft:block/stripped_cherry_log",
+		"log": "minecraft:block/stripped_cherry_log",
+		"wool": "minecraft:block/white_wool"
 	},
 	"elements": [
 		{

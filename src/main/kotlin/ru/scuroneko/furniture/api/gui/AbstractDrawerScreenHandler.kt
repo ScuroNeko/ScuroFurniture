@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.ScreenHandlerType
 import net.minecraft.screen.slot.Slot
-import ru.scuroneko.furniture.ModScreenHandlers
+import ru.scuroneko.furniture.registry.ModScreenHandlers
 
 abstract class AbstractDrawerScreenHandler(
     syncId: Int,

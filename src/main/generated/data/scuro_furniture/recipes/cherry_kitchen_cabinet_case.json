@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:cherry_slab"
+    },
+    "w": {
+      "item": "minecraft:cherry_planks"
+    }
+  },
+  "pattern": [
+    "sws",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "item": "scuro_furniture:cherry_kitchen_cabinet_case"
+  }
+}

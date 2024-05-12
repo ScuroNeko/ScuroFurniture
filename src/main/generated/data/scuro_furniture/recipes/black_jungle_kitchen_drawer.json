@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:jungle_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:jungle_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:black_jungle_kitchen_drawer_case"
+    }
+  ],
+  "result": {
+    "item": "scuro_furniture:black_jungle_kitchen_drawer"
+  }
+}
