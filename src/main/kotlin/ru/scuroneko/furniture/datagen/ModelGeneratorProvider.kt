@@ -20,6 +20,8 @@ class ModelGeneratorProvider(output: FabricDataOutput) : FabricModelProvider(out
         RegistryHelper.Blocks.KITCHEN_CABINETS.forEach(generator::registerKitchenCabinet)
         RegistryHelper.Blocks.LAMPS.forEach(generator::registerLamp)
         RegistryHelper.Blocks.SOFAS.forEach(generator::registerSofa)
+
+        RegistryHelper.Blocks.COFFEE_TABLES.forEach(generator::registerCoffeeTable)
     }
 
     override fun generateItemModels(itemModelGenerator: ItemModelGenerator) {

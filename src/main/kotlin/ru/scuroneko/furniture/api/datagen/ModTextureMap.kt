@@ -5,6 +5,7 @@ import net.minecraft.data.client.TextureKey
 import net.minecraft.data.client.TextureMap
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
+import ru.scuroneko.furniture.blocks.CoffeeTableBlock
 import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
 import ru.scuroneko.furniture.blocks.SofaBlock
 import ru.scuroneko.furniture.item.BoxItem
@@ -40,6 +41,13 @@ object ModTextureMap {
             .put(ModTextureKeys.LOG, TextureMap.getId(sofa.leg))
             .put(ModTextureKeys.PLANKS, TextureMap.getId(sofa.base))
             .put(TextureKey.PARTICLE, TextureMap.getId(sofa.base))
+    }
+
+    fun coffeeTable(block: Block): TextureMap {
+        block as CoffeeTableBlock
+        return TextureMap()
+            .put(TextureKey.PARTICLE, TextureMap.getId(block.wood))
+            .put(TextureKey.TEXTURE, TextureMap.getId(block.wood))
     }
 
     /**

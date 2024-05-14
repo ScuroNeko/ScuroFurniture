@@ -14,10 +14,7 @@ import ru.scuroneko.furniture.gui.KitchenDrawerScreen
 import ru.scuroneko.furniture.gui.MedicalDrawerScreen
 import ru.scuroneko.furniture.registry.ModEntities
 import ru.scuroneko.furniture.registry.ModScreenHandlers
-import ru.scuroneko.furniture.registry.blocks.BedsideDrawers
-import ru.scuroneko.furniture.registry.blocks.Lamps
-import ru.scuroneko.furniture.registry.blocks.MedicalDrawers
-import ru.scuroneko.furniture.registry.blocks.Sofas
+import ru.scuroneko.furniture.registry.blocks.*
 
 @Environment(EnvType.CLIENT)
 object ScuroFurnitureClient : ClientModInitializer {
@@ -29,10 +26,9 @@ object ScuroFurnitureClient : ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(MedicalDrawers.OAK_MEDICAL_DRAWER, RenderLayer.getCutout())
         BlockRenderLayerMap.INSTANCE.putBlock(BedsideDrawers.CHERRY_BEDSIDE_DRAWER, RenderLayer.getCutout())
-
         BlockRenderLayerMap.INSTANCE.putBlock(Lamps.WHITE_OAK_LAMP, RenderLayer.getCutout())
-
         BlockRenderLayerMap.INSTANCE.putBlock(Sofas.WHITE_CHERRY_SOFA, RenderLayer.getCutout())
+        BlockRenderLayerMap.INSTANCE.putBlock(Tables.CHERRY_COFFEE_TABLE, RenderLayer.getCutout())
 
         EntityRendererRegistry.register(ModEntities.SOFA_ENTITY) { context -> SofaEntityRenderer(context) }
     }

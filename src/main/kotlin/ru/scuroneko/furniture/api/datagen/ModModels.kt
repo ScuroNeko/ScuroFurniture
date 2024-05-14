@@ -86,6 +86,23 @@ object ModModels {
         TextureKey.PARTICLE
     )
 
+    val COFFEE_TABLE_SINGLE = block(
+        Identifier(ScuroFurniture.MOD_ID, "block/coffee_table_single"),
+        TextureKey.TEXTURE, TextureKey.PARTICLE
+    )
+    val COFFEE_TABLE_LEFT = block(
+        Identifier(ScuroFurniture.MOD_ID, "block/coffee_table_left"),
+        TextureKey.TEXTURE, TextureKey.PARTICLE
+    )
+    val COFFEE_TABLE_CENTER = block(
+        Identifier(ScuroFurniture.MOD_ID, "block/coffee_table_center"),
+        TextureKey.TEXTURE, TextureKey.PARTICLE
+    )
+    val COFFEE_TABLE_RIGHT = block(
+        Identifier(ScuroFurniture.MOD_ID, "block/coffee_table_right"),
+        TextureKey.TEXTURE, TextureKey.PARTICLE
+    )
+
     private fun item(parent: Identifier, vararg requiredTextureKeys: TextureKey): Model {
         return Model(Optional.of(parent), Optional.empty(), *requiredTextureKeys)
     }

@@ -33,6 +33,7 @@ object ScuroFurniture : ModInitializer {
         BlocksRegistry.registerContainer(KitchenCabinets, MOD_ID)
         BlocksRegistry.registerContainer(Lamps, MOD_ID)
         BlocksRegistry.registerContainer(Sofas, MOD_ID)
+        BlocksRegistry.registerContainer(Tables, MOD_ID)
 
         ItemsRegistry.registerContainer(MediumDrawerBoxes, MOD_ID)
         ItemsRegistry.registerContainer(MedicalDrawersComponents, MOD_ID)

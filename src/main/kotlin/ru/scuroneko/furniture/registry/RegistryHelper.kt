@@ -18,6 +18,8 @@ object RegistryHelper {
         val KITCHEN_CABINETS = mutableListOf<KitchenCabinetBlock>()
         val LAMPS = mutableListOf<LampBlock>()
         val SOFAS = mutableListOf<SofaBlock>()
+
+        val COFFEE_TABLES = mutableListOf<CoffeeTableBlock>()
     }
 
     object Items {

@@ -54,7 +54,7 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
             val next = world.getBlockState(nextRightPos)
             val property = if (leftState.block is AbstractSofaBlock<*>) SofaType.CENTER else SofaType.LEFT
             val nextProperty = if (next.block is AbstractSofaBlock<*>) SofaType.CENTER else SofaType.RIGHT
-            if (!rightState.isAir) world.setBlockState(rightPos, leftState.with(TYPE_PROPERTY, nextProperty))
+            if (!rightState.isAir) world.setBlockState(rightPos, rightState.with(TYPE_PROPERTY, nextProperty))
             world.setBlockState(pos, state.with(TYPE_PROPERTY, property))
         }
         super.onPlaced(world, pos, state, placer, itemStack)
@@ -63,9 +63,9 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
     override fun onBreak(world: World, pos: BlockPos, state: BlockState, player: PlayerEntity): BlockState {
         if (world.isClient) return super.onBreak(world, pos, state, player)
         val (leftPos, rightPos) = getSideBlocks(state, pos)
+        val (nextLeftPos, nextRightPos) = getNextSideBlocks(state, pos)
         val leftState = world.getBlockState(leftPos)
         val rightState = world.getBlockState(rightPos)
-        val (nextLeftPos, nextRightPos) = getNextSideBlocks(state, pos)
 
         if (leftState.block is AbstractSofaBlock<*>) {
             val nextState = world.getBlockState(nextLeftPos)

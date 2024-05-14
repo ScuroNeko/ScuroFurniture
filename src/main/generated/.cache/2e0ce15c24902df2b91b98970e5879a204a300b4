@@ -1,4 +1,4 @@
-// 1.20.4	2024-05-14T04:08:34.057534	Scuro Furniture/Block Loot Tables
+// 1.20.4	2024-05-14T23:59:05.760109	Scuro Furniture/Block Loot Tables
 d306322c9d78144b60c036ffef07769eaa864470 data/scuro_furniture/loot_tables/blocks/white_stripped_spruce_log_kitchen_drawer.json
 fb736c48f6ea5993fc474a047c9cc7721d9befb8 data/scuro_furniture/loot_tables/blocks/stripped_cherry_log_medical_drawer.json
 2ca35a679d4fcba0c178dbbc9c613bd386985c21 data/scuro_furniture/loot_tables/blocks/birch_log_medical_drawer.json
@@ -14,6 +14,7 @@ ab4384fe03000dcece73c5cbd8ae45db544fe7c8 data/scuro_furniture/loot_tables/blocks
 6e28542893bbb795e50dbaf89dc77129aca84f2a data/scuro_furniture/loot_tables/blocks/white_spruce_log_kitchen_drawer.json
 a7d5b6bd6f51cd780b916f9249becc85681a6070 data/scuro_furniture/loot_tables/blocks/jungle_medical_drawer.json
 f12b3b37f869ce4c877c71e95a635363dad92039 data/scuro_furniture/loot_tables/blocks/black_stripped_acacia_log_kitchen_drawer.json
+83b3d0ea36307d26a5858bc8411ecb0fd5f6dd96 data/scuro_furniture/loot_tables/blocks/cherry_coffee_table.json
 0dcf35a5d031d48e3444e1c4356c517c99959a2e data/scuro_furniture/loot_tables/blocks/cherry_kitchen_cabinet.json
 7589cd3aa7af723a698afddce19943cbf4a77109 data/scuro_furniture/loot_tables/blocks/black_dark_oak_kitchen_drawer.json
 c6d995d9678a36fda7b1b04d062ad39469e4c432 data/scuro_furniture/loot_tables/blocks/warped_stem_medical_drawer.json

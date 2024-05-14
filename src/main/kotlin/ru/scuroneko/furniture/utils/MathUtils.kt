@@ -1,6 +1,9 @@
 package ru.scuroneko.furniture.utils
 
+import net.minecraft.block.BlockState
+import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.function.BooleanBiFunction
+import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
@@ -33,5 +36,33 @@ object MathUtils {
         }
 
         return buffer[0]
+    }
+
+    fun add(pos: BlockPos, state: BlockState, i: Int): BlockPos {
+        return when (state.get(HORIZONTAL_FACING)) {
+            Direction.NORTH -> pos.add(i, 0, 0)
+            Direction.WEST -> pos.add(0, 0, i)
+            Direction.SOUTH -> pos.add(-i, 0, 0)
+            Direction.EAST -> pos.add(0, 0, -i)
+            else -> pos
+        }
+    }
+
+    fun getSideBlocks(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
+        return when (state.get(HORIZONTAL_FACING)) {
+            Direction.NORTH -> Pair(pos.add(-1, 0, 0), pos.add(1, 0, 0))
+            Direction.WEST -> Pair(pos.add(0, 0, 1), pos.add(0, 0, -1))
+            Direction.SOUTH -> Pair(pos.add(1, 0, 0), pos.add(-1, 0, 0))
+            Direction.EAST -> Pair(pos.add(0, 0, -1), pos.add(0, 0, 1))
+            else -> Pair(pos, pos)
+        }
+    }
+
+    fun getNextSideBlocks(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
+        val (left, right) = getSideBlocks(state, pos)
+        return Pair(
+            getSideBlocks(state, left).first,
+            getSideBlocks(state, right).second
+        )
     }
 }

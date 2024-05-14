@@ -24,6 +24,7 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
+import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
@@ -132,7 +133,7 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     override fun onStateReplaced(state: BlockState, world: World, pos: BlockPos, newState: BlockState, moved: Boolean) {
         if (state.block === newState.block) return
         val blockEntity = world.getBlockEntity(pos)
-        if (blockEntity is MedicalDrawerBlockEntity) {
+        if (blockEntity is IInventory) {
             ItemScatterer.spawn(world, pos, blockEntity)
             world.updateComparators(pos, this)
         }
