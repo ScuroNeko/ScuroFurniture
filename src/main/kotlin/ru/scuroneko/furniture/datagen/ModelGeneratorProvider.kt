@@ -14,39 +14,12 @@ class ModelGeneratorProvider(output: FabricDataOutput) : FabricModelProvider(out
     override fun generateBlockStateModels(blockGenerator: BlockStateModelGenerator) {
         val generator = FurnitureBlockStateModelGenerator(blockGenerator)
 
-        generator.registerSofa(ModBlocks.WHITE_CHERRY_SOFA)
-        generator.registerSofa(ModBlocks.BLACK_CHERRY_SOFA)
-
-        generator.registerLamp(
-            ModBlocks.WHITE_OAK_LAMP,
-            Blocks.WHITE_WOOL,
-            Blocks.OAK_PLANKS,
-            Blocks.STRIPPED_OAK_LOG
-        )
-        generator.registerLamp(
-            ModBlocks.BLACK_OAK_LAMP,
-            Blocks.BLACK_WOOL,
-            Blocks.OAK_PLANKS,
-            Blocks.STRIPPED_OAK_LOG
-        )
-
-        generator.registerLamp(
-            ModBlocks.WHITE_CHERRY_LAMP,
-            Blocks.WHITE_WOOL,
-            Blocks.CHERRY_PLANKS,
-            Blocks.STRIPPED_CHERRY_LOG
-        )
-        generator.registerLamp(
-            ModBlocks.BLACK_CHERRY_LAMP,
-            Blocks.BLACK_WOOL,
-            Blocks.CHERRY_PLANKS,
-            Blocks.STRIPPED_CHERRY_LOG
-        )
-
         RegistryHelper.Blocks.MEDICAL_DRAWERS.forEach(generator::registerMedicalDrawer)
         RegistryHelper.Blocks.BEDSIDE_DRAWERS.forEach(generator::registerBedsideTable)
         RegistryHelper.Blocks.KITCHEN_DRAWERS.forEach(generator::registerKitchenDrawer)
         RegistryHelper.Blocks.KITCHEN_CABINETS.forEach(generator::registerKitchenCabinet)
+        RegistryHelper.Blocks.LAMPS.forEach(generator::registerLamp)
+        RegistryHelper.Blocks.SOFAS.forEach(generator::registerSofa)
     }
 
     override fun generateItemModels(itemModelGenerator: ItemModelGenerator) {

@@ -4,10 +4,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider
 import net.minecraft.block.Block
 import ru.scuroneko.furniture.ModBlocks
+import ru.scuroneko.furniture.registry.RegistryHelper
 
 class LootTableGeneratorProvider(dataOutput: FabricDataOutput) : FabricBlockLootTableProvider(dataOutput) {
     override fun generate() {
-        ModBlocks.BLOCKS.values.forEach(::dropSelf)
+        RegistryHelper.Blocks.BLOCKS.forEach(::dropSelf)
     }
 
     private fun dropSelf(block: Block) {

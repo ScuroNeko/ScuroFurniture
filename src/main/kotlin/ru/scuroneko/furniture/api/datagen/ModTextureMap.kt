@@ -37,9 +37,9 @@ object ModTextureMap {
         val sofa = block as SofaBlock
         return TextureMap()
             .put(ModTextureKeys.WOOL, TextureMap.getId(sofa.wool))
-            .put(ModTextureKeys.LOG, TextureMap.getId(sofa.legMaterial))
-            .put(ModTextureKeys.PLANKS, TextureMap.getId(sofa.baseMaterial))
-            .put(TextureKey.PARTICLE, TextureMap.getId(sofa.baseMaterial))
+            .put(ModTextureKeys.LOG, TextureMap.getId(sofa.leg))
+            .put(ModTextureKeys.PLANKS, TextureMap.getId(sofa.base))
+            .put(TextureKey.PARTICLE, TextureMap.getId(sofa.base))
     }
 
     /**

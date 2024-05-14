@@ -7,7 +7,7 @@ import ru.scuroneko.furniture.registry.RegistryHelper
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
-object BedsideDrawers: IBlocksContainer {
+object BedsideDrawers : IBlocksContainer {
     val CHERRY_BEDSIDE_DRAWER = BedsideDrawerBlock(
         BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
     )

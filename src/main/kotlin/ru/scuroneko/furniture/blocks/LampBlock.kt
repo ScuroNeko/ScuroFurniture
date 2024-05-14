@@ -1,10 +1,8 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
-import net.minecraft.block.Block
-import net.minecraft.block.BlockState
-import net.minecraft.block.HorizontalFacingBlock
-import net.minecraft.block.ShapeContext
+import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
+import net.minecraft.block.*
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
@@ -15,7 +13,9 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 
-class LampBlock(settings: Settings) : HorizontalFacingBlock(settings.luminance { _ -> 15 }) {
+class LampBlock(val slab: Block, val fence: Block, val wool: Block, val log: Block) : HorizontalFacingBlock(FabricBlockSettings.copy(slab).luminance { _ -> 15 }) {
+    private constructor(settings: Settings): this(Blocks.OAK_SLAB, Blocks.OAK_FENCE, Blocks.WHITE_WOOL, Blocks.STRIPPED_OAK_LOG)
+
     val shape: VoxelShape = sequenceOf(
         sequenceOf(
             createCuboidShape(4.0, 13.0, 4.0, 12.0, 14.0, 12.0),

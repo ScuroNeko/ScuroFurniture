@@ -39,12 +39,12 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
         generator.blockStateCollector.accept(createSofaBlockState(block))
     }
 
-    fun registerLamp(lamp: LampBlock, wool: Block, planks: Block, log: Block) {
+    fun registerLamp(lamp: LampBlock) {
         val map = TextureMap()
-            .put(ModTextureKeys.WOOL, TextureMap.getId(wool))
-            .put(TextureKey.PARTICLE, TextureMap.getId(wool))
-            .put(ModTextureKeys.PLANKS, TextureMap.getId(planks))
-            .put(ModTextureKeys.LOG, TextureMap.getId(log))
+            .put(ModTextureKeys.WOOL, TextureMap.getId(lamp.wool))
+            .put(TextureKey.PARTICLE, TextureMap.getId(lamp.wool))
+            .put(ModTextureKeys.PLANKS, ModTextureMap.slabToPlanks(lamp.slab))
+            .put(ModTextureKeys.LOG, TextureMap.getId(lamp.log))
         val factory = TexturedModel.makeFactory({ _ -> map }, ModModels.LAMP)
         registerFactory(factory, lamp)
     }

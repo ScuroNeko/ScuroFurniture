@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.blocks.KitchenCabinetBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
 import ru.scuroneko.furniture.registry.items.KitchenCabinetComponents
 
-object KitchenCabinets: IBlocksContainer {
+object KitchenCabinets : IBlocksContainer {
     val CHERRY_KITCHEN_CABINET = KitchenCabinetBlock(
         KitchenCabinetComponents.CHERRY_KITCHEN_CABINET_CASE, KitchenCabinetComponents.CHERRY_KITCHEN_CABINET_DOOR
     )

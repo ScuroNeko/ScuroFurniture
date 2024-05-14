@@ -25,13 +25,13 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
         val TYPE_PROPERTY: EnumProperty<SofaType> = EnumProperty.of("type", SofaType::class.java)
     }
 
-    var baseMaterial: Block = Blocks.OAK_PLANKS
-    var legMaterial: Block = Blocks.STRIPPED_OAK_LOG
+    var base: Block = Blocks.OAK_PLANKS
+    var leg: Block = Blocks.STRIPPED_OAK_LOG
     var wool: Block = Blocks.WHITE_WOOL
 
     constructor(base: Block, leg: Block, wool: Block) : this(FabricBlockSettings.copy(base)) {
-        this.baseMaterial = base
-        this.legMaterial = leg
+        this.base = base
+        this.leg = leg
         this.wool = wool
     }
 

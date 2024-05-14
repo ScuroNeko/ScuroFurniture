@@ -3,7 +3,6 @@ package ru.scuroneko.furniture.registry.items
 import net.minecraft.block.Blocks
 import net.minecraft.item.Item
 import ru.scuroneko.furniture.api.registry.IItemContainer
-import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 import ru.scuroneko.furniture.registry.RegistryHelper
 

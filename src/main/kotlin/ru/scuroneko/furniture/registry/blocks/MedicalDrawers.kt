@@ -1,6 +1,9 @@
 package ru.scuroneko.furniture.registry.blocks
 
+import net.fabricmc.fabric.api.item.v1.FabricItem
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.block.Block
+import net.minecraft.item.BlockItem
 import ru.scuroneko.furniture.api.registry.IBlocksContainer
 import ru.scuroneko.furniture.blocks.MedicalDrawerBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
@@ -157,5 +160,9 @@ object MedicalDrawers : IBlocksContainer {
     override fun afterEach(obj: Block) {
         RegistryHelper.Blocks.MEDICAL_DRAWERS.add(obj as MedicalDrawerBlock)
         RegistryHelper.Blocks.BLOCKS.add(obj)
+    }
+
+    override fun afterBlockItem(item: BlockItem) {
+        RegistryHelper.Items.MEDICAL_DRAWERS.add(item)
     }
 }

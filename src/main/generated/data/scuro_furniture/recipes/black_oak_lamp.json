@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "minecraft:oak_fence"
+    },
+    "g": {
+      "item": "minecraft:glowstone"
+    },
+    "s": {
+      "item": "minecraft:oak_slab"
+    },
+    "w": {
+      "item": "minecraft:black_wool"
+    }
+  },
+  "pattern": [
+    "www",
+    "wgw",
+    "sfs"
+  ],
+  "result": {
+    "item": "scuro_furniture:black_oak_lamp"
+  }
+}

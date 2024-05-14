@@ -9,4 +9,5 @@ import net.minecraft.registry.Registry
 interface IBlocksContainer : IRegistryContainer<Block> {
     override fun getRegistry(): Registry<Block> = Registries.BLOCK
     fun getBlockItem(block: Block): BlockItem = BlockItem(block, FabricItemSettings())
+    fun afterBlockItem(item: BlockItem) {}
 }

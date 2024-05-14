@@ -7,17 +7,21 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.ScuroFurniture
+import ru.scuroneko.furniture.api.registry.AutoRegistry
+import ru.scuroneko.furniture.api.registry.IRegistryContainer
 import ru.scuroneko.furniture.blocks.entity.SofaEntity
 
-object ModEntities {
-    val SOFA_ENTITY =
-        EntityType.Builder.create({ _, world -> SofaEntity(world) }, SpawnGroup.MISC).setDimensions(1f, 0f).build()
+object ModEntities: IRegistryContainer<EntityType<*>> {
+    val SOFA_ENTITY = EntityType.Builder.create({ _, world -> SofaEntity(world) }, SpawnGroup.MISC)
+        .setDimensions(1f, 0f).build()
 
-    fun register() {
-        register("sofa", SOFA_ENTITY)
-    }
+//    fun register() {
+//        register("sofa", SOFA_ENTITY)
+//    }
+//
+//    private fun <T : Entity> register(path: String, type: EntityType<T>) {
+//        Registry.register(Registries.ENTITY_TYPE, Identifier(ScuroFurniture.MOD_ID, path), type)
+//    }
 
-    private fun <T : Entity> register(path: String, type: EntityType<T>) {
-        Registry.register(Registries.ENTITY_TYPE, Identifier(ScuroFurniture.MOD_ID, path), type)
-    }
+    override fun getRegistry(): Registry<EntityType<*>> = Registries.ENTITY_TYPE
 }

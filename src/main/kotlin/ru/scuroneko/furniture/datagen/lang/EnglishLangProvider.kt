@@ -8,10 +8,7 @@ import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.ScuroFurniture
-import ru.scuroneko.furniture.registry.blocks.BedsideDrawers
-import ru.scuroneko.furniture.registry.blocks.KitchenCabinets
-import ru.scuroneko.furniture.registry.blocks.KitchenDrawers
-import ru.scuroneko.furniture.registry.blocks.MedicalDrawers
+import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 
@@ -149,7 +146,10 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
 
         builder.add(BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, "Cherry bedside drawer case")
         builder.add(BedsideDrawersComponents.CHERRY_LOG_BEDSIDE_DRAWER_CASE, "Cherry log bedside drawer case")
-        builder.add(BedsideDrawersComponents.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER_CASE, "Stripped cherry log bedside drawer case")
+        builder.add(
+            BedsideDrawersComponents.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER_CASE,
+            "Stripped cherry log bedside drawer case"
+        )
         builder.add(BedsideDrawers.CHERRY_BEDSIDE_DRAWER, "Cherry bedside drawer")
         builder.add(BedsideDrawers.CHERRY_LOG_BEDSIDE_DRAWER, "Cherry log bedside drawer")
         builder.add(BedsideDrawers.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER, "Stripped cherry log bedside drawer")
@@ -159,12 +159,12 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
 
         builder.add(KitchenCabinets.CHERRY_KITCHEN_CABINET, "Cherry kitchen cabinet")
 
-        builder.add(ModBlocks.WHITE_CHERRY_SOFA, "White cherry sofa")
-        builder.add(ModBlocks.BLACK_CHERRY_SOFA, "Black cherry sofa")
+        builder.add(Lamps.WHITE_OAK_LAMP, "White oak lamp")
+        builder.add(Lamps.BLACK_OAK_LAMP, "Black oak lamp")
+        builder.add(Lamps.WHITE_CHERRY_LAMP, "White cherry lamp")
+        builder.add(Lamps.BLACK_CHERRY_LAMP, "Black cherry lamp")
 
-        builder.add(ModBlocks.WHITE_OAK_LAMP, "White oak lamp")
-        builder.add(ModBlocks.BLACK_OAK_LAMP, "Black oak lamp")
-        builder.add(ModBlocks.WHITE_CHERRY_LAMP, "White cherry lamp")
-        builder.add(ModBlocks.BLACK_CHERRY_LAMP, "Black cherry lamp")
+        builder.add(Sofas.WHITE_CHERRY_SOFA, "White cherry sofa")
+        builder.add(Sofas.BLACK_CHERRY_SOFA, "Black cherry sofa")
     }
 }

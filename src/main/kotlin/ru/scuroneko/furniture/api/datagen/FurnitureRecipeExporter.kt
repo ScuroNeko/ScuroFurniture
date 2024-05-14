@@ -2,15 +2,14 @@ package ru.scuroneko.furniture.api.datagen
 
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider.conditionsFromItem
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider.hasItem
+import net.minecraft.block.Blocks
 import net.minecraft.data.server.recipe.RecipeExporter
 import net.minecraft.data.server.recipe.RecipeProvider
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder
 import net.minecraft.item.Items
 import net.minecraft.recipe.book.RecipeCategory
-import ru.scuroneko.furniture.blocks.BedsideDrawerBlock
-import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
-import ru.scuroneko.furniture.blocks.MedicalDrawerBlock
+import ru.scuroneko.furniture.blocks.*
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
@@ -96,6 +95,28 @@ class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
             .input('s', case.slab).input('w', case.material)
             .criterion(hasItem(case.slab), conditionsFromItem(case.slab))
             .criterion(hasItem(case.material), conditionsFromItem(case.material))
+            .offerTo(exporter)
+    }
+
+    fun createLampRecipe(lamp: LampBlock) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, lamp)
+            .pattern("www").pattern("wgw").pattern("sfs")
+            .input('w', lamp.wool).input('g', Blocks.GLOWSTONE)
+            .input('s', lamp.slab).input('f', lamp.fence)
+            .criterion(hasItem(lamp.wool), conditionsFromItem(lamp.wool))
+            .criterion(hasItem(Blocks.GLOWSTONE), conditionsFromItem(Blocks.GLOWSTONE))
+            .criterion(hasItem(lamp.slab), conditionsFromItem(lamp.slab))
+            .criterion(hasItem(lamp.fence), conditionsFromItem(lamp.fence))
+            .offerTo(exporter)
+    }
+
+    fun createSofaRecipe(sofa: SofaBlock) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, sofa)
+            .pattern(" p ").pattern("pwp").pattern("l l")
+            .input('p', sofa.base).input('w', sofa.wool).input('l', sofa.leg)
+            .criterion(hasItem(sofa.base), conditionsFromItem(sofa.base))
+            .criterion(hasItem(sofa.wool), conditionsFromItem(sofa.wool))
+            .criterion(hasItem(sofa.leg), conditionsFromItem(sofa.leg))
             .offerTo(exporter)
     }
 }

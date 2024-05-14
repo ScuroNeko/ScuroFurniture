@@ -23,11 +23,13 @@ object BlocksRegistry : AutoRegistry<Block>() {
             val info = super.processField(field, container, modId) ?: return@forEach
             counter++
             if (field.findAnnotations(NoBlockItem::class).isNotEmpty()) return@forEach
+            val blockItem = container.getBlockItem(info.obj)
             Registry.register(
                 Registries.ITEM,
                 Identifier(info.namespace, info.name),
-                container.getBlockItem(info.obj)
+                blockItem
             )
+            container.afterBlockItem(blockItem)
         }
         container.afterRegistry()
         ScuroFurniture.LOGGER.info("Registered $counter blocks in ${container::class.simpleName}")

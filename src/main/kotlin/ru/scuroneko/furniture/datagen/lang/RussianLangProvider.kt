@@ -8,10 +8,7 @@ import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.ScuroFurniture
-import ru.scuroneko.furniture.registry.blocks.BedsideDrawers
-import ru.scuroneko.furniture.registry.blocks.KitchenCabinets
-import ru.scuroneko.furniture.registry.blocks.KitchenDrawers
-import ru.scuroneko.furniture.registry.blocks.MedicalDrawers
+import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 
@@ -203,8 +200,14 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         )
 
         builder.add(BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, "Вишневый корпус прикроватной тумбы")
-        builder.add(BedsideDrawersComponents.CHERRY_LOG_BEDSIDE_DRAWER_CASE, "Корпус прикроватной тумбы из бревна вишни")
-        builder.add(BedsideDrawersComponents.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER_CASE, "Корпус прикроватной тумбы из обтесанного бревна вишни")
+        builder.add(
+            BedsideDrawersComponents.CHERRY_LOG_BEDSIDE_DRAWER_CASE,
+            "Корпус прикроватной тумбы из бревна вишни"
+        )
+        builder.add(
+            BedsideDrawersComponents.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER_CASE,
+            "Корпус прикроватной тумбы из обтесанного бревна вишни"
+        )
         builder.add(BedsideDrawers.CHERRY_BEDSIDE_DRAWER, "Вишневая прикроватная тумба")
         builder.add(BedsideDrawers.CHERRY_LOG_BEDSIDE_DRAWER, "Прикроватная тумба из бревна вишни")
         builder.add(BedsideDrawers.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER, "Прикроватная тумба из обтесанного бревна вишни")
@@ -214,12 +217,12 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
 
         builder.add(KitchenCabinets.CHERRY_KITCHEN_CABINET, "Вишневый кухонный ящик")
 
-        builder.add(ModBlocks.WHITE_CHERRY_SOFA, "Белый вишневый диван")
-        builder.add(ModBlocks.BLACK_CHERRY_SOFA, "Черный вишневый диван")
+        builder.add(Lamps.WHITE_OAK_LAMP, "Белая дубовая лампа")
+        builder.add(Lamps.BLACK_OAK_LAMP, "Черная дубовая лампа")
+        builder.add(Lamps.WHITE_CHERRY_LAMP, "Белая вишневая лампа")
+        builder.add(Lamps.BLACK_CHERRY_LAMP, "Черная вишневая лампа")
 
-        builder.add(ModBlocks.WHITE_OAK_LAMP, "Белая дубовая лампа")
-        builder.add(ModBlocks.BLACK_OAK_LAMP, "Черная дубовая лампа")
-        builder.add(ModBlocks.WHITE_CHERRY_LAMP, "Белая вишневая лампа")
-        builder.add(ModBlocks.BLACK_CHERRY_LAMP, "Черная вишневая лампа")
+        builder.add(Sofas.WHITE_CHERRY_SOFA, "Белый вишневый диван")
+        builder.add(Sofas.BLACK_CHERRY_SOFA, "Черный вишневый диван")
     }
 }

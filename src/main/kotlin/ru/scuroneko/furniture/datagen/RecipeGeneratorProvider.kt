@@ -21,5 +21,7 @@ class RecipeGeneratorProvider(output: FabricDataOutput) : FabricRecipeProvider(o
         RegistryHelper.Blocks.MEDICAL_DRAWERS.forEach(exporter::createMedicalDrawerRecipe)
         RegistryHelper.Blocks.BEDSIDE_DRAWERS.forEach(exporter::createBedsideDrawerRecipe)
         RegistryHelper.Blocks.KITCHEN_DRAWERS.forEach(exporter::createKitchenDrawerRecipe)
+        RegistryHelper.Blocks.LAMPS.forEach(exporter::createLampRecipe)
+        RegistryHelper.Blocks.SOFAS.forEach(exporter::createSofaRecipe)
     }
 }

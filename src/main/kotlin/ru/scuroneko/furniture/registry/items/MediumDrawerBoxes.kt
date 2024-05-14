@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.api.registry.IItemContainer
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.registry.RegistryHelper
 
-object MediumDrawerBoxes: IItemContainer {
+object MediumDrawerBoxes : IItemContainer {
     val OAK_MEDIUM_DRAWER_BOX = BoxItem(Blocks.OAK_SLAB)
     val SPRUCE_MEDIUM_DRAWER_BOX = BoxItem(Blocks.SPRUCE_SLAB)
     val BIRCH_MEDIUM_DRAWER_BOX = BoxItem(Blocks.BIRCH_SLAB)
