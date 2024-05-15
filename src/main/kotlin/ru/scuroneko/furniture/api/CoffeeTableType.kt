@@ -2,7 +2,7 @@ package ru.scuroneko.furniture.api
 
 import net.minecraft.util.StringIdentifiable
 
-enum class CoffeeTableType: StringIdentifiable {
+enum class CoffeeTableType : StringIdentifiable {
     SINGLE {
         override fun asString(): String = "single"
     },

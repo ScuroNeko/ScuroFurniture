@@ -48,16 +48,17 @@ class CoffeeTableBlock(wood: Block) : AbstractTableBlock(wood) {
         placer: LivingEntity?,
         itemStack: ItemStack
     ) {
-        if(world.isClient) return
+        if (world.isClient) return
         checkSide<CoffeeTableBlock>(world, pos, state)
     }
 
     override fun onBreak(world: World, pos: BlockPos, state: BlockState, player: PlayerEntity): BlockState {
         return super.onBreak(world, pos, state, player)
     }
+
     private fun getShape(state: BlockState): VoxelShape {
         val facing = state.get(Properties.HORIZONTAL_FACING)
-        val s = when(state.get(TYPE)) {
+        val s = when (state.get(TYPE)) {
             CoffeeTableType.SINGLE -> shape
             CoffeeTableType.LEFT -> leftShape
             CoffeeTableType.CENTER -> centerShape
@@ -66,13 +67,21 @@ class CoffeeTableBlock(wood: Block) : AbstractTableBlock(wood) {
         }
         return MathUtils.rotateShape(facing, s)
     }
+
     @Environment(EnvType.CLIENT)
-    override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape = getShape(state)
+    override fun getOutlineShape(
+        state: BlockState,
+        world: BlockView,
+        pos: BlockPos,
+        context: ShapeContext
+    ): VoxelShape = getShape(state)
+
     override fun getCollisionShape(
         state: BlockState,
         world: BlockView,
         pos: BlockPos,
         context: ShapeContext
     ): VoxelShape = getShape(state)
+
     override fun getCodec(): MapCodec<out HorizontalFacingBlock> = createCodec(::CoffeeTableBlock)
 }

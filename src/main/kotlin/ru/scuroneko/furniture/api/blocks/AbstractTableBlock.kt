@@ -14,29 +14,29 @@ import net.minecraft.world.World
 import ru.scuroneko.furniture.api.CoffeeTableType
 import ru.scuroneko.furniture.utils.MathUtils
 
-abstract class AbstractTableBlock(val wood: Block): HorizontalFacingBlock(FabricBlockSettings.copy(wood).nonOpaque()) {
+abstract class AbstractTableBlock(val wood: Block) : HorizontalFacingBlock(FabricBlockSettings.copy(wood).nonOpaque()) {
     companion object {
         val TYPE: EnumProperty<CoffeeTableType> = EnumProperty.of("type", CoffeeTableType::class.java)
 
-        inline fun <reified T: AbstractTableBlock> checkSide(world: World, pos: BlockPos, state: BlockState) {
+        inline fun <reified T : AbstractTableBlock> checkSide(world: World, pos: BlockPos, state: BlockState) {
             val (leftPos, rightPos) = MathUtils.getSideBlocks(state, pos)
             val (nextLeftPos, nextRightPos) = MathUtils.getNextSideBlocks(state, pos)
             val leftState = world.getBlockState(leftPos)
             val rightState = world.getBlockState(rightPos)
             var newProperty = CoffeeTableType.CENTER
-            if(leftState.block is T) {
+            if (leftState.block is T) {
                 val next = world.getBlockState(nextLeftPos)
-                val leftProperty = if(next.block is T) CoffeeTableType.CENTER else CoffeeTableType.LEFT
-                if(rightState.block !is T) newProperty = CoffeeTableType.RIGHT
+                val leftProperty = if (next.block is T) CoffeeTableType.CENTER else CoffeeTableType.LEFT
+                if (rightState.block !is T) newProperty = CoffeeTableType.RIGHT
                 world.setBlockState(leftPos, leftState.with(TYPE, leftProperty))
             }
-            if(rightState.block is T) {
+            if (rightState.block is T) {
                 val next = world.getBlockState(nextRightPos)
-                val rightProperty = if(next.block is T) CoffeeTableType.CENTER else CoffeeTableType.RIGHT
-                if(leftState.block !is T) newProperty = CoffeeTableType.LEFT
+                val rightProperty = if (next.block is T) CoffeeTableType.CENTER else CoffeeTableType.RIGHT
+                if (leftState.block !is T) newProperty = CoffeeTableType.LEFT
                 world.setBlockState(rightPos, rightState.with(TYPE, rightProperty))
             }
-            if(rightState.block is T || leftState.block is T)
+            if (rightState.block is T || leftState.block is T)
                 world.setBlockState(pos, state.with(TYPE, newProperty))
         }
     }

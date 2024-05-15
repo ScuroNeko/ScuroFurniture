@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.api.registry.IBlocksContainer
 import ru.scuroneko.furniture.blocks.LampBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
 
-object Lamps: IBlocksContainer {
+object Lamps : IBlocksContainer {
     val WHITE_OAK_LAMP = LampBlock(
         Blocks.OAK_SLAB, Blocks.OAK_FENCE, Blocks.WHITE_WOOL, Blocks.STRIPPED_OAK_LOG
     )

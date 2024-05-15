@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:item/bedside_drawer_case",
+  "textures": {
+    "drawer_case": "minecraft:block/oak_planks"
+  }
+}

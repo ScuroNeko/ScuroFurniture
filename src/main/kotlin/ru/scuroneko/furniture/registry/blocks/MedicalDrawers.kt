@@ -1,7 +1,5 @@
 package ru.scuroneko.furniture.registry.blocks
 
-import net.fabricmc.fabric.api.item.v1.FabricItem
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.block.Block
 import net.minecraft.item.BlockItem
 import ru.scuroneko.furniture.api.registry.IBlocksContainer

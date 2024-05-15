@@ -9,7 +9,8 @@ import ru.scuroneko.furniture.registry.RegistryHelper
 
 object KitchenCabinetComponents : IItemContainer {
     val CHERRY_KITCHEN_CABINET_DOOR = BoxItem(Blocks.CHERRY_SLAB)
-//    val GLASS_CHERRY_KITCHEN_CABINET_DOOR = Block(null)
+
+    //    val GLASS_CHERRY_KITCHEN_CABINET_DOOR = Block(null)
     val CHERRY_KITCHEN_CABINET_CASE = CaseItem(Blocks.CHERRY_PLANKS, Blocks.CHERRY_SLAB)
 
     override fun afterEach(obj: Item) {

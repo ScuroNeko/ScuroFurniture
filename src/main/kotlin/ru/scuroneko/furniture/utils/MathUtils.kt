@@ -24,7 +24,7 @@ object MathUtils {
 
         val times = (to.horizontal - from.ordinal + 4) % 4
         for (i in 0 until times) {
-            buffer[0].forEachBox { minX: Double, minY: Double, minZ: Double, maxX: Double, maxY: Double, maxZ: Double ->
+            buffer[0].forEachBox { minX, minY, minZ, maxX, maxY, maxZ ->
                 buffer[1] = VoxelShapes.combine(
                     buffer[1],
                     VoxelShapes.cuboid(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX),

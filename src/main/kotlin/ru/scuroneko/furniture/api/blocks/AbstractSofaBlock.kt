@@ -14,11 +14,11 @@ import net.minecraft.state.StateManager
 import net.minecraft.state.property.EnumProperty
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.math.BlockPos
-import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
 import ru.scuroneko.furniture.api.SofaType
+import ru.scuroneko.furniture.utils.MathUtils
 
 abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFacingBlock(settings) {
     companion object {
@@ -37,8 +37,8 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
 
     override fun onPlaced(world: World, pos: BlockPos, state: BlockState, placer: LivingEntity?, itemStack: ItemStack) {
         if (world.isClient) return
-        val (leftPos, rightPos) = getSideBlocks(state, pos)
-        val (nextLeftPos, nextRightPos) = getNextSideBlocks(state, pos)
+        val (leftPos, rightPos) = MathUtils.getSideBlocks(state, pos)
+        val (nextLeftPos, nextRightPos) = MathUtils.getNextSideBlocks(state, pos)
 
         val leftState = world.getBlockState(leftPos)
         val rightState = world.getBlockState(rightPos)
@@ -62,8 +62,8 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
 
     override fun onBreak(world: World, pos: BlockPos, state: BlockState, player: PlayerEntity): BlockState {
         if (world.isClient) return super.onBreak(world, pos, state, player)
-        val (leftPos, rightPos) = getSideBlocks(state, pos)
-        val (nextLeftPos, nextRightPos) = getNextSideBlocks(state, pos)
+        val (leftPos, rightPos) = MathUtils.getSideBlocks(state, pos)
+        val (nextLeftPos, nextRightPos) = MathUtils.getNextSideBlocks(state, pos)
         val leftState = world.getBlockState(leftPos)
         val rightState = world.getBlockState(rightPos)
 
@@ -78,34 +78,6 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
             world.setBlockState(rightPos, rightState.with(TYPE_PROPERTY, property))
         }
         return super.onBreak(world, pos, state, player)
-    }
-
-    fun add(pos: BlockPos, state: BlockState, i: Int): BlockPos {
-        return when (state.get(HORIZONTAL_FACING)) {
-            Direction.NORTH -> pos.add(i, 0, 0)
-            Direction.WEST -> pos.add(0, 0, i)
-            Direction.SOUTH -> pos.add(-i, 0, 0)
-            Direction.EAST -> pos.add(0, 0, -i)
-            else -> pos
-        }
-    }
-
-    fun getSideBlocks(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
-        return when (state.get(HORIZONTAL_FACING)) {
-            Direction.NORTH -> Pair(pos.add(-1, 0, 0), pos.add(1, 0, 0))
-            Direction.WEST -> Pair(pos.add(0, 0, 1), pos.add(0, 0, -1))
-            Direction.SOUTH -> Pair(pos.add(1, 0, 0), pos.add(-1, 0, 0))
-            Direction.EAST -> Pair(pos.add(0, 0, -1), pos.add(0, 0, 1))
-            else -> Pair(pos, pos)
-        }
-    }
-
-    fun getNextSideBlocks(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
-        val (left, right) = getSideBlocks(state, pos)
-        return Pair(
-            getSideBlocks(state, left).first,
-            getSideBlocks(state, right).second
-        )
     }
 
     fun createCuboidShape(

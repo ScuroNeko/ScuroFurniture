@@ -6,11 +6,11 @@ import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.Constants
-import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.ScuroFurniture
 import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
+import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
 
 class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(output, "ru_ru") {
@@ -199,6 +199,30 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
             "Аптечный шкафчик из очищенного искаженного стебля"
         )
 
+        // Средние ящики
+        builder.add(MediumDrawerBoxes.OAK_MEDIUM_DRAWER_BOX, "Дубовый средний ящик")
+        builder.add(MediumDrawerBoxes.BIRCH_MEDIUM_DRAWER_BOX, "Березовый средний ящик")
+        builder.add(MediumDrawerBoxes.SPRUCE_MEDIUM_DRAWER_BOX, "Еловый средний ящик")
+        builder.add(MediumDrawerBoxes.JUNGLE_MEDIUM_DRAWER_BOX, "Тропический средний ящик")
+        builder.add(MediumDrawerBoxes.ACACIA_MEDIUM_DRAWER_BOX, "Акациевый средний ящик")
+        builder.add(MediumDrawerBoxes.DARK_OAK_MEDIUM_DRAWER_BOX, "Средний ящик из темного дуба")
+        builder.add(MediumDrawerBoxes.MANGROVE_MEDIUM_DRAWER_BOX, "Мангровый средний ящик")
+        builder.add(MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX, "Вишневый средний ящик")
+        builder.add(MediumDrawerBoxes.BAMBOO_MEDIUM_DRAWER_BOX, "Бамбуковый средний ящик")
+        builder.add(MediumDrawerBoxes.CRIMSON_MEDIUM_DRAWER_BOX, "Багровый средний ящик")
+        builder.add(MediumDrawerBoxes.WARPED_MEDIUM_DRAWER_BOX, "Искаженный средний ящик")
+
+        // Прикроватные тумбы
+        builder.add(BedsideDrawersComponents.OAK_BEDSIDE_DRAWER_CASE, "Дубовый корпус прикроватной тумбы")
+        builder.add(BedsideDrawersComponents.OAK_LOG_BEDSIDE_DRAWER_CASE, "Корпус прикроватной тумбы из бревна дуба")
+        builder.add(
+            BedsideDrawersComponents.STRIPPED_OAK_LOG_BEDSIDE_DRAWER_CASE,
+            "Корпус прикроватной тумбы из обтесанного бревна дуба"
+        )
+        builder.add(BedsideDrawers.OAK_BEDSIDE_DRAWER, "Дубовая прикроватная тумба")
+        builder.add(BedsideDrawers.OAK_LOG_BEDSIDE_DRAWER, "Прикроватная тумба из бревна дуба")
+        builder.add(BedsideDrawers.STRIPPED_OAK_LOG_BEDSIDE_DRAWER, "Прикроватная тумба из обтесанного бревна дуба")
+
         builder.add(BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, "Вишневый корпус прикроватной тумбы")
         builder.add(
             BedsideDrawersComponents.CHERRY_LOG_BEDSIDE_DRAWER_CASE,
@@ -212,6 +236,7 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(BedsideDrawers.CHERRY_LOG_BEDSIDE_DRAWER, "Прикроватная тумба из бревна вишни")
         builder.add(BedsideDrawers.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER, "Прикроватная тумба из обтесанного бревна вишни")
 
+        // Кухонные тумбы
         builder.add(KitchenDrawers.BLACK_CHERRY_KITCHEN_DRAWER, "Черная вишневая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_CHERRY_KITCHEN_DRAWER, "Белая вишневая кухонная тумба")
 

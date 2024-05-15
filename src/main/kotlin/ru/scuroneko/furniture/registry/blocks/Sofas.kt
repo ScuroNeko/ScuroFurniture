@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.api.registry.IBlocksContainer
 import ru.scuroneko.furniture.blocks.SofaBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
 
-object Sofas: IBlocksContainer {
+object Sofas : IBlocksContainer {
     val WHITE_CHERRY_SOFA = SofaBlock(
         Blocks.CHERRY_PLANKS, Blocks.STRIPPED_CHERRY_LOG, Blocks.WHITE_WOOL
     )

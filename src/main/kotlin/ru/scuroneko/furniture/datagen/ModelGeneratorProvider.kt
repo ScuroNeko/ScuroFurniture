@@ -2,10 +2,8 @@ package ru.scuroneko.furniture.datagen
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
-import net.minecraft.block.Blocks
 import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
-import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.datagen.generators.FurnitureBlockStateModelGenerator
 import ru.scuroneko.furniture.api.datagen.generators.FurnitureItemModelGenerator
 import ru.scuroneko.furniture.registry.RegistryHelper

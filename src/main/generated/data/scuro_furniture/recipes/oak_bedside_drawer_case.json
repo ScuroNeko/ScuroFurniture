@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:oak_slab"
+    },
+    "w": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "sss",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "item": "scuro_furniture:oak_bedside_drawer_case"
+  }
+}

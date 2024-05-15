@@ -6,11 +6,11 @@ import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.Constants
-import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.ScuroFurniture
 import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
+import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
 class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(output) {
     override fun generateTranslations(builder: TranslationBuilder) {
@@ -23,6 +23,7 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(Constants.ScreenNames.BEDSIDE_DRAWER, "Bedside drawer")
         builder.add(Constants.ScreenNames.KITCHEN_DRAWER, "Kitchen drawer")
 
+        // Medical drawers
         builder.add(MedicalDrawersComponents.OAK_MEDICAL_BOX, "Oak medical box")
         builder.add(MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE, "Oak medical drawer case")
         builder.add(MedicalDrawersComponents.OAK_LOG_MEDICAL_DRAWER_CASE, "Oak log medical drawer case")
@@ -144,8 +145,38 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(MedicalDrawers.WARPED_STEM_MEDICAL_DRAWER, "Warped stem medical drawer")
         builder.add(MedicalDrawers.STRIPPED_WARPED_STEM_MEDICAL_DRAWER, "Stripped warped stem medical drawer")
 
+        // Medium boxes
+        builder.add(MediumDrawerBoxes.OAK_MEDIUM_DRAWER_BOX, "Oak medium box")
+        builder.add(MediumDrawerBoxes.BIRCH_MEDIUM_DRAWER_BOX, "Birch medium box")
+        builder.add(MediumDrawerBoxes.SPRUCE_MEDIUM_DRAWER_BOX, "Spruce medium box")
+        builder.add(MediumDrawerBoxes.JUNGLE_MEDIUM_DRAWER_BOX, "Jungle medium box")
+        builder.add(MediumDrawerBoxes.ACACIA_MEDIUM_DRAWER_BOX, "Acacia medium box")
+        builder.add(MediumDrawerBoxes.DARK_OAK_MEDIUM_DRAWER_BOX, "Dark oak medium box")
+        builder.add(MediumDrawerBoxes.MANGROVE_MEDIUM_DRAWER_BOX, "Mangrove medium box")
+        builder.add(MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX, "Cherry medium box")
+        builder.add(MediumDrawerBoxes.BAMBOO_MEDIUM_DRAWER_BOX, "Bamboo medium box")
+        builder.add(MediumDrawerBoxes.CRIMSON_MEDIUM_DRAWER_BOX, "Crimson medium box")
+        builder.add(MediumDrawerBoxes.WARPED_MEDIUM_DRAWER_BOX, "Warped medium box")
+
+        // Bedside drawers
+        builder.add(BedsideDrawersComponents.OAK_BEDSIDE_DRAWER_CASE, "Oak bedside drawer case")
+        builder.add(
+            BedsideDrawersComponents.OAK_LOG_BEDSIDE_DRAWER_CASE,
+            "Oak log bedside drawer case"
+        )
+        builder.add(
+            BedsideDrawersComponents.STRIPPED_OAK_LOG_BEDSIDE_DRAWER_CASE,
+            "Stripped oak log bedside drawer case"
+        )
+        builder.add(BedsideDrawers.OAK_BEDSIDE_DRAWER, "Oak bedside drawer")
+        builder.add(BedsideDrawers.OAK_LOG_BEDSIDE_DRAWER, "Oak log bedside drawer")
+        builder.add(BedsideDrawers.STRIPPED_OAK_LOG_BEDSIDE_DRAWER, "Stripped oak log bedside drawer")
+
         builder.add(BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, "Cherry bedside drawer case")
-        builder.add(BedsideDrawersComponents.CHERRY_LOG_BEDSIDE_DRAWER_CASE, "Cherry log bedside drawer case")
+        builder.add(
+            BedsideDrawersComponents.CHERRY_LOG_BEDSIDE_DRAWER_CASE,
+            "Cherry log bedside drawer case"
+        )
         builder.add(
             BedsideDrawersComponents.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER_CASE,
             "Stripped cherry log bedside drawer case"
@@ -154,16 +185,20 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(BedsideDrawers.CHERRY_LOG_BEDSIDE_DRAWER, "Cherry log bedside drawer")
         builder.add(BedsideDrawers.STRIPPED_CHERRY_LOG_BEDSIDE_DRAWER, "Stripped cherry log bedside drawer")
 
+        // Kitchen drawers
         builder.add(KitchenDrawers.BLACK_CHERRY_KITCHEN_DRAWER, "Black cherry kitchen drawer")
         builder.add(KitchenDrawers.WHITE_CHERRY_KITCHEN_DRAWER, "White cherry kitchen drawer")
 
+        // Kitchen cabinets
         builder.add(KitchenCabinets.CHERRY_KITCHEN_CABINET, "Cherry kitchen cabinet")
 
+        // Lamps
         builder.add(Lamps.WHITE_OAK_LAMP, "White oak lamp")
         builder.add(Lamps.BLACK_OAK_LAMP, "Black oak lamp")
         builder.add(Lamps.WHITE_CHERRY_LAMP, "White cherry lamp")
         builder.add(Lamps.BLACK_CHERRY_LAMP, "Black cherry lamp")
 
+        // Sofas
         builder.add(Sofas.WHITE_CHERRY_SOFA, "White cherry sofa")
         builder.add(Sofas.BLACK_CHERRY_SOFA, "Black cherry sofa")
     }

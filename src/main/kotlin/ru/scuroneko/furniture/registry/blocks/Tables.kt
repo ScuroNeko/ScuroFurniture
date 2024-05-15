@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.api.registry.IBlocksContainer
 import ru.scuroneko.furniture.blocks.CoffeeTableBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
 
-object Tables: IBlocksContainer {
+object Tables : IBlocksContainer {
     val CHERRY_COFFEE_TABLE = CoffeeTableBlock(Blocks.CHERRY_PLANKS)
 
     override fun afterEach(obj: Block) {

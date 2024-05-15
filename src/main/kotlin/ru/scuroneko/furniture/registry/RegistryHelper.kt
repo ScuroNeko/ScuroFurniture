@@ -8,32 +8,33 @@ import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 import ru.scuroneko.furniture.item.MedicalDrawerCaseItem
+import java.util.ArrayList
 
 object RegistryHelper {
     object Blocks {
-        val BLOCKS = mutableListOf<Block>()
-        val MEDICAL_DRAWERS = mutableListOf<MedicalDrawerBlock>()
-        val BEDSIDE_DRAWERS = mutableListOf<BedsideDrawerBlock>()
-        val KITCHEN_DRAWERS = mutableListOf<KitchenDrawerBlock>()
-        val KITCHEN_CABINETS = mutableListOf<KitchenCabinetBlock>()
-        val LAMPS = mutableListOf<LampBlock>()
-        val SOFAS = mutableListOf<SofaBlock>()
+        val BLOCKS = ArrayList<Block>()
+        val MEDICAL_DRAWERS = ArrayList<MedicalDrawerBlock>()
+        val BEDSIDE_DRAWERS = ArrayList<BedsideDrawerBlock>()
+        val KITCHEN_DRAWERS = ArrayList<KitchenDrawerBlock>()
+        val KITCHEN_CABINETS = ArrayList<KitchenCabinetBlock>()
+        val LAMPS = ArrayList<LampBlock>()
+        val SOFAS = ArrayList<SofaBlock>()
 
-        val COFFEE_TABLES = mutableListOf<CoffeeTableBlock>()
+        val COFFEE_TABLES = ArrayList<CoffeeTableBlock>()
     }
 
     object Items {
-        val ITEMS = mutableListOf<Item>()
+        val ITEMS = ArrayList<Item>()
 
-        val MEDICAL_DRAWERS_BOXES = mutableListOf<BoxItem>()
-        val MEDIUM_DRAWERS_BOXES = mutableListOf<BoxItem>()
-        val KITCHEN_CABINET_DOORS = mutableListOf<BoxItem>()
+        val MEDICAL_DRAWERS_BOXES = ArrayList<BoxItem>()
+        val MEDIUM_DRAWERS_BOXES = ArrayList<BoxItem>()
+        val KITCHEN_CABINET_DOORS = ArrayList<BoxItem>()
 
-        val MEDICAL_DRAWERS_CASES = mutableListOf<MedicalDrawerCaseItem>()
-        val BEDSIDE_DRAWERS_CASES = mutableListOf<CaseItem>()
-        val KITCHEN_DRAWERS_CASES = mutableListOf<KitchenDrawerCaseItem>()
-        val KITCHEN_CABINETS_CASES = mutableListOf<CaseItem>()
+        val MEDICAL_DRAWERS_CASES = ArrayList<MedicalDrawerCaseItem>()
+        val BEDSIDE_DRAWERS_CASES = ArrayList<CaseItem>()
+        val KITCHEN_DRAWERS_CASES = ArrayList<KitchenDrawerCaseItem>()
+        val KITCHEN_CABINETS_CASES = ArrayList<CaseItem>()
 
-        val MEDICAL_DRAWERS = mutableListOf<BlockItem>()
+        val MEDICAL_DRAWERS = ArrayList<BlockItem>()
     }
 }

@@ -16,6 +16,8 @@ object MediumDrawerBoxes : IItemContainer {
     val MANGROVE_MEDIUM_DRAWER_BOX = BoxItem(Blocks.MANGROVE_SLAB)
     val CHERRY_MEDIUM_DRAWER_BOX = BoxItem(Blocks.CHERRY_SLAB)
     val BAMBOO_MEDIUM_DRAWER_BOX = BoxItem(Blocks.BAMBOO_SLAB)
+    val CRIMSON_MEDIUM_DRAWER_BOX = BoxItem(Blocks.CRIMSON_SLAB)
+    val WARPED_MEDIUM_DRAWER_BOX = BoxItem(Blocks.WARPED_SLAB)
 
     override fun afterEach(obj: Item) {
         if (obj is BoxItem) RegistryHelper.Items.MEDIUM_DRAWERS_BOXES.add(obj)

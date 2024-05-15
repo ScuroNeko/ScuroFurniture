@@ -78,9 +78,12 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
     fun createCoffeeTableBlockState(block: CoffeeTableBlock): BlockStateSupplier {
         val single = TexturedModel.makeFactory({ _ -> TextureMap.texture(block.wood) }, ModModels.COFFEE_TABLE_SINGLE)
             .upload(block, generator.modelCollector)
-        val leftModelId = createSubModel(block, "_left", ModModels.COFFEE_TABLE_LEFT) { _ -> ModTextureMap.coffeeTable(block) }
-        val centerModelId = createSubModel(block, "_center", ModModels.COFFEE_TABLE_CENTER) { _ -> ModTextureMap.coffeeTable(block) }
-        val rightModelId = createSubModel(block, "_right", ModModels.COFFEE_TABLE_RIGHT) { _ -> ModTextureMap.coffeeTable(block) }
+        val leftModelId =
+            createSubModel(block, "_left", ModModels.COFFEE_TABLE_LEFT) { _ -> ModTextureMap.coffeeTable(block) }
+        val centerModelId =
+            createSubModel(block, "_center", ModModels.COFFEE_TABLE_CENTER) { _ -> ModTextureMap.coffeeTable(block) }
+        val rightModelId =
+            createSubModel(block, "_right", ModModels.COFFEE_TABLE_RIGHT) { _ -> ModTextureMap.coffeeTable(block) }
 
         return VariantsBlockStateSupplier.create(block).coordinate(
             BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()

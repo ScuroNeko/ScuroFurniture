@@ -8,6 +8,36 @@ import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
 object BedsideDrawers : IBlocksContainer {
+    val OAK_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.OAK_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.OAK_MEDIUM_DRAWER_BOX
+    )
+    val OAK_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.OAK_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.OAK_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_OAK_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_OAK_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.OAK_MEDIUM_DRAWER_BOX
+    )
+
+    val SPRUCE_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.SPRUCE_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.SPRUCE_MEDIUM_DRAWER_BOX
+    )
+    val SPRUCE_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.SPRUCE_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.SPRUCE_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_SPRUCE_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_SPRUCE_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.SPRUCE_MEDIUM_DRAWER_BOX
+    )
+
+    val BIRCH_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.BIRCH_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.BIRCH_MEDIUM_DRAWER_BOX
+    )
+    val BIRCH_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.BIRCH_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.BIRCH_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_BIRCH_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_BIRCH_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.BIRCH_MEDIUM_DRAWER_BOX
+    )
+
     val CHERRY_BEDSIDE_DRAWER = BedsideDrawerBlock(
         BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
     )

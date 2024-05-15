@@ -10,7 +10,8 @@ import ru.scuroneko.furniture.ScuroFurniture
 import ru.scuroneko.furniture.registry.RegistryHelper
 import java.util.concurrent.CompletableFuture
 
-class ItemTagGeneratorProvider(output: FabricDataOutput, completableFuture: CompletableFuture<WrapperLookup>): ItemTagProvider(output, completableFuture) {
+class ItemTagGeneratorProvider(output: FabricDataOutput, completableFuture: CompletableFuture<WrapperLookup>) :
+    ItemTagProvider(output, completableFuture) {
     val MEDIUM_BOXES = TagKey.of(RegistryKeys.ITEM, Identifier(ScuroFurniture.MOD_ID, "medium_boxes"))
     val MEDICAL_DRAWERS_CASES = TagKey.of(RegistryKeys.ITEM, Identifier(ScuroFurniture.MOD_ID, "medical_drawers_cases"))
     val MEDICAL_BOXES = TagKey.of(RegistryKeys.ITEM, Identifier(ScuroFurniture.MOD_ID, "medical_boxes"))

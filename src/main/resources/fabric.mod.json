@@ -26,14 +26,6 @@
 		"fabric-datagen": [{
 			"value": "ru.scuroneko.furniture.ScuroFurnitureDataGenerator",
 			"adapter": "kotlin"
-		}],
-		"modmenu": [{
-			"value": "ru.scuroneko.furniture.integration.ScuroFurnitureModMenuIntegration",
-			"adapter": "kotlin"
-		}],
-		"rei_client": [{
-			"value": "ru.scuroneko.furniture.compat.ScuroFurnitureREIClientPlugin",
-			"adapter": "kotlin"
 		}]
 	},
 	"mixins": [

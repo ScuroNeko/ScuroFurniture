@@ -17,9 +17,10 @@ import net.minecraft.util.math.BlockPos
 import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.CarpenterTableScreenHandler
+import ru.scuroneko.furniture.registry.ModBlockEntities
 
 class CarpenterTableBlockEntity(pos: BlockPos, state: BlockState) :
-    BlockEntity(ModBlocks.CARPENTER_TABLE_BLOCK_ENTITY, pos, state),
+    BlockEntity(ModBlockEntities.CARPENTER_TABLE_BLOCK_ENTITY, pos, state),
     NamedScreenHandlerFactory, IInventory {
     private val inventory = DefaultedList.ofSize(4 * 3, ItemStack.EMPTY)
     private val onChange = ArrayList<(Inventory) -> Unit>()

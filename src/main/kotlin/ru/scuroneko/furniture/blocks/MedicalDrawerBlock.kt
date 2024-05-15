@@ -17,6 +17,7 @@ import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.registry.ModBlockEntities
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 
 class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
@@ -62,7 +63,7 @@ class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(cas
 
     private fun openScreen(box: VoxelShape, player: PlayerEntity, state: BlockState, world: World, pos: BlockPos) {
         if (world.isClient) return
-        val optional = world.getBlockEntity(pos, ModBlocks.MEDICAL_DRAWER_BLOCK_ENTITY)
+        val optional = world.getBlockEntity(pos, ModBlockEntities.MEDICAL_DRAWER_BLOCK_ENTITY)
         if (!optional.isPresent) return
         val blockEntity = optional.get()
         val boxToOpen = when (box) {

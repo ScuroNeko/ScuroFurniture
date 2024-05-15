@@ -7,7 +7,8 @@ import net.minecraft.registry.tag.BlockTags
 import ru.scuroneko.furniture.registry.RegistryHelper
 import java.util.concurrent.CompletableFuture
 
-class BlockTagGeneratorProvider(output: FabricDataOutput, completableFuture: CompletableFuture<WrapperLookup>): BlockTagProvider(output, completableFuture) {
+class BlockTagGeneratorProvider(output: FabricDataOutput, completableFuture: CompletableFuture<WrapperLookup>) :
+    BlockTagProvider(output, completableFuture) {
     override fun configure(wl: WrapperLookup) {
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
             .add(*RegistryHelper.Blocks.MEDICAL_DRAWERS.toTypedArray())

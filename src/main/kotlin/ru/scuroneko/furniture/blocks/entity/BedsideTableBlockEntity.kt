@@ -16,9 +16,10 @@ import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.BedsideTableScreenHandler
+import ru.scuroneko.furniture.registry.ModBlockEntities
 
 class BedsideTableBlockEntity(pos: BlockPos, state: BlockState) :
-    BlockEntity(ModBlocks.BEDSIDE_TABLE_BLOCK_ENTITY, pos, state),
+    BlockEntity(ModBlockEntities.BEDSIDE_TABLE_BLOCK_ENTITY, pos, state),
     NamedScreenHandlerFactory, IInventory {
     private var boxIndex = 0
     private val inventory = DefaultedList.ofSize(2 * 18, ItemStack.EMPTY)

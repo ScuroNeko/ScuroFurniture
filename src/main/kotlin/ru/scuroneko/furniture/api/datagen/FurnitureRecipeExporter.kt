@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider.conditio
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider.hasItem
 import net.minecraft.block.Blocks
 import net.minecraft.data.server.recipe.RecipeExporter
-import net.minecraft.data.server.recipe.RecipeProvider
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder
 import net.minecraft.item.Items

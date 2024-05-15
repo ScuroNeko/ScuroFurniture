@@ -13,8 +13,14 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 
-class LampBlock(val slab: Block, val fence: Block, val wool: Block, val log: Block) : HorizontalFacingBlock(FabricBlockSettings.copy(slab).luminance { _ -> 15 }) {
-    private constructor(settings: Settings): this(Blocks.OAK_SLAB, Blocks.OAK_FENCE, Blocks.WHITE_WOOL, Blocks.STRIPPED_OAK_LOG)
+class LampBlock(val slab: Block, val fence: Block, val wool: Block, val log: Block) :
+    HorizontalFacingBlock(FabricBlockSettings.copy(slab).luminance { _ -> 15 }) {
+    private constructor(settings: Settings) : this(
+        Blocks.OAK_SLAB,
+        Blocks.OAK_FENCE,
+        Blocks.WHITE_WOOL,
+        Blocks.STRIPPED_OAK_LOG
+    )
 
     val shape: VoxelShape = sequenceOf(
         sequenceOf(
