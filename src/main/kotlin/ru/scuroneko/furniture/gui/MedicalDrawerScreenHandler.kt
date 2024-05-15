@@ -1,10 +1,13 @@
 package ru.scuroneko.furniture.gui
 
+import net.minecraft.block.Block
+import net.minecraft.block.Blocks
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.inventory.SimpleInventory
 import net.minecraft.item.ItemStack
+import net.minecraft.network.PacketByteBuf
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
 import ru.scuroneko.furniture.registry.ModScreenHandlers
@@ -15,15 +18,19 @@ class MedicalDrawerScreenHandler(
     val inventory: Inventory,
     boxIndex: Int
 ) : ScreenHandler(ModScreenHandlers.MEDICAL_DRAWER_SCREEN_HANDLER, syncId) {
-    constructor(syncId: Int, playerInventory: PlayerInventory) : this(
+    var material: String
+    constructor(syncId: Int, playerInventory: PlayerInventory, buf: PacketByteBuf) : this(
         syncId,
         playerInventory,
         SimpleInventory(4 * 9),
         0
-    )
+    ) {
+        this.material = buf.readString()
+    }
 
     init {
         checkSize(inventory, 4 * 9)
+        this.material = "air"
         inventory.onOpen(playerInventory.player)
 
         for (m in 0 until 9)

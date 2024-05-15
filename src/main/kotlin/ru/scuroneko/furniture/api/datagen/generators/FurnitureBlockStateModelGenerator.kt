@@ -4,14 +4,15 @@ import net.minecraft.block.Block
 import net.minecraft.data.client.*
 import net.minecraft.entity.Entity
 import net.minecraft.util.Identifier
-import ru.scuroneko.furniture.api.CoffeeTableType
-import ru.scuroneko.furniture.api.SofaType
+import ru.scuroneko.furniture.api.properties.CoffeeTableType
+import ru.scuroneko.furniture.api.properties.SofaType
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
 import ru.scuroneko.furniture.api.blocks.AbstractTableBlock
 import ru.scuroneko.furniture.api.datagen.ModModels
 import ru.scuroneko.furniture.api.datagen.ModTextureKeys
 import ru.scuroneko.furniture.api.datagen.ModTextureMap
+import ru.scuroneko.furniture.api.properties.ModProperties
 import ru.scuroneko.furniture.blocks.CoffeeTableBlock
 import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
 import ru.scuroneko.furniture.blocks.LampBlock
@@ -67,7 +68,7 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
         return VariantsBlockStateSupplier.create(block).coordinate(
             BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()
         ).coordinate(
-            BlockStateVariantMap.create(AbstractSofaBlock.TYPE_PROPERTY)
+            BlockStateVariantMap.create(ModProperties.SOFA_TYPE)
                 .register(SofaType.SINGLE, BlockStateVariant.create().put(VariantSettings.MODEL, singleModelId))
                 .register(SofaType.LEFT, BlockStateVariant.create().put(VariantSettings.MODEL, leftModelId))
                 .register(SofaType.CENTER, BlockStateVariant.create().put(VariantSettings.MODEL, centerModelId))
@@ -88,7 +89,7 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
         return VariantsBlockStateSupplier.create(block).coordinate(
             BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()
         ).coordinate(
-            BlockStateVariantMap.create(AbstractTableBlock.TYPE)
+            BlockStateVariantMap.create(ModProperties.COFFEE_TABLE_TYPE)
                 .register(CoffeeTableType.SINGLE, BlockStateVariant.create().put(VariantSettings.MODEL, single))
                 .register(CoffeeTableType.LEFT, BlockStateVariant.create().put(VariantSettings.MODEL, leftModelId))
                 .register(CoffeeTableType.CENTER, BlockStateVariant.create().put(VariantSettings.MODEL, centerModelId))

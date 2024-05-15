@@ -14,8 +14,9 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
-import ru.scuroneko.furniture.api.CoffeeTableType
+import ru.scuroneko.furniture.api.properties.CoffeeTableType
 import ru.scuroneko.furniture.api.blocks.AbstractTableBlock
+import ru.scuroneko.furniture.api.properties.ModProperties
 import ru.scuroneko.furniture.utils.MathUtils
 
 
@@ -58,7 +59,7 @@ class CoffeeTableBlock(wood: Block) : AbstractTableBlock(wood) {
 
     private fun getShape(state: BlockState): VoxelShape {
         val facing = state.get(Properties.HORIZONTAL_FACING)
-        val s = when (state.get(TYPE)) {
+        val s = when (state.get(ModProperties.COFFEE_TABLE_TYPE)) {
             CoffeeTableType.SINGLE -> shape
             CoffeeTableType.LEFT -> leftShape
             CoffeeTableType.CENTER -> centerShape

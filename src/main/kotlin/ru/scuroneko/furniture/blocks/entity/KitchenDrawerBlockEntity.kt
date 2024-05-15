@@ -13,13 +13,12 @@ import net.minecraft.text.Text
 import net.minecraft.util.collection.DefaultedList
 import net.minecraft.util.math.BlockPos
 import ru.scuroneko.furniture.Constants
-import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.KitchenDrawerScreenHandler
 import ru.scuroneko.furniture.registry.ModBlockEntities
 
 class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) :
-    BlockEntity(ModBlockEntities.BEDSIDE_TABLE_BLOCK_ENTITY, pos, state),
+    BlockEntity(ModBlockEntities.KITCHEN_DRAWER_BLOCK_ENTITY, pos, state),
     NamedScreenHandlerFactory, IInventory {
     private var boxIndex = 0
     private val inventory = DefaultedList.ofSize(2 * 18, ItemStack.EMPTY)
@@ -42,6 +41,6 @@ class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) :
         return KitchenDrawerScreenHandler(syncId, playerInventory, this, this.boxIndex)
     }
 
-    override fun getDisplayName(): Text = Text.translatable(Constants.ScreenNames.KITCHEN_DRAWER)
+    override fun getDisplayName(): Text = Text.translatable(Constants.Translatable.KITCHEN_DRAWER)
     override fun getItems(): DefaultedList<ItemStack> = this.inventory
 }

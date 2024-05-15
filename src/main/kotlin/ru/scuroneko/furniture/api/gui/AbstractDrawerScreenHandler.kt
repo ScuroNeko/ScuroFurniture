@@ -13,22 +13,20 @@ import ru.scuroneko.furniture.registry.ModScreenHandlers
 abstract class AbstractDrawerScreenHandler(
     syncId: Int,
     playerInventory: PlayerInventory,
-    private val inventory: Inventory,
+    val inventory: Inventory,
     type: ScreenHandlerType<*>,
     boxIndex: Int,
     private val boxCount: Int,
     private val boxSlotCount: Int
 ) : ScreenHandler(type, syncId) {
-    constructor(
+    private constructor(
         syncId: Int, playerInventory: PlayerInventory, inventory: Inventory,
         type: ScreenHandlerType<*>,
         boxIndex: Int,
     ) : this(
-        syncId,
-        playerInventory,
-        inventory,
-        type,
-        boxIndex, 4, 9
+        syncId, playerInventory,
+        inventory, type, boxIndex,
+        4, 9
     )
 
     constructor(syncId: Int, playerInventory: PlayerInventory) : this(

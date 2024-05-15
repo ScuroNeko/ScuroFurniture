@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
 import net.minecraft.block.entity.BlockEntity
+import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.function.BooleanBiFunction
@@ -78,8 +79,7 @@ class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(cas
         player.openHandledScreen(blockEntity)
     }
 
-    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity =
-        MedicalDrawerBlockEntity(pos, state)
+    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = MedicalDrawerBlockEntity(pos, state)
 
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::MedicalDrawerBlock)
 }

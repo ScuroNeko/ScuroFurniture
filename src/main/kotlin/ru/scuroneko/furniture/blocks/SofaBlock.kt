@@ -14,8 +14,9 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
-import ru.scuroneko.furniture.api.SofaType
+import ru.scuroneko.furniture.api.properties.SofaType
 import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
+import ru.scuroneko.furniture.api.properties.ModProperties
 import ru.scuroneko.furniture.blocks.entity.SofaEntity
 import ru.scuroneko.furniture.registry.ModEntities
 import ru.scuroneko.furniture.utils.MathUtils
@@ -92,7 +93,7 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
     )
 
     init {
-        defaultState = defaultState.with(HORIZONTAL_FACING, Direction.NORTH).with(TYPE_PROPERTY, SofaType.SINGLE)
+        defaultState = defaultState.with(HORIZONTAL_FACING, Direction.NORTH).with(ModProperties.SOFA_TYPE, SofaType.SINGLE)
     }
 
     override fun onUse(
@@ -105,8 +106,8 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
     ): ActionResult {
         if (!world.isClient) {
             val entity = ModEntities.SOFA_ENTITY.create(world)!!
-            world.spawnEntity(entity)
             entity.setPosition(pos.toCenterPos())
+            world.spawnEntity(entity)
             if (entity.hasPassengers()) return ActionResult.FAIL
             player.startRiding(entity)
         }
@@ -114,7 +115,7 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
     }
 
     fun getShape(state: BlockState): VoxelShape {
-        val part = when (state.get(TYPE_PROPERTY)) {
+        val part = when (state.get(ModProperties.SOFA_TYPE)) {
             SofaType.SINGLE -> shape
             SofaType.LEFT -> leftShape
             SofaType.CENTER -> centerShape

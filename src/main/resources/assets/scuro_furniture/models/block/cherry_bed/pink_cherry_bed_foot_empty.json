@@ -1,6 +1,0 @@
-{
-  "parent": "scuro_furniture:block/cherry_bed/cherry_bed_foot_empty",
-  "textures": {
-      "0": "scuro_furniture:block/pink_cherry_bed"
-  }
-}

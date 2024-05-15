@@ -3,10 +3,13 @@ package ru.scuroneko.furniture
 import net.minecraft.util.Identifier
 
 object Constants {
-    object ScreenNames {
+    object Translatable {
         const val MEDICAL_DRAWER = "gui.scuro_furniture.medical_drawer"
         const val BEDSIDE_DRAWER = "gui.scuro_furniture.bedside_table"
         const val KITCHEN_DRAWER = "gui.scuro_furniture.kitchen_drawer"
+
+        const val CARPENTER_GROUP = "itemGroup.scuro_furniture.blocks_group"
+        const val CARPENTER_ITEM_GROUP = "itemGroup.scuro_furniture.items_group"
     }
 
     object ScreenTextures {
@@ -15,9 +18,13 @@ object Constants {
     }
 
     object ScreenMaterialTextures {
-        val OAK_MEDICAL_DRAWER = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/oak_medical_drawer.png")
-        val SPRUCE_MEDICAL_DRAWER =
-            Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/spruce_medical_drawer.png")
-        val CHERRY_MEDICAL_DRAWER = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/oak_medical_drawer.png")
+        val MEDICAL_DRAWER = DrawerIdHolder("medical_drawer")
+
+        class DrawerIdHolder(container: String) {
+            val OAK = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container/oak.png")
+            val SPRUCE = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container/spruce.png")
+            val CHERRY = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container/cherry.png")
+            val DEFAULT = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container.png")
+        }
     }
 }

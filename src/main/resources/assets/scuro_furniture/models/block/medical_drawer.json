@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"drawer_case": "minecraft:block/cherry_log",
-		"drawer_box": "minecraft:block/cherry_planks",
+		"drawer_case": "block/cherry_log",
+		"drawer_box": "block/cherry_planks",
 		"particle": "scuro_furniture:block/box_hand",
 		"box_hand": "scuro_furniture:block/box_hand"
 	},
@@ -133,7 +133,8 @@
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"ground": {
-			"scale": [0.5, 0.5, 0.5]
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
 		},
 		"gui": {
 			"rotation": [25, 45, 0],

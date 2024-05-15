@@ -38,6 +38,46 @@ object BedsideDrawers : IBlocksContainer {
         BedsideDrawersComponents.STRIPPED_BIRCH_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.BIRCH_MEDIUM_DRAWER_BOX
     )
 
+    val JUNGLE_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.JUNGLE_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.JUNGLE_MEDIUM_DRAWER_BOX
+    )
+    val JUNGLE_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.JUNGLE_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.JUNGLE_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_JUNGLE_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_JUNGLE_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.JUNGLE_MEDIUM_DRAWER_BOX
+    )
+
+    val ACACIA_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.ACACIA_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.ACACIA_MEDIUM_DRAWER_BOX
+    )
+    val ACACIA_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.ACACIA_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.ACACIA_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_ACACIA_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_ACACIA_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.ACACIA_MEDIUM_DRAWER_BOX
+    )
+
+    val DARK_OAK_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.DARK_OAK_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.DARK_OAK_MEDIUM_DRAWER_BOX
+    )
+    val DARK_OAK_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.DARK_OAK_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.DARK_OAK_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_DARK_OAK_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_DARK_OAK_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.DARK_OAK_MEDIUM_DRAWER_BOX
+    )
+
+    val MANGROVE_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.MANGROVE_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.MANGROVE_MEDIUM_DRAWER_BOX
+    )
+    val MANGROVE_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.MANGROVE_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.MANGROVE_MEDIUM_DRAWER_BOX
+    )
+    val STRIPPED_MANGROVE_LOG_BEDSIDE_DRAWER = BedsideDrawerBlock(
+        BedsideDrawersComponents.STRIPPED_MANGROVE_LOG_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.MANGROVE_MEDIUM_DRAWER_BOX
+    )
+
     val CHERRY_BEDSIDE_DRAWER = BedsideDrawerBlock(
         BedsideDrawersComponents.CHERRY_BEDSIDE_DRAWER_CASE, MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
     )

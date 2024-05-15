@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"planks": "minecraft:block/cherry_planks",
-		"particle": "minecraft:block/stripped_cherry_log",
-		"log": "minecraft:block/stripped_cherry_log",
-		"wool": "minecraft:block/white_wool"
+		"planks": "block/cherry_planks",
+		"particle": "block/stripped_cherry_log",
+		"log": "block/stripped_cherry_log",
+		"wool": "block/white_wool"
 	},
 	"elements": [
 		{
@@ -67,21 +67,21 @@
 				"north": {"uv": [0, 3.5, 2, 10.5], "texture": "#planks"},
 				"east": {"uv": [0, 5, 14, 12], "texture": "#planks"},
 				"south": {"uv": [14, 5, 16, 12], "texture": "#planks"},
-				"west": {"uv": [0, 5, 14, 12], "texture": "#planks"},
-				"up": {"uv": [14, 5, 0, 3], "rotation": 90, "texture": "#planks"},
+				"west": {"uv": [2, 5, 16, 12], "texture": "#planks"},
+				"up": {"uv": [16, 5, 2, 3], "rotation": 90, "texture": "#planks"},
 				"down": {"uv": [15, 7, 1, 9], "rotation": 270, "texture": "#planks"}
 			}
 		},
 		{
 			"from": [14, 4, 2],
 			"to": [16, 11, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [22, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 3.5, 2, 10.5], "texture": "#planks"},
 				"east": {"uv": [0, 5, 14, 12], "texture": "#planks"},
 				"south": {"uv": [14, 5, 16, 12], "texture": "#planks"},
-				"west": {"uv": [0, 5, 14, 12], "texture": "#planks"},
-				"up": {"uv": [14, 5, 0, 3], "rotation": 90, "texture": "#planks"},
+				"west": {"uv": [2, 5, 16, 12], "texture": "#planks"},
+				"up": {"uv": [16, 5, 2, 3], "rotation": 90, "texture": "#planks"},
 				"down": {"uv": [15, 7, 1, 9], "rotation": 270, "texture": "#planks"}
 			}
 		},
@@ -104,9 +104,9 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 16, 12], "texture": "#planks"},
-				"east": {"uv": [0, 0, 2, 12], "texture": "#planks"},
+				"east": {"uv": [14, 0, 16, 12], "texture": "#planks"},
 				"south": {"uv": [0, 0, 16, 12], "texture": "#planks"},
-				"west": {"uv": [14, 0, 16, 12], "texture": "#planks"},
+				"west": {"uv": [0, 0, 2, 12], "texture": "#planks"},
 				"up": {"uv": [16, 2, 0, 0], "texture": "#planks"},
 				"down": {"uv": [0, 16, 16, 14], "texture": "#planks"}
 			}

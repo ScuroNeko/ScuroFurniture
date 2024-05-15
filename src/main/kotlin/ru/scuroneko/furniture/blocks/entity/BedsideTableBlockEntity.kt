@@ -13,7 +13,6 @@ import net.minecraft.text.Text
 import net.minecraft.util.collection.DefaultedList
 import net.minecraft.util.math.BlockPos
 import ru.scuroneko.furniture.Constants
-import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.BedsideTableScreenHandler
 import ru.scuroneko.furniture.registry.ModBlockEntities
@@ -42,6 +41,6 @@ class BedsideTableBlockEntity(pos: BlockPos, state: BlockState) :
         return BedsideTableScreenHandler(syncId, playerInventory, this, this.boxIndex)
     }
 
-    override fun getDisplayName(): Text = Text.translatable(Constants.ScreenNames.BEDSIDE_DRAWER)
+    override fun getDisplayName(): Text = Text.translatable(Constants.Translatable.BEDSIDE_DRAWER)
     override fun getItems(): DefaultedList<ItemStack> = this.inventory
 }

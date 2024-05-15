@@ -38,8 +38,6 @@ object ScuroFurniture : ModInitializer {
         AutoRegistry<EntityType<*>>().processContainer(ModEntities, MOD_ID)
         AutoRegistry<BlockEntityType<*>>().processContainer(ModBlockEntities, MOD_ID)
 
-        ModRecipes.register()
-
         ModScreenHandlers.register()
 
         LOGGER.info("Initializing Furniture")
