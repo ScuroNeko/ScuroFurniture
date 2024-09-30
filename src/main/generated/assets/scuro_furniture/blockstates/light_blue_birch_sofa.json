@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,type=center": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_center",
+      "y": 90
+    },
+    "facing=east,type=left": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_left",
+      "y": 90
+    },
+    "facing=east,type=right": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_right",
+      "y": 90
+    },
+    "facing=east,type=single": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa",
+      "y": 90
+    },
+    "facing=north,type=center": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_center"
+    },
+    "facing=north,type=left": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_left"
+    },
+    "facing=north,type=right": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_right"
+    },
+    "facing=north,type=single": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa"
+    },
+    "facing=south,type=center": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_center",
+      "y": 180
+    },
+    "facing=south,type=left": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_left",
+      "y": 180
+    },
+    "facing=south,type=right": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_right",
+      "y": 180
+    },
+    "facing=south,type=single": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa",
+      "y": 180
+    },
+    "facing=west,type=center": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_center",
+      "y": 270
+    },
+    "facing=west,type=left": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_left",
+      "y": 270
+    },
+    "facing=west,type=right": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa_right",
+      "y": 270
+    },
+    "facing=west,type=single": {
+      "model": "scuro_furniture:block/light_blue_birch_sofa",
+      "y": 270
+    }
+  }
+}

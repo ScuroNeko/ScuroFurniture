@@ -1,7 +1,7 @@
 package ru.scuroneko.furniture.registry.blocks
 
 import net.minecraft.block.Block
-import ru.scuroneko.furniture.api.registry.IBlocksContainer
+import ru.scuroneko.furniture.api.registry.autoregistry.IBlocksContainer
 import ru.scuroneko.furniture.blocks.BedsideDrawerBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents

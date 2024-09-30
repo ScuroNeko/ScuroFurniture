@@ -1,7 +1,6 @@
 package ru.scuroneko.furniture.api.gui
 
 import com.mojang.blaze3d.systems.RenderSystem
-import net.minecraft.block.entity.BlockEntity
 import net.minecraft.client.gui.DrawContext
 import net.minecraft.client.gui.screen.ingame.HandledScreen
 import net.minecraft.client.render.GameRenderer
@@ -9,11 +8,6 @@ import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import ru.scuroneko.furniture.Constants
-import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
-import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
-import ru.scuroneko.furniture.gui.KitchenDrawerScreenHandler
-import ru.scuroneko.furniture.utils.DrawerUtils
 
 abstract class AbstractDrawerScreen<T : ScreenHandler>(
     handler: T,

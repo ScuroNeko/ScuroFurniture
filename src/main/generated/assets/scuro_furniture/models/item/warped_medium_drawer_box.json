@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:item/medium_drawer_box",
+  "textures": {
+    "drawer_box": "minecraft:block/warped_planks"
+  }
+}

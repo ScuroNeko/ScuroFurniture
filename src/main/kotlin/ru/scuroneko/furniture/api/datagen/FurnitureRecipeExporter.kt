@@ -129,6 +129,16 @@ class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
             .offerTo(exporter)
     }
 
+    fun createShelfRecipe(shelf: ShelfBlock) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, shelf)
+            .pattern("ppp").pattern("s s")
+            .input('p', shelf.slab).input('s', Items.STICK)
+            .criterion(hasItem(shelf.slab), conditionsFromItem(shelf.slab))
+            .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+            .group("shelves")
+            .offerTo(exporter)
+    }
+
     private fun getSofaGroup(sofa: SofaBlock): String {
         val mat = TextureMap.getId(sofa.base).path.split('/')[1]
         return mat.replace("planks", "sofas")

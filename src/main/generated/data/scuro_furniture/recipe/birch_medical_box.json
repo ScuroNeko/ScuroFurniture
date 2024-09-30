@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "medical_boxes",
+  "key": {
+    "p": {
+      "item": "minecraft:birch_slab"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "sps",
+    "p p",
+    "sps"
+  ],
+  "result": {
+    "count": 4,
+    "id": "scuro_furniture:birch_medical_box"
+  }
+}

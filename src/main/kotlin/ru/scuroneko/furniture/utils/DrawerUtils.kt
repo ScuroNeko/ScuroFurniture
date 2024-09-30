@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.Constants
 
 object DrawerUtils {
-    fun blockToMaterial(block: Block): String = when(block) {
+    fun blockToMaterial(block: Block): String = when (block) {
         Blocks.OAK_PLANKS, Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG -> "oak"
         Blocks.SPRUCE_PLANKS, Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG -> "spruce"
         Blocks.BIRCH_PLANKS, Blocks.BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG -> "birch"
@@ -15,10 +15,11 @@ object DrawerUtils {
         else -> "air"
     }
 
-    fun materialToId(holder: Constants.ScreenMaterialTextures.DrawerIdHolder, material: String): Identifier = when(material) {
-        "oak" -> holder.OAK
-        "spruce" -> holder.SPRUCE
-        "cherry" -> holder.CHERRY
-        else -> holder.DEFAULT
-    }
+    fun materialToId(holder: Constants.ScreenMaterialTextures.DrawerIdHolder, material: String): Identifier =
+        when (material) {
+            "oak" -> holder.OAK
+            "spruce" -> holder.SPRUCE
+            "cherry" -> holder.CHERRY
+            else -> holder.DEFAULT
+        }
 }

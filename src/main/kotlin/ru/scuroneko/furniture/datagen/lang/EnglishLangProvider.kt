@@ -2,14 +2,16 @@ package ru.scuroneko.furniture.datagen.lang
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
+import net.minecraft.registry.RegistryWrapper
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
+import java.util.concurrent.CompletableFuture
 
-class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(output) {
-    override fun generateTranslations(builder: TranslationBuilder) {
+class EnglishLangProvider(output: FabricDataOutput, lookup: CompletableFuture<RegistryWrapper.WrapperLookup>) : FabricLanguageProvider(output, lookup) {
+    override fun generateTranslations(registryLookup: RegistryWrapper.WrapperLookup, builder: TranslationBuilder) {
         builder.add(
             Constants.Translatable.CARPENTER_GROUP, "Scuro's Furniture"
         )
@@ -301,15 +303,27 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(KitchenDrawers.WHITE_DARK_OAK_KITCHEN_DRAWER, "White dark oak kitchen drawer")
         builder.add(KitchenDrawers.BLACK_DARK_OAK_LOG_KITCHEN_DRAWER, "Black dark oak log kitchen drawer")
         builder.add(KitchenDrawers.WHITE_DARK_OAK_LOG_KITCHEN_DRAWER, "White dark oak log kitchen drawer")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER, "Black stripped dark oak log kitchen drawer")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER, "White stripped dark oak log kitchen drawer")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER,
+            "Black stripped dark oak log kitchen drawer"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER,
+            "White stripped dark oak log kitchen drawer"
+        )
 
         builder.add(KitchenDrawers.BLACK_MANGROVE_KITCHEN_DRAWER, "Black mangrove kitchen drawer")
         builder.add(KitchenDrawers.WHITE_MANGROVE_KITCHEN_DRAWER, "White mangrove kitchen drawer")
         builder.add(KitchenDrawers.BLACK_MANGROVE_LOG_KITCHEN_DRAWER, "Black mangrove log kitchen drawer")
         builder.add(KitchenDrawers.WHITE_MANGROVE_LOG_KITCHEN_DRAWER, "White mangrove log kitchen drawer")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER, "Black stripped mangrove log kitchen drawer")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER, "White stripped mangrove log kitchen drawer")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER,
+            "Black stripped mangrove log kitchen drawer"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER,
+            "White stripped mangrove log kitchen drawer"
+        )
 
         builder.add(KitchenDrawers.BLACK_CHERRY_KITCHEN_DRAWER, "Black cherry kitchen drawer")
         builder.add(KitchenDrawers.WHITE_CHERRY_KITCHEN_DRAWER, "White cherry kitchen drawer")
@@ -324,8 +338,14 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(KitchenDrawers.WHITE_BAMBOO_MOSAIC_KITCHEN_DRAWER, "White bamboo mosaic kitchen drawer")
         builder.add(KitchenDrawers.BLACK_BAMBOO_BLOCK_KITCHEN_DRAWER, "Black bamboo block kitchen drawer")
         builder.add(KitchenDrawers.WHITE_BAMBOO_BLOCK_KITCHEN_DRAWER, "White bamboo block kitchen drawer")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER, "Black stripped bamboo block kitchen drawer")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER, "White stripped bamboo block kitchen drawer")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER,
+            "Black stripped bamboo block kitchen drawer"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER,
+            "White stripped bamboo block kitchen drawer"
+        )
 
         // Kitchen cabinets
         builder.add(KitchenCabinets.CHERRY_KITCHEN_CABINET, "Cherry kitchen cabinet")
@@ -472,5 +492,14 @@ class EnglishLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(Sofas.PURPLE_CHERRY_SOFA, "Purple cherry sofa")
         builder.add(Sofas.MAGENTA_CHERRY_SOFA, "Magenta cherry sofa")
         builder.add(Sofas.PINK_CHERRY_SOFA, "Pink cherry sofa")
+
+        builder.add(Shelves.OAK_SHELF, "Oak shelf")
+        builder.add(Shelves.SPRUCE_SHELF, "Spruce shelf")
+        builder.add(Shelves.BIRCH_SHELF, "Birch shelf")
+        builder.add(Shelves.JUNGLE_SHELF, "Jungle shelf")
+        builder.add(Shelves.ACACIA_SHELF, "Acacia shelf")
+        builder.add(Shelves.DARK_OAK_SHELF, "Dark oak shelf")
+        builder.add(Shelves.MANGROVE_SHELF, "Mangrove shelf")
+        builder.add(Shelves.CHERRY_SHELF, "Cherry shelf")
     }
 }

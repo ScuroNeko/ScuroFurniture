@@ -2,7 +2,6 @@ package ru.scuroneko.furniture.api.blocks
 
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
-import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.*
 import net.minecraft.client.MinecraftClient
 import net.minecraft.entity.player.PlayerEntity
@@ -13,6 +12,7 @@ import net.minecraft.sound.SoundEvents
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.Properties.AXIS
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
+import net.minecraft.text.Text
 import net.minecraft.util.*
 import net.minecraft.util.function.BooleanBiFunction
 import net.minecraft.util.hit.BlockHitResult
@@ -37,7 +37,7 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     var case: CaseItem = MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE
     var box: BoxItem = MedicalDrawersComponents.OAK_MEDICAL_BOX
 
-    constructor(case: CaseItem, box: BoxItem) : this(FabricBlockSettings.copy(case.material)) {
+    constructor(case: CaseItem, box: BoxItem) : this(Settings.copy(case.material)) {
         this.case = case
         this.box = box
     }
@@ -64,7 +64,6 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
         world: World,
         pos: BlockPos,
         player: PlayerEntity,
-        hand: Hand,
         hit: BlockHitResult
     ): ActionResult {
         this.boxList.keys.forEach { box ->
@@ -92,11 +91,9 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
 
     private fun isRayInBox(box: VoxelShape, blockPos: BlockPos, pos: Vec3d): Boolean {
         val bound = box.boundingBox
-        return this.isInX(bound, blockPos.x, pos.x) && this.isInY(bound, blockPos.y, pos.y) && this.isInZ(
-            bound,
-            blockPos.z,
-            pos.z
-        )
+        return this.isInX(bound, blockPos.x, pos.x) &&
+                this.isInY(bound, blockPos.y, pos.y) &&
+                this.isInZ(bound, blockPos.z, pos.z)
     }
 
     fun isInX(box: Box, posX: Int, x: Double): Boolean = posX + box.minX <= x && posX + box.maxX >= x

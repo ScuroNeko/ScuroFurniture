@@ -13,18 +13,18 @@ object Constants {
     }
 
     object ScreenTextures {
-        val MEDICAL_DRAWER = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/medical_drawer.png")
-        val BEDSIDE_DRAWER = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/bedside_table.png")
+        val MEDICAL_DRAWER = Identifier.of(ScuroFurniture.MOD_ID, "textures/gui/container/medical_drawer.png")
+        val BEDSIDE_DRAWER = Identifier.of(ScuroFurniture.MOD_ID, "textures/gui/container/bedside_table.png")
     }
 
     object ScreenMaterialTextures {
         val MEDICAL_DRAWER = DrawerIdHolder("medical_drawer")
 
         class DrawerIdHolder(container: String) {
-            val OAK = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container/oak.png")
-            val SPRUCE = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container/spruce.png")
-            val CHERRY = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container/cherry.png")
-            val DEFAULT = Identifier(ScuroFurniture.MOD_ID, "textures/gui/container/$container.png")
+            val OAK = Identifier.of(ScuroFurniture.MOD_ID, "textures/gui/container/$container/oak.png")
+            val SPRUCE = Identifier.of(ScuroFurniture.MOD_ID, "textures/gui/container/$container/spruce.png")
+            val CHERRY = Identifier.of(ScuroFurniture.MOD_ID, "textures/gui/container/$container/cherry.png")
+            val DEFAULT = Identifier.of(ScuroFurniture.MOD_ID, "textures/gui/container/$container.png")
         }
     }
 }

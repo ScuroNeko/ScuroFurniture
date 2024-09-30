@@ -1,0 +1,8 @@
+{
+  "parent": "scuro_furniture:block/medical_drawer",
+  "textures": {
+    "drawer_box": "minecraft:block/oak_planks",
+    "drawer_case": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks"
+  }
+}

@@ -8,19 +8,20 @@ import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 import ru.scuroneko.furniture.item.MedicalDrawerCaseItem
-import java.util.ArrayList
 
 object RegistryHelper {
     object Blocks {
         val BLOCKS = ArrayList<Block>()
+
         val MEDICAL_DRAWERS = ArrayList<MedicalDrawerBlock>()
         val BEDSIDE_DRAWERS = ArrayList<BedsideDrawerBlock>()
         val KITCHEN_DRAWERS = ArrayList<KitchenDrawerBlock>()
         val KITCHEN_CABINETS = ArrayList<KitchenCabinetBlock>()
+        val KITCHEN_GLASS_CABINETS = ArrayList<KitchenGlassCabinetBlock>()
         val LAMPS = ArrayList<LampBlock>()
         val SOFAS = ArrayList<SofaBlock>()
 
-        val COFFEE_TABLES = ArrayList<CoffeeTableBlock>()
+        val SHELVES = ArrayList<ShelfBlock>()
     }
 
     object Items {

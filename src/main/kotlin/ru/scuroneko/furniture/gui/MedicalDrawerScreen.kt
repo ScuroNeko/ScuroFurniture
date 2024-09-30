@@ -8,12 +8,12 @@ import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.Constants
-import ru.scuroneko.furniture.api.gui.AbstractDrawerScreen
-import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.utils.DrawerUtils
 
-class MedicalDrawerScreen(handler: MedicalDrawerScreenHandler, inventory: PlayerInventory, title: Text) : HandledScreen<MedicalDrawerScreenHandler>(handler, inventory, title) {
-    var texture: Identifier = DrawerUtils.materialToId(Constants.ScreenMaterialTextures.MEDICAL_DRAWER, this.handler.material)
+class MedicalDrawerScreen(handler: MedicalDrawerScreenHandler, inventory: PlayerInventory, title: Text) :
+    HandledScreen<MedicalDrawerScreenHandler>(handler, inventory, title) {
+//    var texture: Identifier = DrawerUtils.materialToId(Constants.ScreenMaterialTextures.MEDICAL_DRAWER, this.handler.material)
+    val texture = Constants.ScreenTextures.MEDICAL_DRAWER
 
     override fun drawBackground(context: DrawContext, delta: Float, mouseX: Int, mouseY: Int) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram)

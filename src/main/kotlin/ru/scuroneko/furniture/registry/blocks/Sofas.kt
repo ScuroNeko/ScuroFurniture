@@ -2,7 +2,7 @@ package ru.scuroneko.furniture.registry.blocks
 
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
-import ru.scuroneko.furniture.api.registry.IBlocksContainer
+import ru.scuroneko.furniture.api.registry.autoregistry.IBlocksContainer
 import ru.scuroneko.furniture.blocks.SofaBlock
 import ru.scuroneko.furniture.registry.RegistryHelper
 

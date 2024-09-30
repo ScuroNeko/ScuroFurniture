@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "medium_boxes",
+  "key": {
+    "p": {
+      "item": "minecraft:crimson_slab"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ppp",
+    "s s",
+    "ppp"
+  ],
+  "result": {
+    "count": 2,
+    "id": "scuro_furniture:crimson_medium_drawer_box"
+  }
+}

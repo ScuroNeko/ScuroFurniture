@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "jungle_sofas",
+  "key": {
+    "l": {
+      "item": "minecraft:stripped_jungle_log"
+    },
+    "p": {
+      "item": "minecraft:jungle_planks"
+    },
+    "w": {
+      "item": "minecraft:red_wool"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pwp",
+    "lpl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:red_jungle_sofa"
+  }
+}

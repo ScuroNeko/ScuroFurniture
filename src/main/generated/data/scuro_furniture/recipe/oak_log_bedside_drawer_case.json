@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bedside_drawer_cases",
+  "key": {
+    "s": {
+      "item": "minecraft:oak_slab"
+    },
+    "w": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "sss",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:oak_log_bedside_drawer_case"
+  }
+}

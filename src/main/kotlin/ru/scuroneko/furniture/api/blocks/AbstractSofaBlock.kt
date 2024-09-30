@@ -1,6 +1,5 @@
 package ru.scuroneko.furniture.api.blocks
 
-import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
@@ -11,7 +10,6 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.item.ItemStack
 import net.minecraft.state.StateManager
-import net.minecraft.state.property.EnumProperty
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
@@ -26,7 +24,7 @@ abstract class AbstractSofaBlock<T : Entity>(settings: Settings) : HorizontalFac
     var leg: Block = Blocks.STRIPPED_OAK_LOG
     var wool: Block = Blocks.WHITE_WOOL
 
-    constructor(base: Block, leg: Block, wool: Block) : this(FabricBlockSettings.copy(base)) {
+    constructor(base: Block, leg: Block, wool: Block) : this(Settings.copy(base)) {
         this.base = base
         this.leg = leg
         this.wool = wool

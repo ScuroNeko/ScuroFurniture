@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mangrove_sofas",
+  "key": {
+    "l": {
+      "item": "minecraft:stripped_mangrove_log"
+    },
+    "p": {
+      "item": "minecraft:mangrove_planks"
+    },
+    "w": {
+      "item": "minecraft:purple_wool"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pwp",
+    "lpl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:purple_mangrove_sofa"
+  }
+}

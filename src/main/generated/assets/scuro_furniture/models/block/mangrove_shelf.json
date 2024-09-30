@@ -1,0 +1,7 @@
+{
+  "parent": "scuro_furniture:block/shelf",
+  "textures": {
+    "particle": "minecraft:block/mangrove_planks",
+    "planks": "minecraft:block/mangrove_planks"
+  }
+}

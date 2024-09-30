@@ -5,9 +5,7 @@ import net.minecraft.data.client.TextureKey
 import net.minecraft.data.client.TextureMap
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
-import ru.scuroneko.furniture.blocks.CoffeeTableBlock
-import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
-import ru.scuroneko.furniture.blocks.SofaBlock
+import ru.scuroneko.furniture.blocks.*
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
@@ -43,11 +41,13 @@ object ModTextureMap {
             .put(TextureKey.PARTICLE, TextureMap.getId(sofa.base))
     }
 
-    fun coffeeTable(block: Block): TextureMap {
-        block as CoffeeTableBlock
+    fun lamp(block: Block): TextureMap {
+        val lamp = block as LampBlock
         return TextureMap()
-            .put(TextureKey.PARTICLE, TextureMap.getId(block.wood))
-            .put(TextureKey.TEXTURE, TextureMap.getId(block.wood))
+            .put(ModTextureKeys.WOOL, TextureMap.getId(lamp.wool))
+            .put(TextureKey.PARTICLE, TextureMap.getId(lamp.wool))
+            .put(ModTextureKeys.PLANKS, slabToPlanks(lamp.slab))
+            .put(ModTextureKeys.LOG, TextureMap.getId(lamp.log))
     }
 
     /**
@@ -55,7 +55,7 @@ object ModTextureMap {
      */
     fun slabToPlanks(slab: Block): Identifier {
         val id = TextureMap.getId(slab)
-        return Identifier(id.namespace, id.path.replace("slab", "planks"))
+        return Identifier.of(id.namespace, id.path.replace("slab", "planks"))
     }
 
     fun boxPlanks(box: BoxItem): Identifier = slabToPlanks(box.slab)

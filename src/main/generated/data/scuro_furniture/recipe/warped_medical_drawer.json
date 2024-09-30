@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "medical_drawers",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:warped_medical_box"
+    },
+    {
+      "item": "scuro_furniture:warped_medical_box"
+    },
+    {
+      "item": "scuro_furniture:warped_medical_box"
+    },
+    {
+      "item": "scuro_furniture:warped_medical_box"
+    },
+    {
+      "item": "scuro_furniture:warped_medical_drawer_case"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:warped_medical_drawer"
+  }
+}

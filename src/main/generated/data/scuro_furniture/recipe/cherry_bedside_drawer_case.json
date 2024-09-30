@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bedside_drawer_cases",
+  "key": {
+    "s": {
+      "item": "minecraft:cherry_slab"
+    },
+    "w": {
+      "item": "minecraft:cherry_planks"
+    }
+  },
+  "pattern": [
+    "sss",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:cherry_bedside_drawer_case"
+  }
+}

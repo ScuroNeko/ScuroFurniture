@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "medical_drawer_cases",
+  "key": {
+    "s": {
+      "item": "minecraft:jungle_slab"
+    },
+    "w": {
+      "item": "minecraft:jungle_planks"
+    }
+  },
+  "pattern": [
+    " s ",
+    "sws",
+    " s "
+  ],
+  "result": {
+    "count": 4,
+    "id": "scuro_furniture:jungle_medical_drawer_case"
+  }
+}

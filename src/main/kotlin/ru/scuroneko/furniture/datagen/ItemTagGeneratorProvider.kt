@@ -14,7 +14,8 @@ class ItemTagGeneratorProvider(output: FabricDataOutput, completableFuture: Comp
         getOrCreateTagBuilder(ModItemTags.MEDICAL_BOXES).add(*RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.toTypedArray())
 
         getOrCreateTagBuilder(ModItemTags.MEDICAL_DRAWERS_CASES).add(*RegistryHelper.Items.MEDICAL_DRAWERS_CASES.toTypedArray())
-
-        getOrCreateTagBuilder(ModItemTags.MEDICAL_DRAWERS).add(*RegistryHelper.Items.MEDICAL_DRAWERS.toTypedArray())
+        getOrCreateTagBuilder(ModItemTags.BEDSIDE_DRAWERS_CASES).add(*RegistryHelper.Items.BEDSIDE_DRAWERS_CASES.toTypedArray())
+        getOrCreateTagBuilder(ModItemTags.KITCHEN_DRAWERS_CASES).add(*RegistryHelper.Items.KITCHEN_DRAWERS_CASES.toTypedArray())
+        getOrCreateTagBuilder(ModItemTags.KITCHEN_CABINETS_CASES).add(*RegistryHelper.Items.KITCHEN_CABINETS_CASES.toTypedArray())
     }
 }

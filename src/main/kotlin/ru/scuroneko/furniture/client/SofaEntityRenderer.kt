@@ -7,6 +7,6 @@ import ru.scuroneko.furniture.blocks.entity.SofaEntity
 
 class SofaEntityRenderer(ctx: EntityRendererFactory.Context) : EntityRenderer<SofaEntity>(ctx) {
     override fun getTexture(entity: SofaEntity): Identifier {
-        return Identifier("minecraft", "textures/block/cherry_planks.png")
+        return Identifier.of("minecraft", "textures/block/cherry_planks.png")
     }
 }

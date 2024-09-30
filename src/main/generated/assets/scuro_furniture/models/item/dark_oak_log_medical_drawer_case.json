@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:item/medical_drawer_case",
+  "textures": {
+    "drawer_case": "minecraft:block/dark_oak_log"
+  }
+}

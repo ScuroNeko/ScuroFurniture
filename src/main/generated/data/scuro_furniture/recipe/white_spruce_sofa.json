@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "spruce_sofas",
+  "key": {
+    "l": {
+      "item": "minecraft:stripped_spruce_log"
+    },
+    "p": {
+      "item": "minecraft:spruce_planks"
+    },
+    "w": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pwp",
+    "lpl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:white_spruce_sofa"
+  }
+}

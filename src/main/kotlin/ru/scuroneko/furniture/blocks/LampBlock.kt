@@ -1,25 +1,19 @@
 package ru.scuroneko.furniture.blocks
 
 import com.mojang.serialization.MapCodec
-import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.*
-import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
-import net.minecraft.util.ActionResult
-import net.minecraft.util.Hand
 import net.minecraft.util.function.BooleanBiFunction
-import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
-import net.minecraft.world.World
 
 class LampBlock(val slab: Block, val fence: Block, val wool: Block, val log: Block) :
-    HorizontalFacingBlock(FabricBlockSettings.copy(slab).luminance { _ -> 15 }) {
+    HorizontalFacingBlock(Settings.copy(slab).luminance { _ -> 15 }) {
     private constructor(settings: Settings) : this(
         Blocks.OAK_SLAB,
         Blocks.OAK_FENCE,

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchen_drawer_cases",
+  "key": {
+    "c": {
+      "item": "minecraft:black_concrete"
+    },
+    "s": {
+      "item": "minecraft:mangrove_slab"
+    },
+    "w": {
+      "item": "minecraft:mangrove_log"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 4,
+    "id": "scuro_furniture:black_mangrove_log_kitchen_drawer_case"
+  }
+}

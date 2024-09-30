@@ -4,7 +4,6 @@ import com.mojang.serialization.MapCodec
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
 import net.minecraft.block.entity.BlockEntity
-import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.state.property.Properties.HORIZONTAL_FACING
 import net.minecraft.util.function.BooleanBiFunction
@@ -13,7 +12,6 @@ import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.World
-import ru.scuroneko.furniture.ModBlocks
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem

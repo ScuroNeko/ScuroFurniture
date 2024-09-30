@@ -1,37 +1,26 @@
 package ru.scuroneko.furniture.registry
 
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType
-import net.minecraft.client.render.entity.feature.TridentRiptideFeatureRenderer.BOX
+import net.minecraft.block.StonecutterBlock
+import net.minecraft.network.codec.PacketCodec
+import net.minecraft.network.codec.PacketCodecs
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
+import net.minecraft.resource.featuretoggle.FeatureFlag
 import net.minecraft.resource.featuretoggle.FeatureFlags
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.ScreenHandlerType
-import net.minecraft.util.Identifier
-import ru.scuroneko.furniture.ScuroFurniture
+import net.minecraft.screen.StonecutterScreenHandler
+import ru.scuroneko.furniture.api.registry.autoregistry.IRegistryContainer
 import ru.scuroneko.furniture.gui.BedsideTableScreenHandler
 import ru.scuroneko.furniture.gui.KitchenDrawerScreenHandler
 import ru.scuroneko.furniture.gui.MedicalDrawerScreenHandler
 
 
-object ModScreenHandlers {
-    val MEDICAL_DRAWER_SCREEN_HANDLER = ExtendedScreenHandlerType(::MedicalDrawerScreenHandler)
+object ModScreenHandlers : IRegistryContainer<ScreenHandlerType<*>> {
+    val MEDICAL_DRAWER_SCREEN_HANDLER = ScreenHandlerType(::MedicalDrawerScreenHandler, FeatureFlags.VANILLA_FEATURES)
     val BEDSIDE_TABLE_SCREEN_HANDLER = ScreenHandlerType(::BedsideTableScreenHandler, FeatureFlags.VANILLA_FEATURES)
     val KITCHEN_DRAWER_SCREEN_HANDLER = ScreenHandlerType(::KitchenDrawerScreenHandler, FeatureFlags.VANILLA_FEATURES)
 
-    fun register() {
-        register("medical_drawer", MEDICAL_DRAWER_SCREEN_HANDLER)
-        register("bedside_table", BEDSIDE_TABLE_SCREEN_HANDLER)
-        register("kitchen_drawer", KITCHEN_DRAWER_SCREEN_HANDLER)
-    }
-
-    private fun <T : ScreenHandler> register(
-        path: String,
-        factory: ScreenHandlerType<T>
-    ): ScreenHandlerType<T> {
-        return Registry.register(
-            Registries.SCREEN_HANDLER, Identifier(ScuroFurniture.MOD_ID, path), factory
-        )
-    }
+    override fun getRegistry(): Registry<ScreenHandlerType<*>> = Registries.SCREEN_HANDLER
 }

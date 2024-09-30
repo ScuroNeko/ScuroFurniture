@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "dark_oak_sofas",
+  "key": {
+    "l": {
+      "item": "minecraft:stripped_dark_oak_log"
+    },
+    "p": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "w": {
+      "item": "minecraft:lime_wool"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pwp",
+    "lpl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:lime_dark_oak_sofa"
+  }
+}

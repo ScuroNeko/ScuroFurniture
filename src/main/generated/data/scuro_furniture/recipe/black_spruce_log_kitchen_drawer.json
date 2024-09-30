@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchen_drawer",
+  "ingredients": [
+    {
+      "item": "scuro_furniture:spruce_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:spruce_medium_drawer_box"
+    },
+    {
+      "item": "scuro_furniture:black_spruce_log_kitchen_drawer_case"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:black_spruce_log_kitchen_drawer"
+  }
+}

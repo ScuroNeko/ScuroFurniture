@@ -14,9 +14,9 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
-import ru.scuroneko.furniture.api.properties.SofaType
 import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
 import ru.scuroneko.furniture.api.properties.ModProperties
+import ru.scuroneko.furniture.api.properties.SofaType
 import ru.scuroneko.furniture.blocks.entity.SofaEntity
 import ru.scuroneko.furniture.registry.ModEntities
 import ru.scuroneko.furniture.utils.MathUtils
@@ -93,7 +93,8 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
     )
 
     init {
-        defaultState = defaultState.with(HORIZONTAL_FACING, Direction.NORTH).with(ModProperties.SOFA_TYPE, SofaType.SINGLE)
+        defaultState =
+            defaultState.with(HORIZONTAL_FACING, Direction.NORTH).with(ModProperties.SOFA_TYPE, SofaType.SINGLE)
     }
 
     override fun onUse(
@@ -101,7 +102,6 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
         world: World,
         pos: BlockPos,
         player: PlayerEntity,
-        hand: Hand,
         hit: BlockHitResult
     ): ActionResult {
         if (!world.isClient) {
@@ -111,7 +111,7 @@ class SofaBlock(base: Block, leg: Block, wool: Block) : AbstractSofaBlock<SofaEn
             if (entity.hasPassengers()) return ActionResult.FAIL
             player.startRiding(entity)
         }
-        return super.onUse(state, world, pos, player, hand, hit)
+        return super.onUse(state, world, pos, player, hit)
     }
 
     fun getShape(state: BlockState): VoxelShape {

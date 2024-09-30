@@ -2,15 +2,18 @@ package ru.scuroneko.furniture.datagen.lang
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
+import net.minecraft.registry.RegistryWrapper
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
+import java.lang.foreign.SymbolLookup
+import java.util.concurrent.CompletableFuture
 
 
-class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(output, "ru_ru") {
-    override fun generateTranslations(builder: TranslationBuilder) {
+class RussianLangProvider(output: FabricDataOutput, lookup: CompletableFuture<RegistryWrapper.WrapperLookup>) : FabricLanguageProvider(output, "ru_ru", lookup) {
+    override fun generateTranslations(registryLookup: RegistryWrapper.WrapperLookup, builder: TranslationBuilder) {
         builder.add(Constants.Translatable.MEDICAL_DRAWER, "Аптечный шкафчик")
         builder.add(Constants.Translatable.BEDSIDE_DRAWER, "Прикроватная тумба")
         builder.add(Constants.Translatable.KITCHEN_DRAWER, "Кухонная тумба")
@@ -322,57 +325,105 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(KitchenDrawers.WHITE_OAK_KITCHEN_DRAWER, "Белая дубовая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_OAK_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из бревна дуба")
         builder.add(KitchenDrawers.WHITE_OAK_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из бревна дуба")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_OAK_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного бревна дуба")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_OAK_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного бревна дуба")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_OAK_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного бревна дуба"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_OAK_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного бревна дуба"
+        )
 
         builder.add(KitchenDrawers.BLACK_SPRUCE_KITCHEN_DRAWER, "Черная еловая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_SPRUCE_KITCHEN_DRAWER, "Белая еловая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_SPRUCE_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из бревна ели")
         builder.add(KitchenDrawers.WHITE_SPRUCE_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из бревна ели")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_SPRUCE_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного бревна ели")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_SPRUCE_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного бревна ели")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_SPRUCE_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного бревна ели"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_SPRUCE_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного бревна ели"
+        )
 
         builder.add(KitchenDrawers.BLACK_BIRCH_KITCHEN_DRAWER, "Черная березовая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_BIRCH_KITCHEN_DRAWER, "Белая березовая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_BIRCH_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из бревна березы")
         builder.add(KitchenDrawers.WHITE_BIRCH_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из бревна березы")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_BIRCH_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного бревна березы")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_BIRCH_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного бревна березы")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_BIRCH_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного бревна березы"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_BIRCH_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного бревна березы"
+        )
 
         builder.add(KitchenDrawers.BLACK_JUNGLE_KITCHEN_DRAWER, "Черная тропическая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_JUNGLE_KITCHEN_DRAWER, "Белая тропическая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_JUNGLE_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из тропического бревна")
         builder.add(KitchenDrawers.WHITE_JUNGLE_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из тропического бревна")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_JUNGLE_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного тропического бревна")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_JUNGLE_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного тропического бревна")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_JUNGLE_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного тропического бревна"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_JUNGLE_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного тропического бревна"
+        )
 
         builder.add(KitchenDrawers.BLACK_MANGROVE_KITCHEN_DRAWER, "Черная мангровая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_MANGROVE_KITCHEN_DRAWER, "Белая мангровая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_MANGROVE_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из мангрового бревна")
         builder.add(KitchenDrawers.WHITE_MANGROVE_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из мангрового бревна")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного мангрового бревна")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного мангрового бревна")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного мангрового бревна"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_MANGROVE_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного мангрового бревна"
+        )
 
         builder.add(KitchenDrawers.BLACK_ACACIA_KITCHEN_DRAWER, "Черная акациевая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_ACACIA_KITCHEN_DRAWER, "Белая акациевая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_ACACIA_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из бревна акации")
         builder.add(KitchenDrawers.WHITE_ACACIA_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из бревна акации")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_ACACIA_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного бревна акации")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_ACACIA_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного бревна акации")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_ACACIA_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного бревна акации"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_ACACIA_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного бревна акации"
+        )
 
         builder.add(KitchenDrawers.BLACK_DARK_OAK_KITCHEN_DRAWER, "Черная кухонная тумба из темного дуба")
         builder.add(KitchenDrawers.WHITE_DARK_OAK_KITCHEN_DRAWER, "Белая кухонная тумба из темного дуба")
         builder.add(KitchenDrawers.BLACK_DARK_OAK_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из бревна темного дуба")
         builder.add(KitchenDrawers.WHITE_DARK_OAK_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из бревна темного дуба")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного бревна темного дуба")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного бревна темного дуба")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного бревна темного дуба"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_DARK_OAK_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного бревна темного дуба"
+        )
 
         builder.add(KitchenDrawers.BLACK_CHERRY_KITCHEN_DRAWER, "Черная вишневая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_CHERRY_KITCHEN_DRAWER, "Белая вишневая кухонная тумба")
         builder.add(KitchenDrawers.BLACK_CHERRY_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из вишневого бревна")
         builder.add(KitchenDrawers.WHITE_CHERRY_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из вишневого бревна")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного вишневого бревна")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного вишневого бревна")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного вишневого бревна"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_CHERRY_LOG_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного вишневого бревна"
+        )
 
         builder.add(KitchenDrawers.BLACK_BAMBOO_KITCHEN_DRAWER, "Черная бамбуковая кухонная тумба")
         builder.add(KitchenDrawers.WHITE_BAMBOO_KITCHEN_DRAWER, "Белая бамбуковая кухонная тумба")
@@ -380,8 +431,14 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(KitchenDrawers.WHITE_BAMBOO_MOSAIC_KITCHEN_DRAWER, "Белая кухонная тумба из бамбуковой мозаики")
         builder.add(KitchenDrawers.BLACK_BAMBOO_BLOCK_KITCHEN_DRAWER, "Черная кухонная тумба из бамбукового блока")
         builder.add(KitchenDrawers.WHITE_BAMBOO_BLOCK_KITCHEN_DRAWER, "Белая кухонная тумба из бамбукового блока")
-        builder.add(KitchenDrawers.BLACK_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER, "Черная кухонная тумба из обтесанного бамбукового блока")
-        builder.add(KitchenDrawers.WHITE_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER, "Белая кухонная тумба из обтесанного бамбукового блока")
+        builder.add(
+            KitchenDrawers.BLACK_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER,
+            "Черная кухонная тумба из обтесанного бамбукового блока"
+        )
+        builder.add(
+            KitchenDrawers.WHITE_STRIPPED_BAMBOO_BLOCK_KITCHEN_DRAWER,
+            "Белая кухонная тумба из обтесанного бамбукового блока"
+        )
 
         //
         builder.add(KitchenCabinets.CHERRY_KITCHEN_CABINET, "Вишневый кухонный ящик")
@@ -527,5 +584,14 @@ class RussianLangProvider(output: FabricDataOutput) : FabricLanguageProvider(out
         builder.add(Sofas.PURPLE_CHERRY_SOFA, "Фиолетовый вишневый диван")
         builder.add(Sofas.MAGENTA_CHERRY_SOFA, "Пурпурный вишневый диван")
         builder.add(Sofas.PINK_CHERRY_SOFA, "Розовый вишневый диван")
+
+        builder.add(Shelves.OAK_SHELF, "Дубовая полка")
+        builder.add(Shelves.SPRUCE_SHELF, "Еловая полка")
+        builder.add(Shelves.BIRCH_SHELF, "Березовая полка")
+        builder.add(Shelves.JUNGLE_SHELF, "Тропическая полка")
+        builder.add(Shelves.ACACIA_SHELF, "Акациевая полка")
+        builder.add(Shelves.DARK_OAK_SHELF, "Полка из темного дуба")
+        builder.add(Shelves.MANGROVE_SHELF, "Мангровая полка")
+        builder.add(Shelves.CHERRY_SHELF, "Вишневая полка")
     }
 }

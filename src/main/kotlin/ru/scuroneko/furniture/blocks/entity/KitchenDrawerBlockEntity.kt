@@ -7,6 +7,8 @@ import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.inventory.Inventories
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
+import net.minecraft.registry.RegistryEntryLookup
+import net.minecraft.registry.RegistryWrapper
 import net.minecraft.screen.NamedScreenHandlerFactory
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.text.Text
@@ -16,10 +18,10 @@ import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.KitchenDrawerScreenHandler
 import ru.scuroneko.furniture.registry.ModBlockEntities
+import ru.scuroneko.furniture.registry.RegistryHelper
 
 class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) :
-    BlockEntity(ModBlockEntities.KITCHEN_DRAWER_BLOCK_ENTITY, pos, state),
-    NamedScreenHandlerFactory, IInventory {
+    BlockEntity(ModBlockEntities.KITCHEN_DRAWER_BLOCK_ENTITY, pos, state), NamedScreenHandlerFactory, IInventory {
     private var boxIndex = 0
     private val inventory = DefaultedList.ofSize(2 * 18, ItemStack.EMPTY)
 
@@ -27,14 +29,16 @@ class KitchenDrawerBlockEntity(pos: BlockPos, state: BlockState) :
         this.boxIndex = index
     }
 
-    override fun readNbt(nbt: NbtCompound) {
-        super.readNbt(nbt)
-        Inventories.readNbt(nbt, inventory)
+    override fun supports(state: BlockState): Boolean = RegistryHelper.Blocks.KITCHEN_DRAWERS.contains(state.block)
+
+    override fun readNbt(nbt: NbtCompound, registryLookup: RegistryWrapper.WrapperLookup) {
+        super.readNbt(nbt, registryLookup)
+        Inventories.readNbt(nbt, inventory, registryLookup)
     }
 
-    override fun writeNbt(nbt: NbtCompound) {
-        super.writeNbt(nbt)
-        Inventories.writeNbt(nbt, inventory)
+    override fun writeNbt(nbt: NbtCompound, registryLookup: RegistryWrapper.WrapperLookup) {
+        super.writeNbt(nbt, registryLookup)
+        Inventories.writeNbt(nbt, inventory, registryLookup)
     }
 
     override fun createMenu(syncId: Int, playerInventory: PlayerInventory, player: PlayerEntity): ScreenHandler {

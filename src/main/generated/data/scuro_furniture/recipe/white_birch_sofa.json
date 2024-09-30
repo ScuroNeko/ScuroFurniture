@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "birch_sofas",
+  "key": {
+    "l": {
+      "item": "minecraft:stripped_birch_log"
+    },
+    "p": {
+      "item": "minecraft:birch_planks"
+    },
+    "w": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pwp",
+    "lpl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:white_birch_sofa"
+  }
+}

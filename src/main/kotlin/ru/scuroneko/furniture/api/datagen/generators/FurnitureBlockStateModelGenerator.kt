@@ -4,18 +4,15 @@ import net.minecraft.block.Block
 import net.minecraft.data.client.*
 import net.minecraft.entity.Entity
 import net.minecraft.util.Identifier
-import ru.scuroneko.furniture.api.properties.CoffeeTableType
-import ru.scuroneko.furniture.api.properties.SofaType
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
-import ru.scuroneko.furniture.api.blocks.AbstractTableBlock
 import ru.scuroneko.furniture.api.datagen.ModModels
 import ru.scuroneko.furniture.api.datagen.ModTextureKeys
 import ru.scuroneko.furniture.api.datagen.ModTextureMap
+import ru.scuroneko.furniture.api.properties.TableType
 import ru.scuroneko.furniture.api.properties.ModProperties
-import ru.scuroneko.furniture.blocks.CoffeeTableBlock
-import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
-import ru.scuroneko.furniture.blocks.LampBlock
+import ru.scuroneko.furniture.api.properties.SofaType
+import ru.scuroneko.furniture.blocks.*
 import java.util.function.Function
 
 class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGenerator) {
@@ -34,8 +31,13 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
         registerFactory(factory, block)
     }
 
-    fun registerKitchenCabinet(block: AbstractDrawerBlock) {
+    fun registerKitchenCabinet(block: KitchenCabinetBlock) {
         val factory = TexturedModel.makeFactory(ModTextureMap::drawer, ModModels.KITCHEN_CABINET)
+        registerFactory(factory, block)
+    }
+
+    fun registerKitchenGlassCabinet(block: KitchenGlassCabinetBlock) {
+        val factory = TexturedModel.makeFactory(ModTextureMap::drawer, ModModels.KITCHEN_GLASS_CABINET)
         registerFactory(factory, block)
     }
 
@@ -44,17 +46,16 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
     }
 
     fun registerLamp(lamp: LampBlock) {
-        val map = TextureMap()
-            .put(ModTextureKeys.WOOL, TextureMap.getId(lamp.wool))
-            .put(TextureKey.PARTICLE, TextureMap.getId(lamp.wool))
-            .put(ModTextureKeys.PLANKS, ModTextureMap.slabToPlanks(lamp.slab))
-            .put(ModTextureKeys.LOG, TextureMap.getId(lamp.log))
-        val factory = TexturedModel.makeFactory({ _ -> map }, ModModels.LAMP)
+        val factory = TexturedModel.makeFactory(ModTextureMap::lamp, ModModels.LAMP)
         registerFactory(factory, lamp)
     }
 
-    fun registerCoffeeTable(table: CoffeeTableBlock) {
-        generator.blockStateCollector.accept(createCoffeeTableBlockState(table))
+    fun registerShelf(shelf: ShelfBlock) {
+        val map = TextureMap()
+            .put(ModTextureKeys.PLANKS, ModTextureMap.slabToPlanks(shelf.slab))
+            .put(TextureKey.PARTICLE, ModTextureMap.slabToPlanks(shelf.slab))
+        val factory = TexturedModel.makeFactory({ _ -> map }, ModModels.SHELF)
+        registerFactory(factory, shelf)
     }
 
     fun createSofaBlockState(block: Block): BlockStateSupplier {
@@ -73,27 +74,6 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
                 .register(SofaType.LEFT, BlockStateVariant.create().put(VariantSettings.MODEL, leftModelId))
                 .register(SofaType.CENTER, BlockStateVariant.create().put(VariantSettings.MODEL, centerModelId))
                 .register(SofaType.RIGHT, BlockStateVariant.create().put(VariantSettings.MODEL, rightModelId))
-        )
-    }
-
-    fun createCoffeeTableBlockState(block: CoffeeTableBlock): BlockStateSupplier {
-        val single = TexturedModel.makeFactory({ _ -> TextureMap.texture(block.wood) }, ModModels.COFFEE_TABLE_SINGLE)
-            .upload(block, generator.modelCollector)
-        val leftModelId =
-            createSubModel(block, "_left", ModModels.COFFEE_TABLE_LEFT) { _ -> ModTextureMap.coffeeTable(block) }
-        val centerModelId =
-            createSubModel(block, "_center", ModModels.COFFEE_TABLE_CENTER) { _ -> ModTextureMap.coffeeTable(block) }
-        val rightModelId =
-            createSubModel(block, "_right", ModModels.COFFEE_TABLE_RIGHT) { _ -> ModTextureMap.coffeeTable(block) }
-
-        return VariantsBlockStateSupplier.create(block).coordinate(
-            BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()
-        ).coordinate(
-            BlockStateVariantMap.create(ModProperties.COFFEE_TABLE_TYPE)
-                .register(CoffeeTableType.SINGLE, BlockStateVariant.create().put(VariantSettings.MODEL, single))
-                .register(CoffeeTableType.LEFT, BlockStateVariant.create().put(VariantSettings.MODEL, leftModelId))
-                .register(CoffeeTableType.CENTER, BlockStateVariant.create().put(VariantSettings.MODEL, centerModelId))
-                .register(CoffeeTableType.RIGHT, BlockStateVariant.create().put(VariantSettings.MODEL, rightModelId))
         )
     }
 

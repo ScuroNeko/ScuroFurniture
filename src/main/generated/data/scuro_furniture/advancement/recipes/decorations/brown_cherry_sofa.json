@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brown_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:brown_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cherry_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stripped_cherry_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stripped_cherry_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "scuro_furniture:brown_cherry_sofa"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cherry_planks",
+      "has_brown_wool",
+      "has_stripped_cherry_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "scuro_furniture:brown_cherry_sofa"
+    ]
+  }
+}

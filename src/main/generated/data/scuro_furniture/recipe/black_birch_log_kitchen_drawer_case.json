@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchen_drawer_cases",
+  "key": {
+    "c": {
+      "item": "minecraft:black_concrete"
+    },
+    "s": {
+      "item": "minecraft:birch_slab"
+    },
+    "w": {
+      "item": "minecraft:birch_log"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 4,
+    "id": "scuro_furniture:black_birch_log_kitchen_drawer_case"
+  }
+}

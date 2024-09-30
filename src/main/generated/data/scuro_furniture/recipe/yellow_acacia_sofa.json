@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "acacia_sofas",
+  "key": {
+    "l": {
+      "item": "minecraft:stripped_acacia_log"
+    },
+    "p": {
+      "item": "minecraft:acacia_planks"
+    },
+    "w": {
+      "item": "minecraft:yellow_wool"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pwp",
+    "lpl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:yellow_acacia_sofa"
+  }
+}

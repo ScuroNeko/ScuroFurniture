@@ -3,10 +3,13 @@ package ru.scuroneko.furniture.datagen
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.minecraft.data.server.recipe.RecipeExporter
+import net.minecraft.registry.RegistryWrapper
+import org.apache.http.config.Lookup
 import ru.scuroneko.furniture.api.datagen.FurnitureRecipeExporter
 import ru.scuroneko.furniture.registry.RegistryHelper
+import java.util.concurrent.CompletableFuture
 
-class RecipeGeneratorProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
+class RecipeGeneratorProvider(output: FabricDataOutput, lookup: CompletableFuture<RegistryWrapper.WrapperLookup>) : FabricRecipeProvider(output, lookup) {
     override fun generate(recipeExporter: RecipeExporter) {
         val exporter = FurnitureRecipeExporter(recipeExporter)
 
@@ -23,5 +26,6 @@ class RecipeGeneratorProvider(output: FabricDataOutput) : FabricRecipeProvider(o
         RegistryHelper.Blocks.KITCHEN_DRAWERS.forEach(exporter::createKitchenDrawerRecipe)
         RegistryHelper.Blocks.LAMPS.forEach(exporter::createLampRecipe)
         RegistryHelper.Blocks.SOFAS.forEach(exporter::createSofaRecipe)
+        RegistryHelper.Blocks.SHELVES.forEach(exporter::createShelfRecipe)
     }
 }

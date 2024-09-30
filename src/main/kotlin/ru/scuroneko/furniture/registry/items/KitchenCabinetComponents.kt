@@ -2,13 +2,14 @@ package ru.scuroneko.furniture.registry.items
 
 import net.minecraft.block.Blocks
 import net.minecraft.item.Item
-import ru.scuroneko.furniture.api.registry.IItemContainer
+import ru.scuroneko.furniture.api.registry.autoregistry.IItemContainer
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.registry.RegistryHelper
 
 object KitchenCabinetComponents : IItemContainer {
     val CHERRY_KITCHEN_CABINET_DOOR = BoxItem(Blocks.CHERRY_SLAB)
+    val CHERRY_KITCHEN_CABINET_GLASS_DOOR = BoxItem(Blocks.CHERRY_SLAB)
 
     //    val GLASS_CHERRY_KITCHEN_CABINET_DOOR = Block(null)
     val CHERRY_KITCHEN_CABINET_CASE = CaseItem(Blocks.CHERRY_PLANKS, Blocks.CHERRY_SLAB)

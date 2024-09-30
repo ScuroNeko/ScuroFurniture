@@ -1,0 +1,6 @@
+{
+  "parent": "scuro_furniture:item/medical_box",
+  "textures": {
+    "drawer_box": "minecraft:block/oak_planks"
+  }
+}

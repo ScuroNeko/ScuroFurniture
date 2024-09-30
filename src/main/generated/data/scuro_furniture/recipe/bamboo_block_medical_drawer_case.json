@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "medical_drawer_cases",
+  "key": {
+    "s": {
+      "item": "minecraft:bamboo_slab"
+    },
+    "w": {
+      "item": "minecraft:bamboo_block"
+    }
+  },
+  "pattern": [
+    " s ",
+    "sws",
+    " s "
+  ],
+  "result": {
+    "count": 4,
+    "id": "scuro_furniture:bamboo_block_medical_drawer_case"
+  }
+}
