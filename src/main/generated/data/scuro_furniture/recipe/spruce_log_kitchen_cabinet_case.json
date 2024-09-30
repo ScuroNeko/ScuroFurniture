@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchen_cabinet_case",
+  "key": {
+    "s": {
+      "item": "minecraft:spruce_slab"
+    },
+    "w": {
+      "item": "minecraft:spruce_log"
+    }
+  },
+  "pattern": [
+    "sws",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:spruce_log_kitchen_cabinet_case"
+  }
+}

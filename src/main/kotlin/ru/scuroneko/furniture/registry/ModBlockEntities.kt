@@ -7,7 +7,7 @@ import ru.scuroneko.furniture.api.registry.autoregistry.IRegistryContainer
 import ru.scuroneko.furniture.blocks.entity.BedsideTableBlockEntity
 import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
 import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
-import ru.scuroneko.furniture.registry.blocks.BedsideDrawers.CHERRY_BEDSIDE_DRAWER
+import ru.scuroneko.furniture.registry.blocks.BedsideDrawers.OAK_BEDSIDE_DRAWER
 import ru.scuroneko.furniture.registry.blocks.KitchenDrawers.BLACK_OAK_KITCHEN_DRAWER
 import ru.scuroneko.furniture.registry.blocks.MedicalDrawers.OAK_MEDICAL_DRAWER
 
@@ -16,7 +16,7 @@ object ModBlockEntities : IRegistryContainer<BlockEntityType<*>> {
         ::MedicalDrawerBlockEntity, OAK_MEDICAL_DRAWER
     ).build()
     val BEDSIDE_TABLE_BLOCK_ENTITY: BlockEntityType<BedsideTableBlockEntity> = BlockEntityType.Builder.create(
-        ::BedsideTableBlockEntity, CHERRY_BEDSIDE_DRAWER
+        ::BedsideTableBlockEntity, OAK_BEDSIDE_DRAWER
     ).build()
     val KITCHEN_DRAWER_BLOCK_ENTITY: BlockEntityType<KitchenDrawerBlockEntity> = BlockEntityType.Builder.create(
         ::KitchenDrawerBlockEntity, BLACK_OAK_KITCHEN_DRAWER

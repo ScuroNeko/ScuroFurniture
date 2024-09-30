@@ -1,0 +1,8 @@
+{
+  "parent": "scuro_furniture:block/kitchen_cabinet",
+  "textures": {
+    "drawer_box": "minecraft:block/mangrove_planks",
+    "drawer_case": "minecraft:block/mangrove_log",
+    "particle": "minecraft:block/mangrove_log"
+  }
+}

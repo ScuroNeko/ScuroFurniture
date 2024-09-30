@@ -6,6 +6,7 @@ import net.minecraft.registry.RegistryWrapper
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.BedsideDrawersComponents
+import ru.scuroneko.furniture.registry.items.KitchenCabinetComponents
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 import java.util.concurrent.CompletableFuture
@@ -348,7 +349,89 @@ class EnglishLangProvider(output: FabricDataOutput, lookup: CompletableFuture<Re
         )
 
         // Kitchen cabinets
+        builder.add(KitchenCabinets.OAK_KITCHEN_CABINET, "Oak kitchen cabinet")
+        builder.add(KitchenCabinets.OAK_LOG_KITCHEN_CABINET, "Oak log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_OAK_LOG_KITCHEN_CABINET, "Stripped oak log kitchen cabinet")
+
+        builder.add(KitchenCabinets.SPRUCE_KITCHEN_CABINET, "Spruce kitchen cabinet")
+        builder.add(KitchenCabinets.SPRUCE_LOG_KITCHEN_CABINET, "Spruce log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_SPRUCE_LOG_KITCHEN_CABINET, "Stripped spruce log kitchen cabinet")
+
+        builder.add(KitchenCabinets.BIRCH_KITCHEN_CABINET, "Birch kitchen cabinet")
+        builder.add(KitchenCabinets.BIRCH_LOG_KITCHEN_CABINET, "Birch log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_BIRCH_LOG_KITCHEN_CABINET, "Stripped birch log kitchen cabinet")
+
+        builder.add(KitchenCabinets.JUNGLE_KITCHEN_CABINET, "Jungle kitchen cabinet")
+        builder.add(KitchenCabinets.JUNGLE_LOG_KITCHEN_CABINET, "Jungle log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_JUNGLE_LOG_KITCHEN_CABINET, "Stripped jungle log kitchen cabinet")
+
+        builder.add(KitchenCabinets.ACACIA_KITCHEN_CABINET, "Acacia kitchen cabinet")
+        builder.add(KitchenCabinets.ACACIA_LOG_KITCHEN_CABINET, "Acacia log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_ACACIA_LOG_KITCHEN_CABINET, "Stripped acacia log kitchen cabinet")
+
+        builder.add(KitchenCabinets.DARK_OAK_KITCHEN_CABINET, "Dark oak kitchen cabinet")
+        builder.add(KitchenCabinets.DARK_OAK_LOG_KITCHEN_CABINET, "Dark oak log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_DARK_OAK_LOG_KITCHEN_CABINET, "Stripped dark oak log kitchen cabinet")
+
+        builder.add(KitchenCabinets.MANGROVE_KITCHEN_CABINET, "Mangrove kitchen cabinet")
+        builder.add(KitchenCabinets.MANGROVE_LOG_KITCHEN_CABINET, "Mangrove log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_MANGROVE_LOG_KITCHEN_CABINET, "Stripped mangrove log kitchen cabinet")
+
         builder.add(KitchenCabinets.CHERRY_KITCHEN_CABINET, "Cherry kitchen cabinet")
+        builder.add(KitchenCabinets.CHERRY_LOG_KITCHEN_CABINET, "Cherry log kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_CHERRY_LOG_KITCHEN_CABINET, "Stripped cherry log kitchen cabinet")
+
+        builder.add(KitchenCabinets.BAMBOO_KITCHEN_CABINET, "Bamboo kitchen cabinet")
+        builder.add(KitchenCabinets.BAMBOO_BLOCK_KITCHEN_CABINET, "Bamboo block kitchen cabinet")
+        builder.add(KitchenCabinets.STRIPPED_BAMBOO_BLOCK_KITCHEN_CABINET, "Stripped bamboo block kitchen cabinet")
+        builder.add(KitchenCabinets.BAMBOO_MOSAIC_KITCHEN_CABINET, "Bamboo mosaic kitchen cabinet")
+
+        builder.add(KitchenCabinetComponents.OAK_KITCHEN_CABINET_CASE, "Oak kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.OAK_LOG_KITCHEN_CABINET_CASE, "Oak log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_OAK_LOG_KITCHEN_CABINET_CASE, "Stripped oak log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.SPRUCE_KITCHEN_CABINET_CASE, "Spruce kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.SPRUCE_LOG_KITCHEN_CABINET_CASE, "Spruce log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_SPRUCE_LOG_KITCHEN_CABINET_CASE, "Stripped spruce log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.BIRCH_KITCHEN_CABINET_CASE, "Birch kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.BIRCH_LOG_KITCHEN_CABINET_CASE, "Birch log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_BIRCH_LOG_KITCHEN_CABINET_CASE, "Stripped birch log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.JUNGLE_KITCHEN_CABINET_CASE, "Jungle kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.JUNGLE_LOG_KITCHEN_CABINET_CASE, "Jungle log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_JUNGLE_LOG_KITCHEN_CABINET_CASE, "Stripped jungle log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.ACACIA_KITCHEN_CABINET_CASE, "Acacia kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.ACACIA_LOG_KITCHEN_CABINET_CASE, "Acacia log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_ACACIA_LOG_KITCHEN_CABINET_CASE, "Stripped acacia log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.DARK_OAK_KITCHEN_CABINET_CASE, "Dark oak kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.DARK_OAK_LOG_KITCHEN_CABINET_CASE, "Dark oak log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_DARK_OAK_LOG_KITCHEN_CABINET_CASE, "Stripped dark oak log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.MANGROVE_KITCHEN_CABINET_CASE, "Mangrove kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.MANGROVE_LOG_KITCHEN_CABINET_CASE, "Mangrove log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_MANGROVE_LOG_KITCHEN_CABINET_CASE, "Stripped mangrove log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.CHERRY_KITCHEN_CABINET_CASE, "Cherry kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.CHERRY_LOG_KITCHEN_CABINET_CASE, "Cherry log kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_CHERRY_LOG_KITCHEN_CABINET_CASE, "Stripped cherry log kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.BAMBOO_KITCHEN_CABINET_CASE, "Bamboo kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.BAMBOO_BLOCK_KITCHEN_CABINET_CASE, "Bamboo block kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.STRIPPED_BAMBOO_BLOCK_KITCHEN_CABINET_CASE, "Stripped bamboo block kitchen cabinet case")
+        builder.add(KitchenCabinetComponents.BAMBOO_MOSAIC_KITCHEN_CABINET_CASE, "Bamboo mosaic kitchen cabinet case")
+
+        builder.add(KitchenCabinetComponents.OAK_KITCHEN_CABINET_DOOR, "Oak kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.SPRUCE_KITCHEN_CABINET_DOOR, "Spruce kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.BIRCH_KITCHEN_CABINET_DOOR, "Birch kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.JUNGLE_KITCHEN_CABINET_DOOR, "Jungle kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.ACACIA_KITCHEN_CABINET_DOOR, "Acacia kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.DARK_OAK_KITCHEN_CABINET_DOOR, "Dark oak kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.MANGROVE_KITCHEN_CABINET_DOOR, "Mangrove kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.CHERRY_KITCHEN_CABINET_DOOR, "Cherry kitchen cabinet door")
+        builder.add(KitchenCabinetComponents.BAMBOO_KITCHEN_CABINET_DOOR, "Bamboo kitchen cabinet door")
 
         // Lamps
         builder.add(Lamps.WHITE_OAK_LAMP, "White oak lamp")

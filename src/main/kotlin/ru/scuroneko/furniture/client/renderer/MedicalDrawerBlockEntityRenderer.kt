@@ -29,9 +29,9 @@ class MedicalDrawerBlockEntityRenderer(ctx: BlockEntityRendererFactory.Context):
         matrices.translate(0.75, 9.0/16, 0.5)
         val stack = entity.getStack(0)
         if(!stack.isEmpty)
-            MinecraftClient.getInstance().itemRenderer.renderItem(stack, ModelTransformationMode.GROUND, light, overlay, matrices, vertexConsumers, entity.world, 0);
+            MinecraftClient.getInstance().itemRenderer.renderItem(stack, ModelTransformationMode.GROUND, light, overlay, matrices, vertexConsumers, entity.world, 0)
 
         // Mandatory call after GL calls
-        matrices.pop();
+        matrices.pop()
     }
 }

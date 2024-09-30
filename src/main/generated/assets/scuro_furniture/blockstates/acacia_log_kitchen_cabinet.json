@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scuro_furniture:block/acacia_log_kitchen_cabinet",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scuro_furniture:block/acacia_log_kitchen_cabinet"
+    },
+    "facing=south": {
+      "model": "scuro_furniture:block/acacia_log_kitchen_cabinet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scuro_furniture:block/acacia_log_kitchen_cabinet",
+      "y": 270
+    }
+  }
+}

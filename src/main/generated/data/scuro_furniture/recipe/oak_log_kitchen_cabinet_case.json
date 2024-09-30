@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchen_cabinet_case",
+  "key": {
+    "s": {
+      "item": "minecraft:oak_slab"
+    },
+    "w": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "sws",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:oak_log_kitchen_cabinet_case"
+  }
+}

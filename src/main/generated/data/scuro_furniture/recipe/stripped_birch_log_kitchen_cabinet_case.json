@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchen_cabinet_case",
+  "key": {
+    "s": {
+      "item": "minecraft:birch_slab"
+    },
+    "w": {
+      "item": "minecraft:stripped_birch_log"
+    }
+  },
+  "pattern": [
+    "sws",
+    "wsw",
+    "www"
+  ],
+  "result": {
+    "count": 1,
+    "id": "scuro_furniture:stripped_birch_log_kitchen_cabinet_case"
+  }
+}

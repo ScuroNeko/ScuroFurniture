@@ -1,5 +1,32 @@
 {
   "values": [
-    "scuro_furniture:cherry_kitchen_cabinet"
+    "scuro_furniture:acacia_kitchen_cabinet",
+    "scuro_furniture:acacia_log_kitchen_cabinet",
+    "scuro_furniture:bamboo_block_kitchen_cabinet",
+    "scuro_furniture:bamboo_kitchen_cabinet",
+    "scuro_furniture:bamboo_mosaic_kitchen_cabinet",
+    "scuro_furniture:birch_kitchen_cabinet",
+    "scuro_furniture:birch_log_kitchen_cabinet",
+    "scuro_furniture:cherry_kitchen_cabinet",
+    "scuro_furniture:cherry_log_kitchen_cabinet",
+    "scuro_furniture:dark_oak_kitchen_cabinet",
+    "scuro_furniture:dark_oak_log_kitchen_cabinet",
+    "scuro_furniture:jungle_kitchen_cabinet",
+    "scuro_furniture:jungle_log_kitchen_cabinet",
+    "scuro_furniture:mangrove_kitchen_cabinet",
+    "scuro_furniture:mangrove_log_kitchen_cabinet",
+    "scuro_furniture:oak_kitchen_cabinet",
+    "scuro_furniture:oak_log_kitchen_cabinet",
+    "scuro_furniture:spruce_kitchen_cabinet",
+    "scuro_furniture:spruce_log_kitchen_cabinet",
+    "scuro_furniture:stripped_acacia_log_kitchen_cabinet",
+    "scuro_furniture:stripped_bamboo_block_kitchen_cabinet",
+    "scuro_furniture:stripped_birch_log_kitchen_cabinet",
+    "scuro_furniture:stripped_cherry_log_kitchen_cabinet",
+    "scuro_furniture:stripped_dark_oak_log_kitchen_cabinet",
+    "scuro_furniture:stripped_jungle_log_kitchen_cabinet",
+    "scuro_furniture:stripped_mangrove_log_kitchen_cabinet",
+    "scuro_furniture:stripped_oak_log_kitchen_cabinet",
+    "scuro_furniture:stripped_spruce_log_kitchen_cabinet"
   ]
 }
