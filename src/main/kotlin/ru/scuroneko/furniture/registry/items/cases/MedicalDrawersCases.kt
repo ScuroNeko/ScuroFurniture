@@ -1,0 +1,64 @@
+package ru.scuroneko.furniture.registry.items.cases
+
+import net.minecraft.block.Blocks
+import net.minecraft.item.Item
+import ru.scuroneko.furniture.api.registry.autoregistry.IItemContainer
+import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.registry.RegistryHelper
+
+object MedicalDrawersCases : IItemContainer {
+    val OAK_MEDICAL_DRAWER_CASE = CaseItem(Blocks.OAK_PLANKS, Blocks.OAK_SLAB)
+    val OAK_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.OAK_LOG, Blocks.OAK_SLAB)
+    val STRIPPED_OAK_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.STRIPPED_OAK_LOG, Blocks.OAK_SLAB)
+
+    val SPRUCE_MEDICAL_DRAWER_CASE = CaseItem(Blocks.SPRUCE_PLANKS, Blocks.SPRUCE_SLAB)
+    val SPRUCE_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.SPRUCE_LOG, Blocks.SPRUCE_SLAB)
+    val STRIPPED_SPRUCE_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_SLAB)
+
+    val BIRCH_MEDICAL_DRAWER_CASE = CaseItem(Blocks.BIRCH_PLANKS, Blocks.BIRCH_SLAB)
+    val BIRCH_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.BIRCH_LOG, Blocks.BIRCH_SLAB)
+    val STRIPPED_BIRCH_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.STRIPPED_BIRCH_LOG, Blocks.BIRCH_SLAB)
+
+    val JUNGLE_MEDICAL_DRAWER_CASE = CaseItem(Blocks.JUNGLE_PLANKS, Blocks.JUNGLE_SLAB)
+    val JUNGLE_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.JUNGLE_LOG, Blocks.JUNGLE_SLAB)
+    val STRIPPED_JUNGLE_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.STRIPPED_JUNGLE_LOG, Blocks.JUNGLE_SLAB)
+
+    val ACACIA_MEDICAL_DRAWER_CASE = CaseItem(Blocks.ACACIA_PLANKS, Blocks.ACACIA_SLAB)
+    val ACACIA_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.ACACIA_LOG, Blocks.ACACIA_SLAB)
+    val STRIPPED_ACACIA_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.STRIPPED_ACACIA_LOG, Blocks.ACACIA_SLAB)
+
+    val DARK_OAK_MEDICAL_DRAWER_CASE = CaseItem(Blocks.DARK_OAK_PLANKS, Blocks.DARK_OAK_SLAB)
+    val DARK_OAK_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_SLAB)
+    val STRIPPED_DARK_OAK_LOG_MEDICAL_DRAWER_CASE =
+        CaseItem(Blocks.STRIPPED_DARK_OAK_LOG, Blocks.DARK_OAK_SLAB)
+
+    val MANGROVE_MEDICAL_DRAWER_CASE = CaseItem(Blocks.MANGROVE_PLANKS, Blocks.MANGROVE_SLAB)
+    val MANGROVE_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.MANGROVE_LOG, Blocks.MANGROVE_SLAB)
+    val STRIPPED_MANGROVE_LOG_MEDICAL_DRAWER_CASE =
+        CaseItem(Blocks.STRIPPED_MANGROVE_LOG, Blocks.MANGROVE_SLAB)
+
+    val CHERRY_MEDICAL_DRAWER_CASE = CaseItem(Blocks.CHERRY_PLANKS, Blocks.CHERRY_SLAB)
+    val CHERRY_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.CHERRY_LOG, Blocks.CHERRY_SLAB)
+    val STRIPPED_CHERRY_LOG_MEDICAL_DRAWER_CASE = CaseItem(Blocks.STRIPPED_CHERRY_LOG, Blocks.CHERRY_SLAB)
+
+    val BAMBOO_MEDICAL_DRAWER_CASE = CaseItem(Blocks.BAMBOO_PLANKS, Blocks.BAMBOO_SLAB)
+    val BAMBOO_MOSAIC_MEDICAL_DRAWER_CASE = CaseItem(Blocks.BAMBOO_MOSAIC, Blocks.BAMBOO_SLAB)
+    val BAMBOO_BLOCK_MEDICAL_DRAWER_CASE = CaseItem(Blocks.BAMBOO_BLOCK, Blocks.BAMBOO_SLAB)
+    val STRIPPED_BAMBOO_BLOCK_MEDICAL_DRAWER_CASE =
+        CaseItem(Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.BAMBOO_SLAB)
+
+    val WARPED_MEDICAL_DRAWER_CASE = CaseItem(Blocks.WARPED_PLANKS, Blocks.WARPED_SLAB)
+    val WARPED_STEM_MEDICAL_DRAWER_CASE = CaseItem(Blocks.WARPED_STEM, Blocks.WARPED_SLAB)
+    val STRIPPED_WARPED_STEM_MEDICAL_DRAWER_CASE =
+        CaseItem(Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_SLAB)
+
+    val CRIMSON_MEDICAL_DRAWER_CASE = CaseItem(Blocks.CRIMSON_PLANKS, Blocks.CRIMSON_SLAB)
+    val CRIMSON_STEM_MEDICAL_DRAWER_CASE = CaseItem(Blocks.CRIMSON_STEM, Blocks.CRIMSON_SLAB)
+    val STRIPPED_CRIMSON_STEM_MEDICAL_DRAWER_CASE =
+        CaseItem(Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_SLAB)
+
+    override fun afterEach(obj: Item) {
+        RegistryHelper.Items.MEDICAL_DRAWERS_CASES.add(obj as CaseItem)
+        RegistryHelper.Items.ITEMS.add(obj)
+    }
+}

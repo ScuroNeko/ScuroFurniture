@@ -17,12 +17,13 @@ import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.registry.ModBlockEntities
-import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
+import ru.scuroneko.furniture.registry.items.SmallDrawersBoxes
+import ru.scuroneko.furniture.registry.items.cases.MedicalDrawersCases
 
 class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box, null, "medical_drawer") {
     private constructor(settings: Settings) : this(
-        MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE,
-        MedicalDrawersComponents.OAK_MEDICAL_BOX
+        MedicalDrawersCases.OAK_MEDICAL_DRAWER_CASE,
+        SmallDrawersBoxes.OAK_SMALL_BOX
     )
 
     private val boxTopLeft = VoxelShapes.combineAndSimplify(
@@ -54,9 +55,9 @@ class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(cas
         registerBox(boxBottomLeft, ::openScreen)
         registerBox(boxBottomRight, ::openScreen)
 
-        drawerShape = createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 8.0)
-        shape = sequenceOf(
-            drawerShape, boxTopLeft, boxTopRight, boxBottomLeft, boxBottomRight
+        caseShape = createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 8.0)
+        fullShape = sequenceOf(
+            caseShape, boxTopLeft, boxTopRight, boxBottomLeft, boxBottomRight
         ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) }
     }
 

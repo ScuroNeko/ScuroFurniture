@@ -1,4 +1,4 @@
-package ru.scuroneko.furniture.registry.items
+package ru.scuroneko.furniture.registry.items.cases
 
 import net.minecraft.block.Blocks
 import net.minecraft.item.Item
@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.api.registry.autoregistry.IItemContainer
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.registry.RegistryHelper
 
-object SingleDrawerComponents : IItemContainer {
+object SingleDrawerCases : IItemContainer {
     val OAK_SINGLE_DRAWER_CASE = CaseItem(Blocks.OAK_PLANKS, Blocks.OAK_SLAB)
     val OAK_LOG_SINGLE_DRAWER_CASE = CaseItem(Blocks.OAK_LOG, Blocks.OAK_SLAB)
     val STRIPPED_OAK_LOG_SINGLE_DRAWER_CASE = CaseItem(Blocks.STRIPPED_OAK_LOG, Blocks.OAK_SLAB)

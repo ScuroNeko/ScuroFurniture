@@ -8,4 +8,9 @@ import ru.scuroneko.furniture.api.gui.AbstractDrawerScreen
 class KitchenCabinetScreen(
     handler: KitchenCabinetScreenHandler,
     inventory: PlayerInventory, title: Text
-) : AbstractDrawerScreen<KitchenCabinetScreenHandler>(handler, inventory, title, Constants.ScreenTextures.BEDSIDE_DRAWER)
+) : AbstractDrawerScreen<KitchenCabinetScreenHandler>(
+    handler,
+    inventory,
+    title,
+    Constants.ScreenTextures.BEDSIDE_DRAWER
+)

@@ -6,7 +6,7 @@ import ru.scuroneko.furniture.api.registry.autoregistry.IItemContainer
 import ru.scuroneko.furniture.item.DoorItem
 import ru.scuroneko.furniture.registry.RegistryHelper
 
-object KitchenGlassCabinetComponents : IItemContainer {
+object MediumDrawersGlassDoors : IItemContainer {
     val OAK_KITCHEN_CABINET_GLASS_DOOR = DoorItem(Blocks.OAK_SLAB)
     val BIRCH_KITCHEN_CABINET_GLASS_DOOR = DoorItem(Blocks.BIRCH_SLAB)
     val SPRUCE_KITCHEN_CABINET_GLASS_DOOR = DoorItem(Blocks.SPRUCE_SLAB)
@@ -20,7 +20,7 @@ object KitchenGlassCabinetComponents : IItemContainer {
     val WARPED_KITCHEN_CABINET_GLASS_DOOR = DoorItem(Blocks.WARPED_SLAB)
 
     override fun afterEach(obj: Item) {
-        RegistryHelper.Items.KITCHEN_CABINET_GLASS_DOORS.add(obj as DoorItem)
+        RegistryHelper.Items.MEDIUM_DRAWERS_GLASS_DOORS.add(obj as DoorItem)
         RegistryHelper.Items.ITEMS.add(obj)
     }
 }

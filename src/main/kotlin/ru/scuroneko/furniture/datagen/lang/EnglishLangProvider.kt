@@ -8,7 +8,8 @@ import ru.scuroneko.furniture.registry.RegistryHelper
 import ru.scuroneko.furniture.registry.blocks.Shelves
 import java.util.concurrent.CompletableFuture
 
-class EnglishLangProvider(output: FabricDataOutput, lookup: CompletableFuture<RegistryWrapper.WrapperLookup>) : FabricLanguageProvider(output, lookup) {
+class EnglishLangProvider(output: FabricDataOutput, lookup: CompletableFuture<RegistryWrapper.WrapperLookup>) :
+    FabricLanguageProvider(output, lookup) {
     override fun generateTranslations(registryLookup: RegistryWrapper.WrapperLookup, builder: TranslationBuilder) {
         builder.add(
             Constants.Translatable.CARPENTER_GROUP, "Scuro's Furniture"
@@ -20,20 +21,27 @@ class EnglishLangProvider(output: FabricDataOutput, lookup: CompletableFuture<Re
         builder.add(Constants.Translatable.MEDICAL_DRAWER, "Medical drawer")
         builder.add(Constants.Translatable.BEDSIDE_DRAWER, "Bedside drawer")
         builder.add(Constants.Translatable.KITCHEN_DRAWER, "Kitchen drawer")
+        builder.add(Constants.Translatable.KITCHEN_CABINET, "Kitchen cabinet")
+        builder.add(Constants.Translatable.SINGLE_DRAWER, "Single drawer")
 
         builder.add(Constants.Translatable.CASE_MATERIAL_TOOLTIP, "Case material")
         builder.add(Constants.Translatable.BOX_MATERIAL_TOOLTIP, "Box material")
         builder.add(Constants.Translatable.DOOR_MATERIAL_TOOLTIP, "Door material")
 
-        RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.forEach { box -> builder.add(box, "Medical drawer box") }
+        RegistryHelper.Items.SMALL_DRAWERS_BOXES.forEach { box -> builder.add(box, "Medical drawer box") }
         RegistryHelper.Items.MEDICAL_DRAWERS_CASES.forEach { case -> builder.add(case, "Medical drawer case") }
 
         RegistryHelper.Items.MEDIUM_DRAWERS_BOXES.forEach { box -> builder.add(box, "Medium drawer box") }
         RegistryHelper.Items.KITCHEN_DRAWERS_CASES.forEach { case -> builder.add(case, "Kitchen drawer case") }
 
         RegistryHelper.Items.KITCHEN_CABINETS_CASES.forEach { case -> builder.add(case, "Kitchen cabinet case") }
-        RegistryHelper.Items.KITCHEN_CABINET_DOORS.forEach { door -> builder.add(door, "Kitchen cabinet door") }
-        RegistryHelper.Items.KITCHEN_CABINET_GLASS_DOORS.forEach { door -> builder.add(door, "Kitchen cabinet glass door") }
+        RegistryHelper.Items.MEDIUM_DRAWERS_DOORS.forEach { door -> builder.add(door, "Kitchen cabinet door") }
+        RegistryHelper.Items.MEDIUM_DRAWERS_GLASS_DOORS.forEach { door ->
+            builder.add(
+                door,
+                "Kitchen cabinet glass door"
+            )
+        }
 
         RegistryHelper.Blocks.MEDICAL_DRAWERS.forEach { drawer -> builder.add(drawer, "Medical drawer") }
         RegistryHelper.Blocks.BEDSIDE_DRAWERS.forEach { drawer -> builder.add(drawer, "Bedside drawer") }

@@ -6,34 +6,49 @@ import net.minecraft.data.client.TextureMap
 import ru.scuroneko.furniture.api.datagen.ModModels
 import ru.scuroneko.furniture.api.datagen.ModTextureKeys
 import ru.scuroneko.furniture.api.datagen.ModTextureMap
-import ru.scuroneko.furniture.item.*
+import ru.scuroneko.furniture.item.BoxItem
+import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.item.DoorItem
+import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 
 class FurnitureItemModelGenerator(private val generator: ItemModelGenerator) {
-    fun registerKitchenDrawerBox(box: BoxItem) {
+    fun registerSmallBox(box: BoxItem) {
+        val id = ModTextureMap.slabToPlanks(box.slab)
+        val map = TextureMap().put(ModTextureKeys.DRAWER_BOX, id)
+        ModModels.SMALL_DRAWER_BOX.upload(ModelIds.getItemModelId(box), map, generator.writer)
+    }
+
+    fun registerMediumDrawerBox(box: BoxItem) {
         val id = ModTextureMap.slabToPlanks(box.slab)
         val map = TextureMap().put(ModTextureKeys.DRAWER_BOX, id)
         ModModels.MEDIUM_DRAWER_BOX.upload(ModelIds.getItemModelId(box), map, generator.writer)
     }
 
-    fun registerMedicalBox(box: BoxItem) {
+    fun registerBigDrawerBox(box: BoxItem) {
         val id = ModTextureMap.slabToPlanks(box.slab)
         val map = TextureMap().put(ModTextureKeys.DRAWER_BOX, id)
-        ModModels.MEDICAL_BOX.upload(ModelIds.getItemModelId(box), map, generator.writer)
+        ModModels.BIG_DRAWER_BOX.upload(ModelIds.getItemModelId(box), map, generator.writer)
     }
 
-    fun registerCabinetDoor(door: DoorItem): Unit {
+    fun registerMediumDoor(door: DoorItem) {
         val id = ModTextureMap.slabToPlanks(door.slab)
         val map = TextureMap().put(ModTextureKeys.CABINET_DOOR, id)
-        ModModels.KITCHEN_CABINET_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
+        ModModels.MEDIUM_DRAWER_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
     }
 
-    fun registerCabinetGlassDoor(door: DoorItem) {
+    fun registerMediumGlassDoor(door: DoorItem) {
         val id = ModTextureMap.slabToPlanks(door.slab)
         val map = TextureMap().put(ModTextureKeys.CABINET_DOOR, id)
-        ModModels.KITCHEN_CABINET_GLASS_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
+        ModModels.MEDIUM_DRAWER_GLASS_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
     }
 
-    fun registerMedicalCase(case: MedicalDrawerCaseItem) {
+    fun registerBigDoor(door: DoorItem) {
+        val id = ModTextureMap.slabToPlanks(door.slab)
+        val map = TextureMap().put(ModTextureKeys.CABINET_DOOR, id)
+        ModModels.BIG_DRAWER_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
+    }
+
+    fun registerMedicalCase(case: CaseItem) {
         val map = ModTextureMap.drawerCase(case)
         ModModels.MEDICAL_CASE.upload(ModelIds.getItemModelId(case), map, generator.writer)
     }
@@ -53,5 +68,10 @@ class FurnitureItemModelGenerator(private val generator: ItemModelGenerator) {
     fun registerKitchenCabinetCase(case: CaseItem) {
         val map = ModTextureMap.drawerCase(case)
         ModModels.KITCHEN_CABINET_CASE.upload(ModelIds.getItemModelId(case), map, generator.writer)
+    }
+
+    fun registerSingleDrawerDoorCase(case: CaseItem) {
+        val map = ModTextureMap.drawerCase(case)
+        ModModels.SINGLE_DRAWER_CASE.upload(ModelIds.getItemModelId(case), map, generator.writer)
     }
 }

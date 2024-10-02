@@ -16,12 +16,13 @@ import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
-import ru.scuroneko.furniture.registry.items.KitchenDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
+import ru.scuroneko.furniture.registry.items.cases.KitchenDrawersCases
 
-class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDrawerBlock(case, box, null, "kitchen_drawer") {
+class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) :
+    AbstractDrawerBlock(case, box, null, "kitchen_drawer") {
     constructor(settings: Settings) : this(
-        KitchenDrawersComponents.BLACK_CHERRY_KITCHEN_DRAWER_CASE,
+        KitchenDrawersCases.BLACK_CHERRY_KITCHEN_DRAWER_CASE,
         MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
     )
 
@@ -40,13 +41,13 @@ class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDr
         registerBox(boxTop, ::openScreen)
         registerBox(boxBottom, ::openScreen)
 
-        drawerShape = VoxelShapes.combineAndSimplify(
+        caseShape = VoxelShapes.combineAndSimplify(
             createCuboidShape(0, 15, 0, 16, 16, 16),
             createCuboidShape(0, 0, 0, 16, 15, 14),
             BooleanBiFunction.OR
         )
-        shape = sequenceOf(
-            drawerShape, boxTop, boxBottom
+        fullShape = sequenceOf(
+            caseShape, boxTop, boxBottom
         ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) }
     }
 
@@ -64,9 +65,12 @@ class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDr
     }
 
     override fun getDrawerName(): String {
-        val top = Util.createTranslationKey("block", Registries.BLOCK.getId((this.case as KitchenDrawerCaseItem).concrete)).split(".")[2]
-        return super.getDrawerName()+"_$top"
+        val top =
+            Util.createTranslationKey("block", Registries.BLOCK.getId((this.case as KitchenDrawerCaseItem).concrete))
+                .split(".")[2]
+        return super.getDrawerName() + "_$top"
     }
+
     override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = KitchenDrawerBlockEntity(pos, state)
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::KitchenDrawerBlock)
 }

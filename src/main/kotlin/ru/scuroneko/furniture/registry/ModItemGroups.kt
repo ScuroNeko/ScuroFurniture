@@ -8,7 +8,7 @@ import net.minecraft.registry.Registry
 import net.minecraft.text.Text
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.api.registry.autoregistry.IRegistryContainer
-import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
+import ru.scuroneko.furniture.registry.items.cases.MedicalDrawersCases
 
 object ModItemGroups : IRegistryContainer<ItemGroup> {
     val BLOCKS_GROUP: ItemGroup = FabricItemGroup.builder()
@@ -19,7 +19,7 @@ object ModItemGroups : IRegistryContainer<ItemGroup> {
         }.build()
 
     val ITEMS_GROUP: ItemGroup = FabricItemGroup.builder()
-        .icon { ItemStack(MedicalDrawersComponents.CHERRY_MEDICAL_DRAWER_CASE) }
+        .icon { ItemStack(MedicalDrawersCases.CHERRY_MEDICAL_DRAWER_CASE) }
         .displayName(Text.translatable(Constants.Translatable.CARPENTER_ITEM_GROUP))
         .entries { _, entries ->
             RegistryHelper.Items.ITEMS.forEach(entries::add)

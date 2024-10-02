@@ -4,10 +4,7 @@ import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import ru.scuroneko.furniture.api.registry.autoregistry.IRegistryContainer
-import ru.scuroneko.furniture.blocks.entity.BedsideTableBlockEntity
-import ru.scuroneko.furniture.blocks.entity.KitchenCabinetBlockEntity
-import ru.scuroneko.furniture.blocks.entity.KitchenDrawerBlockEntity
-import ru.scuroneko.furniture.blocks.entity.MedicalDrawerBlockEntity
+import ru.scuroneko.furniture.blocks.entity.*
 
 object ModBlockEntities : IRegistryContainer<BlockEntityType<*>> {
     val MEDICAL_DRAWER_BLOCK_ENTITY: BlockEntityType<MedicalDrawerBlockEntity> = BlockEntityType.Builder.create(
@@ -21,6 +18,9 @@ object ModBlockEntities : IRegistryContainer<BlockEntityType<*>> {
     ).build()
     val KITCHEN_CABINET_BLOCK_ENTITY: BlockEntityType<KitchenCabinetBlockEntity> = BlockEntityType.Builder.create(
         ::KitchenCabinetBlockEntity, *RegistryHelper.Blocks.KITCHEN_CABINETS.toTypedArray()
+    ).build()
+    val SINGLE_DRAWER_BLOCK_ENTITY: BlockEntityType<SingleDrawerBlockEntity> = BlockEntityType.Builder.create(
+        ::SingleDrawerBlockEntity, *RegistryHelper.Blocks.SINGLE_DRAWERS.toTypedArray()
     ).build()
 
     override fun getRegistry(): Registry<BlockEntityType<*>> = Registries.BLOCK_ENTITY_TYPE

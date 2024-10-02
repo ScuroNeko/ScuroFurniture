@@ -10,7 +10,7 @@ import ru.scuroneko.furniture.Constants
 
 class MedicalDrawerScreen(handler: MedicalDrawerScreenHandler, inventory: PlayerInventory, title: Text) :
     HandledScreen<MedicalDrawerScreenHandler>(handler, inventory, title) {
-//    var texture: Identifier = DrawerUtils.materialToId(Constants.ScreenMaterialTextures.MEDICAL_DRAWER, this.handler.material)
+    //    var texture: Identifier = DrawerUtils.materialToId(Constants.ScreenMaterialTextures.MEDICAL_DRAWER, this.handler.material)
     val texture = Constants.ScreenTextures.MEDICAL_DRAWER
 
     override fun drawBackground(context: DrawContext, delta: Float, mouseX: Int, mouseY: Int) {

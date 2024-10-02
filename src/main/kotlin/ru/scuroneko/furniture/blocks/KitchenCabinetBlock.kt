@@ -14,12 +14,13 @@ import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
 import ru.scuroneko.furniture.blocks.entity.KitchenCabinetBlockEntity
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.item.DoorItem
-import ru.scuroneko.furniture.registry.items.KitchenCabinetComponents
+import ru.scuroneko.furniture.registry.items.MediumDrawersDoors
+import ru.scuroneko.furniture.registry.items.cases.KitchenCabinetCases
 
 class KitchenCabinetBlock(case: CaseItem, door: DoorItem) : AbstractDrawerBlock(case, null, door, "kitchen_cabinet") {
     private constructor(settings: Settings) : this(
-        KitchenCabinetComponents.OAK_KITCHEN_CABINET_CASE,
-        KitchenCabinetComponents.OAK_KITCHEN_CABINET_DOOR
+        KitchenCabinetCases.OAK_KITCHEN_CABINET_CASE,
+        MediumDrawersDoors.OAK_MEDIUM_DRAWER_DOOR
     )
 
     private val boxLeft = VoxelShapes.combineAndSimplify(
@@ -37,9 +38,9 @@ class KitchenCabinetBlock(case: CaseItem, door: DoorItem) : AbstractDrawerBlock(
         registerBox(boxLeft, ::openScreen)
         registerBox(boxRight, ::openScreen)
 
-        drawerShape = createCuboidShape(0, 0, 0, 16, 16, 14)
-        shape = sequenceOf(
-            drawerShape, boxLeft, boxRight
+        caseShape = createCuboidShape(0, 0, 0, 16, 16, 14)
+        fullShape = sequenceOf(
+            caseShape, boxLeft, boxRight
         ).reduce { v1, v2 -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR) }
     }
 
@@ -55,6 +56,8 @@ class KitchenCabinetBlock(case: CaseItem, door: DoorItem) : AbstractDrawerBlock(
         player.openHandledScreen(blockEntity)
     }
 
-    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = KitchenCabinetBlockEntity(pos, state)
+    override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity =
+        KitchenCabinetBlockEntity(pos, state)
+
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::KitchenCabinetBlock)
 }

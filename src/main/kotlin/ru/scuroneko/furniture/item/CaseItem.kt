@@ -19,6 +19,8 @@ open class CaseItem(
         type: TooltipType
     ) {
         tooltip.add(Text.translatable(Constants.Translatable.CASE_MATERIAL_TOOLTIP))
-        tooltip.add(Text.literal("  ").append(Text.translatable(this.material.translationKey).formatted(Formatting.BLUE)))
+        tooltip.add(
+            Text.literal("  ").append(Text.translatable(this.material.translationKey).formatted(Formatting.BLUE))
+        )
     }
 }

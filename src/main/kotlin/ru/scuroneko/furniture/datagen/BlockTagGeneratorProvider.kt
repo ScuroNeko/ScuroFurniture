@@ -14,8 +14,9 @@ class BlockTagGeneratorProvider(output: FabricDataOutput, completableFuture: Com
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
             .add(*RegistryHelper.Blocks.MEDICAL_DRAWERS.toTypedArray())
             .add(*RegistryHelper.Blocks.BEDSIDE_DRAWERS.toTypedArray())
-            .add(*RegistryHelper.Blocks.KITCHEN_CABINETS.toTypedArray())
             .add(*RegistryHelper.Blocks.KITCHEN_DRAWERS.toTypedArray())
+            .add(*RegistryHelper.Blocks.KITCHEN_CABINETS.toTypedArray())
+            .add(*RegistryHelper.Blocks.SINGLE_DRAWERS.toTypedArray())
             .add(*RegistryHelper.Blocks.SHELVES.toTypedArray())
 
 
@@ -23,6 +24,7 @@ class BlockTagGeneratorProvider(output: FabricDataOutput, completableFuture: Com
         getOrCreateTagBuilder(ModBlockTags.BEDSIDE_DRAWERS).add(*RegistryHelper.Blocks.BEDSIDE_DRAWERS.toTypedArray())
         getOrCreateTagBuilder(ModBlockTags.KITCHEN_DRAWERS).add(*RegistryHelper.Blocks.KITCHEN_DRAWERS.toTypedArray())
         getOrCreateTagBuilder(ModBlockTags.KITCHEN_CABINETS).add(*RegistryHelper.Blocks.KITCHEN_CABINETS.toTypedArray())
+        getOrCreateTagBuilder(ModBlockTags.SINGLE_DRAWERS).add(*RegistryHelper.Blocks.SINGLE_DRAWERS.toTypedArray())
         getOrCreateTagBuilder(ModBlockTags.SHELVES).add(*RegistryHelper.Blocks.SHELVES.toTypedArray())
     }
 }

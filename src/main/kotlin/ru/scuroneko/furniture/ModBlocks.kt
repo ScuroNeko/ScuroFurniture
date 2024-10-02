@@ -14,6 +14,10 @@ object ModBlocks {
 
     fun register(block: Block, name: String): Unit {
         Registry.register(Registries.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, name), block)
-        Registry.register(Registries.ITEM, Identifier.of(ScuroFurniture.MOD_ID, name), BlockItem(block, Item.Settings()))
+        Registry.register(
+            Registries.ITEM,
+            Identifier.of(ScuroFurniture.MOD_ID, name),
+            BlockItem(block, Item.Settings())
+        )
     }
 }

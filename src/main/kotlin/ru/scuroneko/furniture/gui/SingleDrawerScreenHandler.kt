@@ -9,35 +9,33 @@ import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
 import ru.scuroneko.furniture.registry.ModScreenHandlers
 
-class KitchenDrawerScreenHandler(
+class SingleDrawerScreenHandler(
     syncId: Int,
     playerInventory: PlayerInventory,
-    private val inventory: Inventory,
+    val inventory: Inventory,
     boxIndex: Int
-) : ScreenHandler(
-    ModScreenHandlers.KITCHEN_DRAWER_SCREEN_HANDLER, syncId
-) {
+) : ScreenHandler(ModScreenHandlers.SINGLE_DRAWER_SCREEN_HANDLER, syncId) {
     constructor(syncId: Int, playerInventory: PlayerInventory) : this(
         syncId,
         playerInventory,
-        SimpleInventory(2 * 18),
+        SimpleInventory(4 * 9),
         0
     )
 
     init {
-        checkSize(inventory, 2 * 18)
+        checkSize(inventory, 4 * 9)
         inventory.onOpen(playerInventory.player)
 
-        for (line in 0 until 2)
-            for (m in 0 until 9)
-                this.addSlot(Slot(inventory, (boxIndex * 2) * 9 + (9 * line) + m, 8 + m * 18, 26 + (line * 18)))
+        for (j in 0 until 4)
+            for (k in 0..8)
+                this.addSlot(Slot(inventory, k + j * 9, 8 + k * 18, 18 + j * 18))
 
-        for (m in 0 until 3)
-            for (l in 0 until 9)
-                this.addSlot(Slot(playerInventory, l + m * 9 + 9, 8 + l * 18, 84 + m * 18))
+        for (j in 0..2)
+            for (k in 0..8)
+                this.addSlot(Slot(playerInventory, k + j * 9 + 9, 8 + k * 18, 103 + j * 18))
 
-        for (m in 0 until 9)
-            this.addSlot(Slot(playerInventory, m, 8 + m * 18, 142))
+        for (j in 0..8)
+            this.addSlot(Slot(playerInventory, j, 8 + j * 18, 161))
     }
 
     override fun quickMove(player: PlayerEntity, invSlot: Int): ItemStack {
@@ -46,10 +44,10 @@ class KitchenDrawerScreenHandler(
         if (slot.hasStack()) {
             val originalStack = slot.stack
             newStack = originalStack.copy()
-            if (invSlot < inventory.size() / 2) {
-                if (!this.insertItem(originalStack, inventory.size() / 2, slots.size, true))
+            if (invSlot < inventory.size()) {
+                if (!this.insertItem(originalStack, inventory.size(), slots.size, true))
                     return ItemStack.EMPTY
-            } else if (!this.insertItem(originalStack, 0, inventory.size() / 2, false))
+            } else if (!this.insertItem(originalStack, 0, inventory.size(), false))
                 return ItemStack.EMPTY
 
             if (originalStack.isEmpty)

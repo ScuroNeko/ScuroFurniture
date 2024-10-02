@@ -34,26 +34,26 @@ import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.item.DoorItem
-import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
+import ru.scuroneko.furniture.registry.items.cases.MedicalDrawersCases
 import ru.scuroneko.furniture.utils.MathUtils
 
 abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(settings) {
-    var drawerShape: VoxelShape = VoxelShapes.empty()
-    var shape: VoxelShape = VoxelShapes.empty()
+    var caseShape: VoxelShape = VoxelShapes.empty()
+    var fullShape: VoxelShape = VoxelShapes.empty()
 
-    var case: CaseItem = MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE
+    var case: CaseItem = MedicalDrawersCases.OAK_MEDICAL_DRAWER_CASE
     var box: BoxItem? = null
     var door: DoorItem? = null
     var name = "drawer"
 
     constructor(case: CaseItem, box: BoxItem?, door: DoorItem?) : this(Settings.copy(case.material)) {
         this.case = case
-        if(box == null && door == null) throw IllegalArgumentException("Both box and door can't be null!")
+        if (box == null && door == null) throw IllegalArgumentException("Both box and door can't be null!")
         this.box = box
         this.door = door
     }
 
-    constructor(case: CaseItem, box: BoxItem?, door: DoorItem?, name: String): this(case, box, door) {
+    constructor(case: CaseItem, box: BoxItem?, door: DoorItem?, name: String) : this(case, box, door) {
         this.name = name
     }
 
@@ -104,14 +104,16 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
         options: TooltipType
     ) {
         tooltip.add(Text.translatable(Constants.Translatable.CASE_MATERIAL_TOOLTIP))
-        tooltip.add(Text.literal("  ").append(Text.translatable(this.case.material.translationKey).formatted(Formatting.BLUE)))
-        if(this.box != null) {
+        tooltip.add(
+            Text.literal("  ").append(Text.translatable(this.case.material.translationKey).formatted(Formatting.BLUE))
+        )
+        if (this.box != null) {
             tooltip.add(Text.translatable(Constants.Translatable.BOX_MATERIAL_TOOLTIP))
             tooltip.add(
                 Text.literal("  ").append(Text.translatable(this.box!!.slab.translationKey).formatted(Formatting.BLUE))
             )
         }
-        if(this.door != null) {
+        if (this.door != null) {
             tooltip.add(Text.translatable(Constants.Translatable.DOOR_MATERIAL_TOOLTIP))
             tooltip.add(
                 Text.literal("  ").append(Text.translatable(this.door!!.slab.translationKey).formatted(Formatting.BLUE))
@@ -138,7 +140,7 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     private fun isInZ(box: Box, posZ: Int, z: Double): Boolean = posZ + box.minZ <= z && posZ + box.maxZ >= z
 
     private fun getShape(state: BlockState): VoxelShape =
-        MathUtils.rotateShape(state.get(HORIZONTAL_FACING), shape)
+        MathUtils.rotateShape(state.get(HORIZONTAL_FACING), fullShape)
 
     override fun getCollisionShape(
         state: BlockState,
@@ -159,7 +161,7 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
         val rayCastShape = getRayCast(state, pos, hit as BlockHitResult) ?: return getShape(state)
         return MathUtils.rotateShape(
             state.get(HORIZONTAL_FACING),
-            VoxelShapes.combineAndSimplify(drawerShape, rayCastShape, BooleanBiFunction.OR)
+            VoxelShapes.combineAndSimplify(caseShape, rayCastShape, BooleanBiFunction.OR)
         )
     }
 

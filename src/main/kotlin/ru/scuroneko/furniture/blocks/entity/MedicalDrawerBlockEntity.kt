@@ -50,7 +50,8 @@ class MedicalDrawerBlockEntity(pos: BlockPos, state: BlockState) :
     }
 
     override fun toUpdatePacket(): Packet<ClientPlayPacketListener> = BlockEntityUpdateS2CPacket.create(this)
-    override fun toInitialChunkDataNbt(registryLookup: RegistryWrapper.WrapperLookup): NbtCompound = createNbt(registryLookup)
+    override fun toInitialChunkDataNbt(registryLookup: RegistryWrapper.WrapperLookup): NbtCompound =
+        createNbt(registryLookup)
 
     override fun getDisplayName(): Text = Text.translatable(Constants.Translatable.MEDICAL_DRAWER)
 
@@ -59,8 +60,8 @@ class MedicalDrawerBlockEntity(pos: BlockPos, state: BlockState) :
     override fun markDirty() {
         super.markDirty()
         val player = MinecraftClient.getInstance().player ?: return
-        if(player.world.isClient) return
-        if(player is ServerPlayerEntity)
+        if (player.world.isClient) return
+        if (player is ServerPlayerEntity)
             (player as ServerPlayerEntity).networkHandler.sendPacket(toUpdatePacket())
     }
 }

@@ -26,14 +26,19 @@ class ModelGeneratorProvider(output: FabricDataOutput) : FabricModelProvider(out
     override fun generateItemModels(itemModelGenerator: ItemModelGenerator) {
         val generator = FurnitureItemModelGenerator(itemModelGenerator)
 
-        RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.forEach(generator::registerMedicalBox)
-        RegistryHelper.Items.MEDIUM_DRAWERS_BOXES.forEach(generator::registerKitchenDrawerBox)
-        RegistryHelper.Items.KITCHEN_CABINET_DOORS.forEach(generator::registerCabinetDoor)
-        RegistryHelper.Items.KITCHEN_CABINET_GLASS_DOORS.forEach(generator::registerCabinetGlassDoor)
+        RegistryHelper.Items.SMALL_DRAWERS_BOXES.forEach(generator::registerSmallBox)
+        RegistryHelper.Items.MEDIUM_DRAWERS_BOXES.forEach(generator::registerMediumDrawerBox)
+        RegistryHelper.Items.BIG_DRAWERS_BOXES.forEach(generator::registerBigDrawerBox)
+
+        RegistryHelper.Items.MEDIUM_DRAWERS_DOORS.forEach(generator::registerMediumDoor)
+        RegistryHelper.Items.MEDIUM_DRAWERS_GLASS_DOORS.forEach(generator::registerMediumGlassDoor)
+        RegistryHelper.Items.BIG_DRAWERS_DOORS.forEach(generator::registerBigDoor)
 
         RegistryHelper.Items.MEDICAL_DRAWERS_CASES.forEach(generator::registerMedicalCase)
         RegistryHelper.Items.BEDSIDE_DRAWERS_CASES.forEach(generator::registerBedsideDrawerCase)
         RegistryHelper.Items.KITCHEN_DRAWERS_CASES.forEach(generator::registerKitchenDrawerCase)
         RegistryHelper.Items.KITCHEN_CABINETS_CASES.forEach(generator::registerKitchenCabinetCase)
+
+        RegistryHelper.Items.SINGLE_DRAWERS_CASES.forEach(generator::registerSingleDrawerDoorCase)
     }
 }

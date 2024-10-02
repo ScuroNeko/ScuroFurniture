@@ -13,10 +13,10 @@ import ru.scuroneko.furniture.registry.RegistryHelper
 object KitchenCabinets {
     fun register() {
         RegistryHelper.Items.KITCHEN_CABINETS_CASES.forEach { case ->
-            RegistryHelper.Items.KITCHEN_CABINET_DOORS.forEach { door ->
+            RegistryHelper.Items.MEDIUM_DRAWERS_DOORS.forEach { door ->
                 register(KitchenCabinetBlock(case, door))
             }
-            RegistryHelper.Items.KITCHEN_CABINET_GLASS_DOORS.forEach { door ->
+            RegistryHelper.Items.MEDIUM_DRAWERS_GLASS_DOORS.forEach { door ->
                 registerGlass(KitchenGlassCabinetBlock(case, door))
             }
         }

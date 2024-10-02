@@ -12,7 +12,7 @@ import ru.scuroneko.furniture.registry.RegistryHelper
 object MedicalDrawers {
     fun register() {
         RegistryHelper.Items.MEDICAL_DRAWERS_CASES.forEach { case ->
-            RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.forEach { box ->
+            RegistryHelper.Items.SMALL_DRAWERS_BOXES.forEach { box ->
                 register(MedicalDrawerBlock(case, box))
             }
         }

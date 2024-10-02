@@ -16,6 +16,7 @@ import ru.scuroneko.furniture.registry.ModItemGroups
 import ru.scuroneko.furniture.registry.ModScreenHandlers
 import ru.scuroneko.furniture.registry.blocks.*
 import ru.scuroneko.furniture.registry.items.*
+import ru.scuroneko.furniture.registry.items.cases.*
 
 object ScuroFurniture : ModInitializer {
     val LOGGER: Logger = LoggerFactory.getLogger("Scuro's Furniture")
@@ -24,15 +25,20 @@ object ScuroFurniture : ModInitializer {
     override fun onInitialize() {
         BlocksRegistry.registerContainer(Shelves, MOD_ID)
 
-        ItemsRegistry.registerContainer(MediumDrawerBoxes, MOD_ID)
-        ItemsRegistry.registerContainer(MedicalDrawersComponents, MOD_ID)
-        ItemsRegistry.registerContainer(BedsideDrawersComponents, MOD_ID)
-        ItemsRegistry.registerContainer(KitchenDrawersComponents, MOD_ID)
-        ItemsRegistry.registerContainer(KitchenCabinetComponents, MOD_ID)
-        ItemsRegistry.registerContainer(KitchenGlassCabinetComponents, MOD_ID)
-
-        ItemsRegistry.registerContainer(SingleDrawerComponents, MOD_ID)
+        ItemsRegistry.registerContainer(MediumDrawersDoors, MOD_ID)
+        ItemsRegistry.registerContainer(MediumDrawersGlassDoors, MOD_ID)
         ItemsRegistry.registerContainer(BigDrawersDoors, MOD_ID)
+
+        ItemsRegistry.registerContainer(SmallDrawersBoxes, MOD_ID)
+        ItemsRegistry.registerContainer(MediumDrawerBoxes, MOD_ID)
+        ItemsRegistry.registerContainer(BigDrawersBoxes, MOD_ID)
+
+        ItemsRegistry.registerContainer(MedicalDrawersCases, MOD_ID)
+        ItemsRegistry.registerContainer(BedsideDrawersCases, MOD_ID)
+        ItemsRegistry.registerContainer(KitchenDrawersCases, MOD_ID)
+        ItemsRegistry.registerContainer(KitchenCabinetCases, MOD_ID)
+
+        ItemsRegistry.registerContainer(SingleDrawerCases, MOD_ID)
 
         ModBlocks.register()
         MedicalDrawers.register()

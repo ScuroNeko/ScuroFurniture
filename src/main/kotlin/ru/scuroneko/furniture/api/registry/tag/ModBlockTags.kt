@@ -15,7 +15,8 @@ object ModBlockTags {
         TagKey.of(RegistryKeys.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, "kitchen_drawers"))
     val KITCHEN_CABINETS: TagKey<Block> =
         TagKey.of(RegistryKeys.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, "kitchen_cabinets"))
-    val LAMPS: TagKey<Block> = TagKey.of(RegistryKeys.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, "lamps"))
-    val SOFAS: TagKey<Block> = TagKey.of(RegistryKeys.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, "sofas"))
+    val SINGLE_DRAWERS: TagKey<Block> =
+        TagKey.of(RegistryKeys.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, "single_drawers"))
+
     val SHELVES: TagKey<Block> = TagKey.of(RegistryKeys.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, "shelves"))
 }

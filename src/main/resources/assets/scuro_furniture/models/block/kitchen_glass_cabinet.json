@@ -4,8 +4,8 @@
 		"3": "scuro_furniture:block/box_hand",
 		"glass": "block/glass",
 		"drawer_door": "block/oak_planks",
-		"particle": "block/stripped_oak_log",
-		"drawer_case": "block/stripped_oak_log"
+		"particle": "block/cherry_planks",
+		"drawer_case": "block/cherry_planks"
 	},
 	"elements": [
 		{
@@ -14,11 +14,11 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 16, 1], "texture": "#drawer_case", "cullface": "north"},
-				"east": {"uv": [0, 0, 15, 1], "texture": "#drawer_case", "cullface": "east"},
-				"south": {"uv": [0, 0, 16, 1], "texture": "#drawer_case"},
+				"east": {"uv": [0, 15, 14, 16], "texture": "#drawer_case", "cullface": "east"},
+				"south": {"uv": [0, 15, 16, 16], "texture": "#drawer_case"},
 				"west": {"uv": [0, 0, 15, 1], "texture": "#drawer_case", "cullface": "west"},
 				"up": {"uv": [0, 0, 16, 15], "rotation": 180, "texture": "#drawer_case"},
-				"down": {"uv": [0, 0, 16, 15], "rotation": 180, "texture": "#drawer_case", "cullface": "down"}
+				"down": {"uv": [0, 0, 16, 14], "texture": "#drawer_case", "cullface": "down"}
 			}
 		},
 		{
@@ -28,9 +28,9 @@
 			"faces": {
 				"north": {"uv": [0, 0, 16, 1], "texture": "#drawer_case"},
 				"east": {"uv": [0, 0, 15, 1], "texture": "#drawer_case"},
-				"south": {"uv": [0, 0, 16, 1], "texture": "#drawer_case"},
+				"south": {"uv": [1, 0, 15, 1], "texture": "#drawer_case"},
 				"west": {"uv": [0, 0, 15, 1], "texture": "#drawer_case"},
-				"up": {"uv": [0, 0, 16, 15], "rotation": 180, "texture": "#drawer_case", "cullface": "up"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#drawer_case", "cullface": "up"},
 				"down": {"uv": [0, 0, 16, 15], "rotation": 180, "texture": "#drawer_case"}
 			}
 		},
@@ -52,11 +52,11 @@
 			"to": [1, 16, 14],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#drawer_case", "cullface": "north"},
+				"north": {"uv": [15, 0, 16, 15], "texture": "#drawer_case", "cullface": "north"},
 				"east": {"uv": [0, 0, 15, 14], "texture": "#drawer_case"},
-				"south": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#drawer_case"},
-				"west": {"uv": [0, 0, 15, 14], "rotation": 180, "texture": "#drawer_case", "cullface": "west"},
-				"up": {"uv": [0, 0, 15, 1], "rotation": 90, "texture": "#drawer_case", "cullface": "up"},
+				"south": {"uv": [0, 0, 1, 15], "texture": "#drawer_case"},
+				"west": {"uv": [0, 0, 15, 15], "rotation": 180, "texture": "#drawer_case", "cullface": "west"},
+				"up": {"uv": [0, 0, 1, 15], "texture": "#drawer_case", "cullface": "up"},
 				"down": {"uv": [0, 0, 15, 1], "rotation": 90, "texture": "#drawer_case"}
 			}
 		},
@@ -65,11 +65,11 @@
 			"to": [16, 16, 14],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#drawer_case", "cullface": "north"},
-				"east": {"uv": [1, 1, 16, 15], "texture": "#drawer_case", "cullface": "east"},
-				"south": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#drawer_case"},
+				"north": {"uv": [15, 0, 16, 15], "texture": "#drawer_case", "cullface": "north"},
+				"east": {"uv": [1, 0, 16, 15], "texture": "#drawer_case", "cullface": "east"},
+				"south": {"uv": [15, 0, 16, 15], "texture": "#drawer_case"},
 				"west": {"uv": [0, 0, 15, 14], "rotation": 180, "texture": "#drawer_case"},
-				"up": {"uv": [0, 0, 15, 1], "rotation": 90, "texture": "#drawer_case", "cullface": "up"},
+				"up": {"uv": [15, 0, 16, 15], "texture": "#drawer_case", "cullface": "up"},
 				"down": {"uv": [0, 0, 15, 1], "rotation": 90, "texture": "#drawer_case"}
 			}
 		},
@@ -78,11 +78,11 @@
 			"to": [15, 16, 1],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 14, 14], "rotation": 180, "texture": "#drawer_case", "cullface": "north"},
+				"north": {"uv": [1, 0, 15, 15], "rotation": 180, "texture": "#drawer_case", "cullface": "north"},
 				"east": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#drawer_case"},
 				"south": {"uv": [0, 0, 14, 14], "texture": "#drawer_case"},
 				"west": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#drawer_case"},
-				"up": {"uv": [0, 0, 14, 1], "rotation": 180, "texture": "#drawer_case", "cullface": "up"},
+				"up": {"uv": [1, 0, 15, 1], "rotation": 180, "texture": "#drawer_case", "cullface": "up"},
 				"down": {"uv": [0, 0, 14, 1], "texture": "#drawer_case"}
 			}
 		},
