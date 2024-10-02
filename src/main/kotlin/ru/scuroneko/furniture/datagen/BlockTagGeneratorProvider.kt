@@ -16,8 +16,6 @@ class BlockTagGeneratorProvider(output: FabricDataOutput, completableFuture: Com
             .add(*RegistryHelper.Blocks.BEDSIDE_DRAWERS.toTypedArray())
             .add(*RegistryHelper.Blocks.KITCHEN_CABINETS.toTypedArray())
             .add(*RegistryHelper.Blocks.KITCHEN_DRAWERS.toTypedArray())
-            .add(*RegistryHelper.Blocks.LAMPS.toTypedArray())
-            .add(*RegistryHelper.Blocks.SOFAS.toTypedArray())
             .add(*RegistryHelper.Blocks.SHELVES.toTypedArray())
 
 
@@ -25,8 +23,6 @@ class BlockTagGeneratorProvider(output: FabricDataOutput, completableFuture: Com
         getOrCreateTagBuilder(ModBlockTags.BEDSIDE_DRAWERS).add(*RegistryHelper.Blocks.BEDSIDE_DRAWERS.toTypedArray())
         getOrCreateTagBuilder(ModBlockTags.KITCHEN_DRAWERS).add(*RegistryHelper.Blocks.KITCHEN_DRAWERS.toTypedArray())
         getOrCreateTagBuilder(ModBlockTags.KITCHEN_CABINETS).add(*RegistryHelper.Blocks.KITCHEN_CABINETS.toTypedArray())
-        getOrCreateTagBuilder(ModBlockTags.LAMPS).add(*RegistryHelper.Blocks.LAMPS.toTypedArray())
-        getOrCreateTagBuilder(ModBlockTags.SOFAS).add(*RegistryHelper.Blocks.SOFAS.toTypedArray())
         getOrCreateTagBuilder(ModBlockTags.SHELVES).add(*RegistryHelper.Blocks.SHELVES.toTypedArray())
     }
 }

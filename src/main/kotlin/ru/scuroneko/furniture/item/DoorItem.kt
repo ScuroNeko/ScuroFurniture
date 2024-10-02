@@ -8,14 +8,14 @@ import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import ru.scuroneko.furniture.Constants
 
-class BoxItem(val slab: Block) : Item(Settings()) {
+class DoorItem(val slab: Block) : Item(Settings()) {
     override fun appendTooltip(
         stack: ItemStack,
         context: TooltipContext,
         tooltip: MutableList<Text>,
         type: TooltipType
     ) {
-        tooltip.add(Text.translatable(Constants.Translatable.BOX_MATERIAL_TOOLTIP))
+        tooltip.add(Text.translatable(Constants.Translatable.DOOR_MATERIAL_TOOLTIP))
         tooltip.add(Text.literal("  ").append(Text.translatable(this.slab.translationKey).formatted(Formatting.BLUE)))
     }
 }

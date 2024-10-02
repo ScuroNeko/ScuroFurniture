@@ -47,12 +47,12 @@ object ModModels {
 
     val KITCHEN_CABINET = block(
         Identifier.of(ScuroFurniture.MOD_ID, "block/kitchen_cabinet"),
-        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX,
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_DOOR,
         TextureKey.PARTICLE
     )
     val KITCHEN_GLASS_CABINET = block(
         Identifier.of(ScuroFurniture.MOD_ID, "block/kitchen_glass_cabinet"),
-        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_BOX,
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_DOOR,
         TextureKey.PARTICLE
     )
     val KITCHEN_CABINET_CASE = item(
@@ -63,31 +63,29 @@ object ModModels {
         Identifier.of(ScuroFurniture.MOD_ID, "item/kitchen_cabinet_door"),
         ModTextureKeys.CABINET_DOOR
     )
-
-    val SOFA_SINGLE = block(
-        Identifier.of(ScuroFurniture.MOD_ID, "block/sofa"),
-        ModTextureKeys.WOOL, ModTextureKeys.PLANKS, ModTextureKeys.LOG,
-        TextureKey.PARTICLE
-    )
-    val SOFA_LEFT = block(
-        Identifier.of(ScuroFurniture.MOD_ID, "block/sofa_left"),
-        ModTextureKeys.WOOL, ModTextureKeys.PLANKS, ModTextureKeys.LOG,
-        TextureKey.PARTICLE
-    )
-    val SOFA_CENTER = block(
-        Identifier.of(ScuroFurniture.MOD_ID, "block/sofa_center"),
-        ModTextureKeys.WOOL, ModTextureKeys.PLANKS, ModTextureKeys.LOG,
-        TextureKey.PARTICLE
-    )
-    val SOFA_RIGHT = block(
-        Identifier.of(ScuroFurniture.MOD_ID, "block/sofa_right"),
-        ModTextureKeys.WOOL, ModTextureKeys.PLANKS, ModTextureKeys.LOG,
-        TextureKey.PARTICLE
+    val KITCHEN_CABINET_GLASS_DOOR = item(
+        Identifier.of(ScuroFurniture.MOD_ID, "item/kitchen_cabinet_glass_door"),
+        ModTextureKeys.CABINET_DOOR
     )
 
-    val LAMP = block(
-        Identifier.of(ScuroFurniture.MOD_ID, "block/lamp"),
-        ModTextureKeys.WOOL, ModTextureKeys.PLANKS, ModTextureKeys.LOG,
+    val SINGLE_DRAWER_S = block(
+        Identifier.of(ScuroFurniture.MOD_ID, "block/single_drawer_s"),
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_DOOR,
+        TextureKey.PARTICLE
+    )
+    val SINGLE_DRAWER_U = block(
+        Identifier.of(ScuroFurniture.MOD_ID, "block/single_drawer_u"),
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_DOOR,
+        TextureKey.PARTICLE
+    )
+    val SINGLE_DRAWER_D = block(
+        Identifier.of(ScuroFurniture.MOD_ID, "block/single_drawer_d"),
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_DOOR,
+        TextureKey.PARTICLE
+    )
+    val SINGLE_DRAWER_C = block(
+        Identifier.of(ScuroFurniture.MOD_ID, "block/single_drawer_c"),
+        ModTextureKeys.DRAWER_CASE, ModTextureKeys.DRAWER_DOOR,
         TextureKey.PARTICLE
     )
 

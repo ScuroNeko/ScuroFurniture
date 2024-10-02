@@ -1,8 +1,0 @@
-{
-  "parent": "scuro_furniture:block/bedside_drawer",
-  "textures": {
-    "drawer_box": "minecraft:block/acacia_planks",
-    "drawer_case": "minecraft:block/stripped_acacia_log",
-    "particle": "minecraft:block/stripped_acacia_log"
-  }
-}

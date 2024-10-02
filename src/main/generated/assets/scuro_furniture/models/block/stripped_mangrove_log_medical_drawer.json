@@ -1,8 +1,0 @@
-{
-  "parent": "scuro_furniture:block/medical_drawer",
-  "textures": {
-    "drawer_box": "minecraft:block/mangrove_planks",
-    "drawer_case": "minecraft:block/stripped_mangrove_log",
-    "particle": "minecraft:block/stripped_mangrove_log"
-  }
-}

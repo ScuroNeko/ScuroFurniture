@@ -5,6 +5,8 @@ import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.registry.Registries
+import net.minecraft.util.Util
 import net.minecraft.util.function.BooleanBiFunction
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
@@ -17,7 +19,7 @@ import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 import ru.scuroneko.furniture.registry.items.KitchenDrawersComponents
 import ru.scuroneko.furniture.registry.items.MediumDrawerBoxes
 
-class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
+class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDrawerBlock(case, box, null, "kitchen_drawer") {
     constructor(settings: Settings) : this(
         KitchenDrawersComponents.BLACK_CHERRY_KITCHEN_DRAWER_CASE,
         MediumDrawerBoxes.CHERRY_MEDIUM_DRAWER_BOX
@@ -61,6 +63,10 @@ class KitchenDrawerBlock(case: KitchenDrawerCaseItem, box: BoxItem) : AbstractDr
         }
     }
 
+    override fun getDrawerName(): String {
+        val top = Util.createTranslationKey("block", Registries.BLOCK.getId((this.case as KitchenDrawerCaseItem).concrete)).split(".")[2]
+        return super.getDrawerName()+"_$top"
+    }
     override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = KitchenDrawerBlockEntity(pos, state)
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::KitchenDrawerBlock)
 }

@@ -2,17 +2,18 @@ package ru.scuroneko.furniture.api.datagen.generators
 
 import net.minecraft.block.Block
 import net.minecraft.data.client.*
-import net.minecraft.entity.Entity
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
-import ru.scuroneko.furniture.api.blocks.AbstractSofaBlock
+import ru.scuroneko.furniture.api.blocks.AbstractStackableDrawerBlock
 import ru.scuroneko.furniture.api.datagen.ModModels
 import ru.scuroneko.furniture.api.datagen.ModTextureKeys
 import ru.scuroneko.furniture.api.datagen.ModTextureMap
-import ru.scuroneko.furniture.api.properties.TableType
-import ru.scuroneko.furniture.api.properties.ModProperties
-import ru.scuroneko.furniture.api.properties.SofaType
-import ru.scuroneko.furniture.blocks.*
+import ru.scuroneko.furniture.api.state.ModProperties
+import ru.scuroneko.furniture.api.state.StackableDrawerPart
+import ru.scuroneko.furniture.blocks.KitchenCabinetBlock
+import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
+import ru.scuroneko.furniture.blocks.KitchenGlassCabinetBlock
+import ru.scuroneko.furniture.blocks.ShelfBlock
 import java.util.function.Function
 
 class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGenerator) {
@@ -32,22 +33,17 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
     }
 
     fun registerKitchenCabinet(block: KitchenCabinetBlock) {
-        val factory = TexturedModel.makeFactory(ModTextureMap::drawer, ModModels.KITCHEN_CABINET)
+        val factory = TexturedModel.makeFactory(ModTextureMap::drawerWithDoor, ModModels.KITCHEN_CABINET)
         registerFactory(factory, block)
     }
 
     fun registerKitchenGlassCabinet(block: KitchenGlassCabinetBlock) {
-        val factory = TexturedModel.makeFactory(ModTextureMap::drawer, ModModels.KITCHEN_GLASS_CABINET)
+        val factory = TexturedModel.makeFactory(ModTextureMap::drawerWithDoor, ModModels.KITCHEN_GLASS_CABINET)
         registerFactory(factory, block)
     }
 
-    fun <T : Entity> registerSofa(block: AbstractSofaBlock<T>) {
-        generator.blockStateCollector.accept(createSofaBlockState(block))
-    }
-
-    fun registerLamp(lamp: LampBlock) {
-        val factory = TexturedModel.makeFactory(ModTextureMap::lamp, ModModels.LAMP)
-        registerFactory(factory, lamp)
+    fun registerStackableDrawer(block: AbstractStackableDrawerBlock) {
+        generator.blockStateCollector.accept(createStackableDrawerBlockState(block))
     }
 
     fun registerShelf(shelf: ShelfBlock) {
@@ -58,22 +54,21 @@ class FurnitureBlockStateModelGenerator(private val generator: BlockStateModelGe
         registerFactory(factory, shelf)
     }
 
-    fun createSofaBlockState(block: Block): BlockStateSupplier {
-        val singleModelId = TexturedModel.makeFactory(ModTextureMap::sofa, ModModels.SOFA_SINGLE)
+    fun createStackableDrawerBlockState(block: Block): BlockStateSupplier {
+        val singleModelId = TexturedModel.makeFactory(ModTextureMap::drawerWithDoor, ModModels.SINGLE_DRAWER_S)
             .upload(block, generator.modelCollector)
-        val leftModelId = this.createSubModel(block, "_left", ModModels.SOFA_LEFT) { _ -> ModTextureMap.sofa(block) }
-        val centerModelId =
-            this.createSubModel(block, "_center", ModModels.SOFA_CENTER) { _ -> ModTextureMap.sofa(block) }
-        val rightModelId = this.createSubModel(block, "_right", ModModels.SOFA_RIGHT) { _ -> ModTextureMap.sofa(block) }
+        val upModelId = this.createSubModel(block, "_u", ModModels.SINGLE_DRAWER_U) { _ -> ModTextureMap.drawerWithDoor(block) }
+        val centerModelId = this.createSubModel(block, "_c", ModModels.SINGLE_DRAWER_C) { _ -> ModTextureMap.drawerWithDoor(block) }
+        val downModelId = this.createSubModel(block, "_d", ModModels.SINGLE_DRAWER_D) { _ -> ModTextureMap.drawerWithDoor(block) }
 
         return VariantsBlockStateSupplier.create(block).coordinate(
             BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()
         ).coordinate(
-            BlockStateVariantMap.create(ModProperties.SOFA_TYPE)
-                .register(SofaType.SINGLE, BlockStateVariant.create().put(VariantSettings.MODEL, singleModelId))
-                .register(SofaType.LEFT, BlockStateVariant.create().put(VariantSettings.MODEL, leftModelId))
-                .register(SofaType.CENTER, BlockStateVariant.create().put(VariantSettings.MODEL, centerModelId))
-                .register(SofaType.RIGHT, BlockStateVariant.create().put(VariantSettings.MODEL, rightModelId))
+            BlockStateVariantMap.create(ModProperties.STACKABLE_DRAWER_PART)
+                .register(StackableDrawerPart.SINGLE, BlockStateVariant.create().put(VariantSettings.MODEL, singleModelId))
+                .register(StackableDrawerPart.UP, BlockStateVariant.create().put(VariantSettings.MODEL, upModelId))
+                .register(StackableDrawerPart.CENTER, BlockStateVariant.create().put(VariantSettings.MODEL, centerModelId))
+                .register(StackableDrawerPart.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, downModelId))
         )
     }
 

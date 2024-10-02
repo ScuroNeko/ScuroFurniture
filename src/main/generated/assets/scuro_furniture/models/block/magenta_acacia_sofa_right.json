@@ -1,9 +1,0 @@
-{
-  "parent": "scuro_furniture:block/sofa_right",
-  "textures": {
-    "log": "minecraft:block/stripped_acacia_log",
-    "particle": "minecraft:block/acacia_planks",
-    "planks": "minecraft:block/acacia_planks",
-    "wool": "minecraft:block/magenta_wool"
-  }
-}

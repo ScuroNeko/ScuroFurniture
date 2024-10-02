@@ -1,7 +1,0 @@
-{
-  "parent": "scuro_furniture:block/shelf",
-  "textures": {
-    "particle": "minecraft:block/jungle_planks",
-    "planks": "minecraft:block/jungle_planks"
-  }
-}

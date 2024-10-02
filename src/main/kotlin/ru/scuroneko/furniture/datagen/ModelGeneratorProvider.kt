@@ -17,8 +17,8 @@ class ModelGeneratorProvider(output: FabricDataOutput) : FabricModelProvider(out
         RegistryHelper.Blocks.KITCHEN_DRAWERS.forEach(generator::registerKitchenDrawer)
         RegistryHelper.Blocks.KITCHEN_CABINETS.forEach(generator::registerKitchenCabinet)
         RegistryHelper.Blocks.KITCHEN_GLASS_CABINETS.forEach(generator::registerKitchenGlassCabinet)
-        RegistryHelper.Blocks.LAMPS.forEach(generator::registerLamp)
-        RegistryHelper.Blocks.SOFAS.forEach(generator::registerSofa)
+
+        RegistryHelper.Blocks.SINGLE_DRAWERS.forEach(generator::registerStackableDrawer)
 
         RegistryHelper.Blocks.SHELVES.forEach(generator::registerShelf)
     }
@@ -29,6 +29,7 @@ class ModelGeneratorProvider(output: FabricDataOutput) : FabricModelProvider(out
         RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.forEach(generator::registerMedicalBox)
         RegistryHelper.Items.MEDIUM_DRAWERS_BOXES.forEach(generator::registerKitchenDrawerBox)
         RegistryHelper.Items.KITCHEN_CABINET_DOORS.forEach(generator::registerCabinetDoor)
+        RegistryHelper.Items.KITCHEN_CABINET_GLASS_DOORS.forEach(generator::registerCabinetGlassDoor)
 
         RegistryHelper.Items.MEDICAL_DRAWERS_CASES.forEach(generator::registerMedicalCase)
         RegistryHelper.Items.BEDSIDE_DRAWERS_CASES.forEach(generator::registerBedsideDrawerCase)

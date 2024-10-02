@@ -1,7 +1,0 @@
-{
-  "parent": "scuro_furniture:block/shelf",
-  "textures": {
-    "particle": "minecraft:block/acacia_planks",
-    "planks": "minecraft:block/acacia_planks"
-  }
-}

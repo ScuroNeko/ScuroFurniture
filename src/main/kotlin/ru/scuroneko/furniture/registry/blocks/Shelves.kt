@@ -15,6 +15,8 @@ object Shelves : IBlocksContainer {
     val DARK_OAK_SHELF = ShelfBlock(Blocks.DARK_OAK_SLAB)
     val MANGROVE_SHELF = ShelfBlock(Blocks.MANGROVE_SLAB)
     val CHERRY_SHELF = ShelfBlock(Blocks.CHERRY_SLAB)
+    val CRIMSON_SHELF = ShelfBlock(Blocks.CRIMSON_SLAB)
+    val WARPED_SHELF = ShelfBlock(Blocks.WARPED_SLAB)
 
     override fun afterEach(obj: Block) {
         RegistryHelper.Blocks.SHELVES.add(obj as ShelfBlock)

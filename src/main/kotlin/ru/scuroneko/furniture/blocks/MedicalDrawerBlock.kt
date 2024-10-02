@@ -19,7 +19,7 @@ import ru.scuroneko.furniture.item.CaseItem
 import ru.scuroneko.furniture.registry.ModBlockEntities
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 
-class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box) {
+class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(case, box, null, "medical_drawer") {
     private constructor(settings: Settings) : this(
         MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE,
         MedicalDrawersComponents.OAK_MEDICAL_BOX
@@ -78,6 +78,5 @@ class MedicalDrawerBlock(case: CaseItem, box: BoxItem) : AbstractDrawerBlock(cas
     }
 
     override fun createBlockEntity(pos: BlockPos, state: BlockState): BlockEntity = MedicalDrawerBlockEntity(pos, state)
-
     override fun getCodec(): MapCodec<out BlockWithEntity> = createCodec(::MedicalDrawerBlock)
 }

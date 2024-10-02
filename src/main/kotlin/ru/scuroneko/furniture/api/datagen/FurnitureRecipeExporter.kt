@@ -3,17 +3,13 @@ package ru.scuroneko.furniture.api.datagen
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider.conditionsFromItem
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider.hasItem
 import net.minecraft.block.Blocks
-import net.minecraft.data.client.TextureMap
 import net.minecraft.data.server.recipe.RecipeExporter
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder
 import net.minecraft.item.Items
 import net.minecraft.recipe.book.RecipeCategory
 import ru.scuroneko.furniture.blocks.*
-import ru.scuroneko.furniture.item.BoxItem
-import ru.scuroneko.furniture.item.CaseItem
-import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
-import ru.scuroneko.furniture.item.MedicalDrawerCaseItem
+import ru.scuroneko.furniture.item.*
 
 class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
     fun createMedicalDrawerBoxRecipe(box: BoxItem) {
@@ -34,6 +30,25 @@ class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
             .criterion(hasItem(box.slab), conditionsFromItem(box.slab))
             .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
             .group("medium_boxes")
+            .offerTo(exporter)
+    }
+
+    fun createKitchenCabinetDoorRecipe(door: DoorItem) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, door, 2)
+            .pattern("ss ").pattern("ss ").pattern("ss ")
+            .input('s', door.slab)
+            .criterion(hasItem(door.slab), conditionsFromItem(door.slab))
+            .group("kitchen_cabinet_door")
+            .offerTo(exporter)
+    }
+
+    fun createKitchenCabinetGlassDoorRecipe(door: DoorItem) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, door, 2)
+            .pattern("ss ").pattern("sg ").pattern("ss ")
+            .input('s', door.slab).input('g', Blocks.GLASS_PANE)
+            .criterion(hasItem(door.slab), conditionsFromItem(door.slab))
+            .criterion(hasItem(Blocks.GLASS_PANE), conditionsFromItem(Blocks.GLASS_PANE))
+            .group("kitchen_cabinet_door")
             .offerTo(exporter)
     }
 
@@ -95,6 +110,22 @@ class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
             .offerTo(exporter)
     }
 
+    fun createKitchenCabinetRecipe(cabinet: KitchenCabinetBlock) {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, cabinet)
+            .input(cabinet.box, 2).input(cabinet.case)
+            .criterion(hasItem(cabinet.case), conditionsFromItem(cabinet.case))
+            .criterion(hasItem(cabinet.box), conditionsFromItem(cabinet.box))
+            .group("kitchen_cabinet")
+            .offerTo(exporter)
+    }
+    fun createKitchenGlassCabinetRecipe(cabinet: KitchenGlassCabinetBlock) {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, cabinet)
+            .input(cabinet.box, 2).input(cabinet.case)
+            .criterion(hasItem(cabinet.case), conditionsFromItem(cabinet.case))
+            .criterion(hasItem(cabinet.box), conditionsFromItem(cabinet.box))
+            .group("kitchen_glass_cabinet")
+            .offerTo(exporter)
+    }
     fun createKitchenCabinetCaseRecipe(case: CaseItem) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, case)
             .pattern("sws").pattern("wsw").pattern("www")
@@ -102,30 +133,6 @@ class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
             .criterion(hasItem(case.slab), conditionsFromItem(case.slab))
             .criterion(hasItem(case.material), conditionsFromItem(case.material))
             .group("kitchen_cabinet_case")
-            .offerTo(exporter)
-    }
-
-    fun createLampRecipe(lamp: LampBlock) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, lamp)
-            .pattern("www").pattern("wgw").pattern("sfs")
-            .input('w', lamp.wool).input('g', Blocks.GLOWSTONE)
-            .input('s', lamp.slab).input('f', lamp.fence)
-            .criterion(hasItem(lamp.wool), conditionsFromItem(lamp.wool))
-            .criterion(hasItem(Blocks.GLOWSTONE), conditionsFromItem(Blocks.GLOWSTONE))
-            .criterion(hasItem(lamp.slab), conditionsFromItem(lamp.slab))
-            .criterion(hasItem(lamp.fence), conditionsFromItem(lamp.fence))
-            .group("lamps")
-            .offerTo(exporter)
-    }
-
-    fun createSofaRecipe(sofa: SofaBlock) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, sofa)
-            .pattern(" p ").pattern("pwp").pattern("lpl")
-            .input('p', sofa.base).input('w', sofa.wool).input('l', sofa.leg)
-            .criterion(hasItem(sofa.base), conditionsFromItem(sofa.base))
-            .criterion(hasItem(sofa.wool), conditionsFromItem(sofa.wool))
-            .criterion(hasItem(sofa.leg), conditionsFromItem(sofa.leg))
-            .group(getSofaGroup(sofa))
             .offerTo(exporter)
     }
 
@@ -137,10 +144,5 @@ class FurnitureRecipeExporter(private val exporter: RecipeExporter) {
             .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
             .group("shelves")
             .offerTo(exporter)
-    }
-
-    private fun getSofaGroup(sofa: SofaBlock): String {
-        val mat = TextureMap.getId(sofa.base).path.split('/')[1]
-        return mat.replace("planks", "sofas")
     }
 }

@@ -22,13 +22,6 @@ object ScuroFurniture : ModInitializer {
     const val MOD_ID = "scuro_furniture"
 
     override fun onInitialize() {
-        BlocksRegistry.registerContainer(ModBlocks, MOD_ID)
-        BlocksRegistry.registerContainer(MedicalDrawers, MOD_ID)
-        BlocksRegistry.registerContainer(BedsideDrawers, MOD_ID)
-        BlocksRegistry.registerContainer(KitchenDrawers, MOD_ID)
-        BlocksRegistry.registerContainer(KitchenCabinets, MOD_ID)
-        BlocksRegistry.registerContainer(Lamps, MOD_ID)
-        BlocksRegistry.registerContainer(Sofas, MOD_ID)
         BlocksRegistry.registerContainer(Shelves, MOD_ID)
 
         ItemsRegistry.registerContainer(MediumDrawerBoxes, MOD_ID)
@@ -36,6 +29,17 @@ object ScuroFurniture : ModInitializer {
         ItemsRegistry.registerContainer(BedsideDrawersComponents, MOD_ID)
         ItemsRegistry.registerContainer(KitchenDrawersComponents, MOD_ID)
         ItemsRegistry.registerContainer(KitchenCabinetComponents, MOD_ID)
+        ItemsRegistry.registerContainer(KitchenGlassCabinetComponents, MOD_ID)
+
+        ItemsRegistry.registerContainer(SingleDrawerComponents, MOD_ID)
+        ItemsRegistry.registerContainer(BigDrawersDoors, MOD_ID)
+
+        ModBlocks.register()
+        MedicalDrawers.register()
+        BedsideDrawers.register()
+        KitchenDrawers.register()
+        KitchenCabinets.register()
+        SingleDrawers.register()
 
         AutoRegistry<EntityType<*>>().processContainer(ModEntities, MOD_ID)
         AutoRegistry<BlockEntityType<*>>().processContainer(ModBlockEntities, MOD_ID)

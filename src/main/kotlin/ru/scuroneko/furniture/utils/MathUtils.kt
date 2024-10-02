@@ -48,7 +48,19 @@ object MathUtils {
         }
     }
 
-    fun getSideBlocks(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
+    fun getSideBlocksV(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
+        return Pair(pos.add(0, 1, 0), pos.add(0, -1, 0))
+    }
+
+    fun getNextSideBlocksV(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
+        val (up, down) = getSideBlocksV(state, pos)
+        return Pair(
+            getSideBlocksV(state, up).first,
+            getSideBlocksV(state, down).second
+        )
+    }
+
+    fun getSideBlocksH(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
         return when (state.get(HORIZONTAL_FACING)) {
             Direction.NORTH -> Pair(pos.add(-1, 0, 0), pos.add(1, 0, 0))
             Direction.WEST -> Pair(pos.add(0, 0, 1), pos.add(0, 0, -1))
@@ -58,11 +70,11 @@ object MathUtils {
         }
     }
 
-    fun getNextSideBlocks(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
-        val (left, right) = getSideBlocks(state, pos)
+    fun getNextSideBlocksH(state: BlockState, pos: BlockPos): Pair<BlockPos, BlockPos> {
+        val (left, right) = getSideBlocksH(state, pos)
         return Pair(
-            getSideBlocks(state, left).first,
-            getSideBlocks(state, right).second
+            getSideBlocksH(state, left).first,
+            getSideBlocksH(state, right).second
         )
     }
 }

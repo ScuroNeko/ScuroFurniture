@@ -9,6 +9,8 @@ import ru.scuroneko.furniture.ScuroFurniture
 object ModItemTags {
     val MEDICAL_BOXES: TagKey<Item> = TagKey.of(RegistryKeys.ITEM, Identifier.of(ScuroFurniture.MOD_ID, "medical_boxes"))
     val MEDIUM_BOXES: TagKey<Item> = TagKey.of(RegistryKeys.ITEM, Identifier.of(ScuroFurniture.MOD_ID, "medium_boxes"))
+    val KITCHEN_CABINET_DOORS: TagKey<Item> = TagKey.of(RegistryKeys.ITEM, Identifier.of(ScuroFurniture.MOD_ID, "kitchen_cabinet_doors"))
+    val KITCHEN_CABINET_GLASS_DOORS: TagKey<Item> = TagKey.of(RegistryKeys.ITEM, Identifier.of(ScuroFurniture.MOD_ID, "kitchen_cabinet_glass_doors"))
 
     val MEDICAL_DRAWERS_CASES: TagKey<Item> =
         TagKey.of(RegistryKeys.ITEM, Identifier.of(ScuroFurniture.MOD_ID, "medical_drawers_cases"))

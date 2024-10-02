@@ -1,13 +1,15 @@
 package ru.scuroneko.furniture.api.datagen
 
 import net.minecraft.block.Block
+import net.minecraft.block.Blocks
 import net.minecraft.data.client.TextureKey
 import net.minecraft.data.client.TextureMap
 import net.minecraft.util.Identifier
 import ru.scuroneko.furniture.api.blocks.AbstractDrawerBlock
-import ru.scuroneko.furniture.blocks.*
+import ru.scuroneko.furniture.blocks.KitchenDrawerBlock
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.item.DoorItem
 import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
 
 object ModTextureMap {
@@ -15,8 +17,19 @@ object ModTextureMap {
         block as AbstractDrawerBlock
         return TextureMap()
             .put(TextureKey.PARTICLE, TextureMap.getId(block.case.material))
+            .put(ModTextureKeys.GLASS, TextureMap.getId(Blocks.GLASS))
             .put(ModTextureKeys.DRAWER_CASE, TextureMap.getId(block.case.material))
-            .put(ModTextureKeys.DRAWER_BOX, boxPlanks(block.box))
+            .put(ModTextureKeys.DRAWER_BOX, boxPlanks(block.box!!))
+    }
+
+    fun drawerWithDoor(block: Block): TextureMap {
+        block as AbstractDrawerBlock
+        return TextureMap()
+            .put(TextureKey.PARTICLE, TextureMap.getId(block.case.material))
+            .put(ModTextureKeys.GLASS, TextureMap.getId(Blocks.GLASS))
+            .put(ModTextureKeys.DRAWER_CASE, TextureMap.getId(block.case.material))
+            .put(ModTextureKeys.DRAWER_DOOR, doorPlanks(block.door!!))
+
     }
 
     fun drawerCase(case: CaseItem): TextureMap {
@@ -28,26 +41,8 @@ object ModTextureMap {
         return TextureMap()
             .put(TextureKey.PARTICLE, TextureMap.getId(drawer.case.material))
             .put(ModTextureKeys.DRAWER_CASE, TextureMap.getId(drawer.case.material))
-            .put(ModTextureKeys.DRAWER_BOX, boxPlanks(drawer.box))
+            .put(ModTextureKeys.DRAWER_BOX, boxPlanks(drawer.box!!))
             .put(ModTextureKeys.DRAWER_CONCRETE, TextureMap.getId((drawer.case as KitchenDrawerCaseItem).concrete))
-    }
-
-    fun sofa(block: Block): TextureMap {
-        val sofa = block as SofaBlock
-        return TextureMap()
-            .put(ModTextureKeys.WOOL, TextureMap.getId(sofa.wool))
-            .put(ModTextureKeys.LOG, TextureMap.getId(sofa.leg))
-            .put(ModTextureKeys.PLANKS, TextureMap.getId(sofa.base))
-            .put(TextureKey.PARTICLE, TextureMap.getId(sofa.base))
-    }
-
-    fun lamp(block: Block): TextureMap {
-        val lamp = block as LampBlock
-        return TextureMap()
-            .put(ModTextureKeys.WOOL, TextureMap.getId(lamp.wool))
-            .put(TextureKey.PARTICLE, TextureMap.getId(lamp.wool))
-            .put(ModTextureKeys.PLANKS, slabToPlanks(lamp.slab))
-            .put(ModTextureKeys.LOG, TextureMap.getId(lamp.log))
     }
 
     /**
@@ -59,4 +54,5 @@ object ModTextureMap {
     }
 
     fun boxPlanks(box: BoxItem): Identifier = slabToPlanks(box.slab)
+    fun doorPlanks(door: DoorItem): Identifier = slabToPlanks(door.slab)
 }

@@ -5,7 +5,11 @@ import net.fabricmc.api.Environment
 import net.minecraft.block.*
 import net.minecraft.client.MinecraftClient
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.Item
 import net.minecraft.item.ItemPlacementContext
+import net.minecraft.item.ItemStack
+import net.minecraft.item.tooltip.TooltipType
+import net.minecraft.registry.Registries
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
@@ -24,9 +28,12 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
+import ru.scuroneko.furniture.Constants
+import ru.scuroneko.furniture.ScuroFurniture
 import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.item.DoorItem
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 import ru.scuroneko.furniture.utils.MathUtils
 
@@ -35,11 +42,19 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     var shape: VoxelShape = VoxelShapes.empty()
 
     var case: CaseItem = MedicalDrawersComponents.OAK_MEDICAL_DRAWER_CASE
-    var box: BoxItem = MedicalDrawersComponents.OAK_MEDICAL_BOX
+    var box: BoxItem? = null
+    var door: DoorItem? = null
+    var name = "drawer"
 
-    constructor(case: CaseItem, box: BoxItem) : this(Settings.copy(case.material)) {
+    constructor(case: CaseItem, box: BoxItem?, door: DoorItem?) : this(Settings.copy(case.material)) {
         this.case = case
+        if(box == null && door == null) throw IllegalArgumentException("Both box and door can't be null!")
         this.box = box
+        this.door = door
+    }
+
+    constructor(case: CaseItem, box: BoxItem?, door: DoorItem?, name: String): this(case, box, door) {
+        this.name = name
     }
 
     private val boxList = hashMapOf<VoxelShape, (VoxelShape, PlayerEntity, BlockState, World, BlockPos) -> Unit>()
@@ -82,6 +97,28 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
         return ActionResult.FAIL
     }
 
+    override fun appendTooltip(
+        stack: ItemStack,
+        context: Item.TooltipContext,
+        tooltip: MutableList<Text>,
+        options: TooltipType
+    ) {
+        tooltip.add(Text.translatable(Constants.Translatable.CASE_MATERIAL_TOOLTIP))
+        tooltip.add(Text.literal("  ").append(Text.translatable(this.case.material.translationKey).formatted(Formatting.BLUE)))
+        if(this.box != null) {
+            tooltip.add(Text.translatable(Constants.Translatable.BOX_MATERIAL_TOOLTIP))
+            tooltip.add(
+                Text.literal("  ").append(Text.translatable(this.box!!.slab.translationKey).formatted(Formatting.BLUE))
+            )
+        }
+        if(this.door != null) {
+            tooltip.add(Text.translatable(Constants.Translatable.DOOR_MATERIAL_TOOLTIP))
+            tooltip.add(
+                Text.literal("  ").append(Text.translatable(this.door!!.slab.translationKey).formatted(Formatting.BLUE))
+            )
+        }
+    }
+
     fun getRayCast(state: BlockState, pos: BlockPos, hit: BlockHitResult): VoxelShape? {
         this.boxList.keys.forEach { box ->
             if (this.isRayInBox(MathUtils.rotateShape(state.get(HORIZONTAL_FACING), box), pos, hit.pos)) return box
@@ -96,12 +133,12 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
                 this.isInZ(bound, blockPos.z, pos.z)
     }
 
-    fun isInX(box: Box, posX: Int, x: Double): Boolean = posX + box.minX <= x && posX + box.maxX >= x
-    fun isInY(box: Box, posY: Int, y: Double): Boolean = posY + box.minY <= y && posY + box.maxY >= y
-    fun isInZ(box: Box, posZ: Int, z: Double): Boolean = posZ + box.minZ <= z && posZ + box.maxZ >= z
+    private fun isInX(box: Box, posX: Int, x: Double): Boolean = posX + box.minX <= x && posX + box.maxX >= x
+    private fun isInY(box: Box, posY: Int, y: Double): Boolean = posY + box.minY <= y && posY + box.maxY >= y
+    private fun isInZ(box: Box, posZ: Int, z: Double): Boolean = posZ + box.minZ <= z && posZ + box.maxZ >= z
 
     private fun getShape(state: BlockState): VoxelShape =
-        MathUtils.rotateShape(state.get(HORIZONTAL_FACING), this.shape)
+        MathUtils.rotateShape(state.get(HORIZONTAL_FACING), shape)
 
     override fun getCollisionShape(
         state: BlockState,
@@ -119,10 +156,10 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
     ): VoxelShape {
         val hit = MinecraftClient.getInstance().crosshairTarget ?: return getShape(state)
         if (hit.type != HitResult.Type.BLOCK) return getShape(state)
-        val rayCastShape = this.getRayCast(state, pos, hit as BlockHitResult) ?: return getShape(state)
+        val rayCastShape = getRayCast(state, pos, hit as BlockHitResult) ?: return getShape(state)
         return MathUtils.rotateShape(
             state.get(HORIZONTAL_FACING),
-            VoxelShapes.combineAndSimplify(this.drawerShape, rayCastShape, BooleanBiFunction.OR)
+            VoxelShapes.combineAndSimplify(drawerShape, rayCastShape, BooleanBiFunction.OR)
         )
     }
 
@@ -134,6 +171,17 @@ abstract class AbstractDrawerBlock(settings: Settings) : BlockWithEntity(setting
             world.updateComparators(pos, this)
         }
         super.onStateReplaced(state, world, pos, newState, moved)
+    }
+
+
+    override fun getTranslationKey(): String = "item.${ScuroFurniture.MOD_ID}.${getDrawerName()}"
+    open fun getDrawerName(): String {
+        val case = Util.createTranslationKey("block", Registries.BLOCK.getId(this.case.material)).split(".")[2]
+        val box = if (this.box != null)
+            Util.createTranslationKey("block", Registries.BLOCK.getId(this.box!!.slab)).split(".")[2]
+        else
+            Util.createTranslationKey("block", Registries.BLOCK.getId(this.door!!.slab)).split(".")[2]
+        return "${name}_${case}_${box}"
     }
 
     // Facing

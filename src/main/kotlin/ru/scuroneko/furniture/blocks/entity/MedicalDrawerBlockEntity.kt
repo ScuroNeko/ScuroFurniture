@@ -14,7 +14,6 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket
 import net.minecraft.registry.RegistryWrapper
 import net.minecraft.screen.NamedScreenHandlerFactory
 import net.minecraft.screen.ScreenHandler
-import net.minecraft.server.network.ServerPlayNetworkHandler
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.text.Text
 import net.minecraft.util.collection.DefaultedList
@@ -24,7 +23,6 @@ import ru.scuroneko.furniture.api.IInventory
 import ru.scuroneko.furniture.gui.MedicalDrawerScreenHandler
 import ru.scuroneko.furniture.registry.ModBlockEntities
 import ru.scuroneko.furniture.registry.RegistryHelper
-import ru.scuroneko.furniture.registry.blocks.MedicalDrawers
 
 class MedicalDrawerBlockEntity(pos: BlockPos, state: BlockState) :
     BlockEntity(ModBlockEntities.MEDICAL_DRAWER_BLOCK_ENTITY, pos, state), NamedScreenHandlerFactory, IInventory {

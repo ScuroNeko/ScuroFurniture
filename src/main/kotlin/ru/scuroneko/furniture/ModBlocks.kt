@@ -1,11 +1,19 @@
 package ru.scuroneko.furniture
 
 import net.minecraft.block.Block
-import ru.scuroneko.furniture.api.registry.autoregistry.IBlocksContainer
-import ru.scuroneko.furniture.registry.RegistryHelper
+import net.minecraft.item.BlockItem
+import net.minecraft.item.Item
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
+import net.minecraft.util.Identifier
 
-object ModBlocks: IBlocksContainer {
-    override fun afterEach(obj: Block) {
-        RegistryHelper.Blocks.BLOCKS.add(obj)
+object ModBlocks {
+
+    fun register() {
+    }
+
+    fun register(block: Block, name: String): Unit {
+        Registry.register(Registries.BLOCK, Identifier.of(ScuroFurniture.MOD_ID, name), block)
+        Registry.register(Registries.ITEM, Identifier.of(ScuroFurniture.MOD_ID, name), BlockItem(block, Item.Settings()))
     }
 }

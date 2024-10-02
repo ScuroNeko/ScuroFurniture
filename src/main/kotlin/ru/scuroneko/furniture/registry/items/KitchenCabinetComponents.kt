@@ -3,23 +3,22 @@ package ru.scuroneko.furniture.registry.items
 import net.minecraft.block.Blocks
 import net.minecraft.item.Item
 import ru.scuroneko.furniture.api.registry.autoregistry.IItemContainer
-import ru.scuroneko.furniture.item.BoxItem
 import ru.scuroneko.furniture.item.CaseItem
+import ru.scuroneko.furniture.item.DoorItem
 import ru.scuroneko.furniture.registry.RegistryHelper
 
 object KitchenCabinetComponents : IItemContainer {
-    val OAK_KITCHEN_CABINET_DOOR = BoxItem(Blocks.OAK_SLAB)
-    val SPRUCE_KITCHEN_CABINET_DOOR = BoxItem(Blocks.SPRUCE_SLAB)
-    val BIRCH_KITCHEN_CABINET_DOOR = BoxItem(Blocks.BIRCH_SLAB)
-    val JUNGLE_KITCHEN_CABINET_DOOR = BoxItem(Blocks.JUNGLE_SLAB)
-    val ACACIA_KITCHEN_CABINET_DOOR = BoxItem(Blocks.ACACIA_SLAB)
-    val DARK_OAK_KITCHEN_CABINET_DOOR = BoxItem(Blocks.DARK_OAK_SLAB)
-    val MANGROVE_KITCHEN_CABINET_DOOR = BoxItem(Blocks.MANGROVE_SLAB)
-    val BAMBOO_KITCHEN_CABINET_DOOR = BoxItem(Blocks.BAMBOO_SLAB)
-
-    val CHERRY_KITCHEN_CABINET_DOOR = BoxItem(Blocks.CHERRY_SLAB)
-
-    val CHERRY_KITCHEN_CABINET_GLASS_DOOR = BoxItem(Blocks.CHERRY_SLAB)
+    val OAK_KITCHEN_CABINET_DOOR = DoorItem(Blocks.OAK_SLAB)
+    val SPRUCE_KITCHEN_CABINET_DOOR = DoorItem(Blocks.SPRUCE_SLAB)
+    val BIRCH_KITCHEN_CABINET_DOOR = DoorItem(Blocks.BIRCH_SLAB)
+    val JUNGLE_KITCHEN_CABINET_DOOR = DoorItem(Blocks.JUNGLE_SLAB)
+    val ACACIA_KITCHEN_CABINET_DOOR = DoorItem(Blocks.ACACIA_SLAB)
+    val DARK_OAK_KITCHEN_CABINET_DOOR = DoorItem(Blocks.DARK_OAK_SLAB)
+    val MANGROVE_KITCHEN_CABINET_DOOR = DoorItem(Blocks.MANGROVE_SLAB)
+    val BAMBOO_KITCHEN_CABINET_DOOR = DoorItem(Blocks.BAMBOO_SLAB)
+    val CHERRY_KITCHEN_CABINET_DOOR = DoorItem(Blocks.CHERRY_SLAB)
+    val CRIMSON_KITCHEN_CABINET_DOOR = DoorItem(Blocks.CRIMSON_SLAB)
+    val WARPED_KITCHEN_CABINET_DOOR = DoorItem(Blocks.WARPED_SLAB)
 
     // Cabinet cases
     val OAK_KITCHEN_CABINET_CASE = CaseItem(Blocks.OAK_PLANKS, Blocks.OAK_SLAB)
@@ -59,8 +58,16 @@ object KitchenCabinetComponents : IItemContainer {
     val STRIPPED_BAMBOO_BLOCK_KITCHEN_CABINET_CASE = CaseItem(Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.BAMBOO_SLAB)
     val BAMBOO_MOSAIC_KITCHEN_CABINET_CASE = CaseItem(Blocks.BAMBOO_MOSAIC, Blocks.BAMBOO_SLAB)
 
+    val CRIMSON_KITCHEN_CABINET_CASE = CaseItem(Blocks.CRIMSON_PLANKS, Blocks.CRIMSON_SLAB)
+    val CRIMSON_STEM_KITCHEN_CABINET_CASE = CaseItem(Blocks.CRIMSON_STEM, Blocks.CRIMSON_SLAB)
+    val STRIPPED_CRIMSON_STEM_KITCHEN_CABINET_CASE = CaseItem(Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_SLAB)
+
+    val WARPED_KITCHEN_CABINET_CASE = CaseItem(Blocks.WARPED_PLANKS, Blocks.WARPED_SLAB)
+    val WARPED_STEM_KITCHEN_CABINET_CASE = CaseItem(Blocks.WARPED_STEM, Blocks.WARPED_SLAB)
+    val STRIPPED_WARPED_STEM_KITCHEN_CABINET_CASE = CaseItem(Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_SLAB)
+
     override fun afterEach(obj: Item) {
-        if (obj is BoxItem) RegistryHelper.Items.KITCHEN_CABINET_DOORS.add(obj)
+        if (obj is DoorItem) RegistryHelper.Items.KITCHEN_CABINET_DOORS.add(obj)
         if (obj is CaseItem) RegistryHelper.Items.KITCHEN_CABINETS_CASES.add(obj)
         RegistryHelper.Items.ITEMS.add(obj)
     }

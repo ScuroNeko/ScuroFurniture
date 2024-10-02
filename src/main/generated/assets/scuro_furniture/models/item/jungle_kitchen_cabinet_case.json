@@ -1,6 +1,0 @@
-{
-  "parent": "scuro_furniture:item/kitchen_cabinet_case",
-  "textures": {
-    "drawer_case": "minecraft:block/jungle_planks"
-  }
-}

@@ -6,10 +6,7 @@ import net.minecraft.data.client.TextureMap
 import ru.scuroneko.furniture.api.datagen.ModModels
 import ru.scuroneko.furniture.api.datagen.ModTextureKeys
 import ru.scuroneko.furniture.api.datagen.ModTextureMap
-import ru.scuroneko.furniture.item.BoxItem
-import ru.scuroneko.furniture.item.CaseItem
-import ru.scuroneko.furniture.item.KitchenDrawerCaseItem
-import ru.scuroneko.furniture.item.MedicalDrawerCaseItem
+import ru.scuroneko.furniture.item.*
 
 class FurnitureItemModelGenerator(private val generator: ItemModelGenerator) {
     fun registerKitchenDrawerBox(box: BoxItem) {
@@ -24,10 +21,16 @@ class FurnitureItemModelGenerator(private val generator: ItemModelGenerator) {
         ModModels.MEDICAL_BOX.upload(ModelIds.getItemModelId(box), map, generator.writer)
     }
 
-    fun registerCabinetDoor(door: BoxItem): Unit {
+    fun registerCabinetDoor(door: DoorItem): Unit {
         val id = ModTextureMap.slabToPlanks(door.slab)
         val map = TextureMap().put(ModTextureKeys.CABINET_DOOR, id)
         ModModels.KITCHEN_CABINET_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
+    }
+
+    fun registerCabinetGlassDoor(door: DoorItem) {
+        val id = ModTextureMap.slabToPlanks(door.slab)
+        val map = TextureMap().put(ModTextureKeys.CABINET_DOOR, id)
+        ModModels.KITCHEN_CABINET_GLASS_DOOR.upload(ModelIds.getItemModelId(door), map, generator.writer)
     }
 
     fun registerMedicalCase(case: MedicalDrawerCaseItem) {
@@ -47,7 +50,7 @@ class FurnitureItemModelGenerator(private val generator: ItemModelGenerator) {
         ModModels.KITCHEN_DRAWER_CASE.upload(ModelIds.getItemModelId(caseItem), map, generator.writer)
     }
 
-    fun registerKitchenCabinetCase(case: CaseItem): Unit {
+    fun registerKitchenCabinetCase(case: CaseItem) {
         val map = ModTextureMap.drawerCase(case)
         ModModels.KITCHEN_CABINET_CASE.upload(ModelIds.getItemModelId(case), map, generator.writer)
     }

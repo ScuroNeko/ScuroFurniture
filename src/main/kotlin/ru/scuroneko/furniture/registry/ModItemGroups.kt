@@ -8,12 +8,11 @@ import net.minecraft.registry.Registry
 import net.minecraft.text.Text
 import ru.scuroneko.furniture.Constants
 import ru.scuroneko.furniture.api.registry.autoregistry.IRegistryContainer
-import ru.scuroneko.furniture.registry.blocks.KitchenDrawers
 import ru.scuroneko.furniture.registry.items.MedicalDrawersComponents
 
 object ModItemGroups : IRegistryContainer<ItemGroup> {
     val BLOCKS_GROUP: ItemGroup = FabricItemGroup.builder()
-        .icon { ItemStack(KitchenDrawers.BLACK_CHERRY_KITCHEN_DRAWER) }
+        .icon { ItemStack(RegistryHelper.Blocks.KITCHEN_DRAWERS[0]) }
         .displayName(Text.translatable(Constants.Translatable.CARPENTER_GROUP))
         .entries { _, entries ->
             RegistryHelper.Blocks.BLOCKS.forEach(entries::add)

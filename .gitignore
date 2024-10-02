@@ -32,9 +32,11 @@ bin/
 
 run/
 server/
+src/main/generated/
 
 # java
 
+.kotlin/
 hs_err_*.log
 replay_*.log
 *.hprof

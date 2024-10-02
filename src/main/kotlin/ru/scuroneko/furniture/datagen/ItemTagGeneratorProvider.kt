@@ -12,6 +12,8 @@ class ItemTagGeneratorProvider(output: FabricDataOutput, completableFuture: Comp
     override fun configure(wl: WrapperLookup) {
         getOrCreateTagBuilder(ModItemTags.MEDIUM_BOXES).add(*RegistryHelper.Items.MEDIUM_DRAWERS_BOXES.toTypedArray())
         getOrCreateTagBuilder(ModItemTags.MEDICAL_BOXES).add(*RegistryHelper.Items.MEDICAL_DRAWERS_BOXES.toTypedArray())
+        getOrCreateTagBuilder(ModItemTags.KITCHEN_CABINET_DOORS).add(*RegistryHelper.Items.KITCHEN_CABINET_DOORS.toTypedArray())
+        getOrCreateTagBuilder(ModItemTags.KITCHEN_CABINET_GLASS_DOORS).add(*RegistryHelper.Items.KITCHEN_CABINET_GLASS_DOORS.toTypedArray())
 
         getOrCreateTagBuilder(ModItemTags.MEDICAL_DRAWERS_CASES).add(*RegistryHelper.Items.MEDICAL_DRAWERS_CASES.toTypedArray())
         getOrCreateTagBuilder(ModItemTags.BEDSIDE_DRAWERS_CASES).add(*RegistryHelper.Items.BEDSIDE_DRAWERS_CASES.toTypedArray())

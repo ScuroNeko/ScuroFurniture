@@ -1,9 +1,0 @@
-{
-  "parent": "scuro_furniture:block/kitchen_drawer",
-  "textures": {
-    "drawer_box": "minecraft:block/bamboo_planks",
-    "drawer_case": "minecraft:block/bamboo_block",
-    "drawer_concrete": "minecraft:block/white_concrete",
-    "particle": "minecraft:block/bamboo_block"
-  }
-}
